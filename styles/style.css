@@ -1,4 +1,10 @@
 
 body {
-    background-image: url("http://jgonzalez.greenriverdev.com/328/team-charm/images/bobaBakcground.jpg");
+    background-image: url("http://jgonzalez.greenriverdev.com/328/team-charm/images/bobaBackground.jpg");
+    background-size: 50%;
+
+}
+
+nav.navbar.navbar-expand-sm.text-white.navbar-dark {
+    background-color: pink;
 }
