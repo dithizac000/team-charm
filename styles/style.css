@@ -1,10 +1,18 @@
-
+/*having an image background*/
 body {
     background-image: url("http://jgonzalez.greenriverdev.com/328/team-charm/images/bobaBackground.jpg");
     background-size: 50%;
 
 }
 
+/*nav-bar styling*/
 nav.navbar.navbar-expand-sm.text-white.navbar-dark {
     background-color: pink;
 }
+
+.col-md-12.text-center.uk-panel-box {
+    padding: 40px;
+    background-color: white;
+    border-radius: 40px;
+}
+
