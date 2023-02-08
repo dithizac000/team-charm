@@ -15,4 +15,8 @@ nav.navbar.navbar-expand-sm.text-white.navbar-dark {
     background-color: white;
     border-radius: 40px;
 }
+/*Font Fmaily - */
+h1,h2,h5, p, li{
+    font-family: 'Quicksand', sans-serif;
+}
 
