@@ -10,11 +10,14 @@ body {
 /*nav-bar styling bg color*/
 nav.navbar.navbar-expand-sm.text-white.navbar-dark {
     background-color: pink;
+    opacity: 80%;
+
 }
 /*nav-bar hover color change*/
 .navbar-dark .navbar-nav .nav-item .nav-link:focus,
 .navbar-dark .navbar-nav .nav-item .nav-link:hover {
     color: salmon;
+
 }
 /*drop down hover color*/
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
@@ -83,4 +86,10 @@ a.btn:hover {
     80% { transform: translate(-1px, -1px) rotate(1deg); }
     90% { transform: translate(1px, 2px) rotate(0deg); }
     100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+/*hover border pink on menu album and opacity on selection*/
+.card:hover {
+    border-color: deeppink;
+    opacity: 80%;
 }
