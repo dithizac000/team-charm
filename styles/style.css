@@ -25,3 +25,7 @@ a.btn.btn-primary {
     border-color: pink;
     padding: 15px;
 }
+
+.logo {
+    height: 50px;
+}
