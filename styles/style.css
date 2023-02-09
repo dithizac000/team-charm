@@ -1,5 +1,6 @@
 /* pink font trio is : pink, deeppink, and salmon
-green: #8ae78a*/
+green: #8ae78a
+brown: #806464*/
 
 /*having an image background*/
 body {
@@ -17,7 +18,7 @@ nav.navbar.navbar-expand-sm.text-white.navbar-dark {
 /*nav-bar hover color change*/
 .navbar-dark .navbar-nav .nav-item .nav-link:focus,
 .navbar-dark .navbar-nav .nav-item .nav-link:hover {
-    color: #8ae78a;
+    color: deeppink;
 
 }
 /*drop down hover color*/
@@ -65,14 +66,15 @@ a {
     color: pink;
     text-decoration: none; /* no underline */
 }
-/*deeppink font color when a href is hover*/
-a:hover {
+/*green font color when a href is hover*/
+a:hover,.bold-green:hover{
     color: #8ae78a;
+    text-decoration-style: solid;
 }
 /*button hover border*/
-a.btn:hover {
+a.btn:hover,.menu-title, .menu-title:hover  {
     border-color: deeppink;
-    color: salmon;
+    color: #806464;
 }
 /*logo size*/
 .logo {
@@ -122,8 +124,9 @@ a.btn:hover {
 }
 /*side bar hover*/
 .sidenav a:hover,.sidenav:hover {
-    color: #8ae78a;
+    color: #806464;
     opacity: 100%;
+    text-decoration-style: wavy;
 
 }
 
@@ -133,10 +136,7 @@ a.btn:hover {
     opacity: 80%;
 }
 
-/*menu title hover*/
-.menu-title {
-    border-color: #8ae78a;
-}
+
 .menu-title:hover {
     color: pink;
  }
