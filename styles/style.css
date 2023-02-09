@@ -36,6 +36,19 @@ h1,h2,h5,p,li,.sidenav{
     opacity: 80%;
 
 }
+
+/*Centering the content to center of the div*/
+.col-md-6.col-sm-12.color_description.text-center {
+    padding: 50px 0;
+}
+
+/*Styling the paragraph next to the carousel*/
+p#home-page-content {
+    background-color: white;
+    padding-bottom: 15px;
+    border-radius: 15px;
+}
+
 /*Hover to full opacity for most fonts*/
 h1:hover,h2:hover,h5:hover, p:hover, li:hover{
     opacity: 100%;
