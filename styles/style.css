@@ -20,3 +20,8 @@ h1,h2,h5, p, li{
     font-family: 'Quicksand', sans-serif;
 }
 
+a.btn.btn-primary {
+    background-color: pink;
+    border-color: pink;
+    padding: 15px;
+}
