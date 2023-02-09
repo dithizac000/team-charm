@@ -1,3 +1,5 @@
+/*Note to styling, our main pink font trio is : pink, deeppink, and salmon*/
+
 /*having an image background*/
 body {
     background-image: url("http://jgonzalez.greenriverdev.com/328/team-charm/images/bobaBackground.jpg");
@@ -5,9 +7,18 @@ body {
 
 }
 
-/*nav-bar styling*/
+/*nav-bar styling bg color*/
 nav.navbar.navbar-expand-sm.text-white.navbar-dark {
     background-color: pink;
+}
+/*nav-bar hover color change*/
+.navbar-dark .navbar-nav .nav-item .nav-link:focus,
+.navbar-dark .navbar-nav .nav-item .nav-link:hover {
+    color: salmon;
+}
+/*drop down hover color*/
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    color:salmon;
 }
 
 .col-md-12.text-center.uk-panel-box {
@@ -15,22 +26,43 @@ nav.navbar.navbar-expand-sm.text-white.navbar-dark {
     background-color: white;
     border-radius: 40px;
 }
-/*Font Fmaily - */
-h1,h2,h5, p, li{
+/*Font Fmaily - google fonts */
+h1,h2,h5,p,li{
     font-family: 'Quicksand', sans-serif;
+    opacity: 80%;
+
+}
+/*Hover to full opacity for most fonts*/
+h1:hover,h2:hover,h5:hover, p:hover, li:hover{
+    opacity: 100%;
 }
 
+/*button colors and padding*/
 a.btn.btn-primary {
     background-color: pink;
     border-color: pink;
     padding: 15px;
 }
-
+/*remove under line on a href amd keep color pink*/
+a {
+    color: pink;
+    text-decoration: none; /* no underline */
+}
+/*deeppink font color when a href is hover*/
+a:hover {
+    color: deeppink;
+}
+/*button hover border*/
+a.btn:hover {
+    border-color: deeppink;
+    color: salmon;
+}
+/*logo size*/
 .logo {
     height: 50px;
 
 }
-
+/*logo hover to shake*/
 .logo:hover {
     /* Start the shake animation and make the animation last for 0.5 seconds */
     animation: shake 0.5s;
@@ -38,7 +70,7 @@ a.btn.btn-primary {
     /* When the animation is finished, start again */
     animation-iteration-count: infinite;
 }
-
+/*Nav bar logo shake animation*/
 @keyframes shake {
     0% { transform: translate(1px, 1px) rotate(0deg); }
     10% { transform: translate(-1px, -2px) rotate(-1deg); }
