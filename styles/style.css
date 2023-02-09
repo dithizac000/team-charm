@@ -10,11 +10,21 @@ body {
 }
 
 /*nav-bar styling bg color*/
-nav.navbar.navbar-expand-sm.text-white.navbar-dark {
+nav.navbar.navbar-expand-sm {
     background-color: pink;
-    opacity: 80%;
-
+    text-decoration-color: black;
+    opacity: 90%;
 }
+
+/*nav-bar hover*/
+nav.navbar.navbar-expand-sm:hover {
+    opacity: 100%;
+}
+
+.navbar-brand{
+    color:white;
+}
+
 /*nav-bar hover color change*/
 .navbar-dark .navbar-nav .nav-item .nav-link:focus,
 .navbar-dark .navbar-nav .nav-item .nav-link:hover {
