@@ -1,4 +1,5 @@
-/*Note to styling, our main pink font trio is : pink, deeppink, and salmon*/
+/* pink font trio is : pink, deeppink, and salmon
+green: #8ae78a*/
 
 /*having an image background*/
 body {
@@ -16,7 +17,7 @@ nav.navbar.navbar-expand-sm.text-white.navbar-dark {
 /*nav-bar hover color change*/
 .navbar-dark .navbar-nav .nav-item .nav-link:focus,
 .navbar-dark .navbar-nav .nav-item .nav-link:hover {
-    color: salmon;
+    color: #8ae78a;
 
 }
 /*drop down hover color*/
@@ -30,7 +31,7 @@ nav.navbar.navbar-expand-sm.text-white.navbar-dark {
     border-radius: 40px;
 }
 /*Font Fmaily - google fonts */
-h1,h2,h5,p,li{
+h1,h2,h5,p,li,.sidenav{
     font-family: 'Quicksand', sans-serif;
     opacity: 80%;
 
@@ -53,7 +54,7 @@ a {
 }
 /*deeppink font color when a href is hover*/
 a:hover {
-    color: deeppink;
+    color: #8ae78a;
 }
 /*button hover border*/
 a.btn:hover {
@@ -87,9 +88,42 @@ a.btn:hover {
     90% { transform: translate(1px, 2px) rotate(0deg); }
     100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
+/*side bar code */
+.sidenav {
+    width: 100px;
+    position: fixed;
+    z-index: 1;
+    top: 150px;
+    left: 10px;
+    background: pink;
+    overflow-x: hidden;
+    padding: 8px 0;
+    opacity: 80%;
+}
+/*side bar a href code*/
+.sidenav a {
+    padding: 5px 5px 5px 12px;
+    font-size: 12px;
+    color: white;
+    display: block;
+}
+/*side bar hover*/
+.sidenav a:hover,.sidenav:hover {
+    color: #8ae78a;
+    opacity: 100%;
+
+}
 
 /*hover border pink on menu album and opacity on selection*/
 .card:hover {
     border-color: deeppink;
     opacity: 80%;
 }
+
+/*menu title hover*/
+.menu-title {
+    border-color: #8ae78a;
+}
+.menu-title:hover {
+    color: pink;
+ }
