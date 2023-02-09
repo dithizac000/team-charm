@@ -140,3 +140,9 @@ a.btn:hover {
 .menu-title:hover {
     color: pink;
  }
+
+/*Styling for the footer*/
+.col-md-12.uk-panel-box.bg-light {
+    border-radius: 20px;
+}
+
