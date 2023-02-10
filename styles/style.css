@@ -50,11 +50,17 @@ h1:hover,h2:hover,h5, p:hover, li:hover, .sidenav a:hover,.sidenav:hover, nav.na
 .slides {
     width: 100%;
 }
+/*max height on witdth on hoem carousel*/
 .carousel-inner{
     width:100%;
     max-height: 300px !important;
 }
-/*button colors and padding*/
+/*card class img width and height*/
+.card-img-top  {
+    width:100%;
+    max-height: 345px !important;
+}
+    /*button colors and padding*/
 a.btn.btn-primary, h5 {
     background-color: pink;
     border-color: pink;
