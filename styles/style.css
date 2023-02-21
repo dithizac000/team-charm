@@ -64,7 +64,6 @@ h1:hover,h2:hover,h5, p:hover, li:hover, .sidenav a:hover,.sidenav:hover, nav.na
 a.btn.btn-primary, h5 {
     background-color: pink;
     border-color: pink;
-    padding: 15px;
 }
 /*remove under line on a href amd keep color pink*/
 a, nav-link {
