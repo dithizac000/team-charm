@@ -40,14 +40,14 @@ $f3->route('GET|POST /menu', function ($f3) {
     echo $view->render("views/menu.html"); // render method, return text on template
 });
 
-//purchase route
-$f3->route('GET /purchase', function() {
+//cart route
+$f3->route('GET /cart', function() {
     //instantiate a view
     $view = new Template(); // template is a fat free class
-    echo $view->render("views/purchase-form.html"); // render method, return text on template
+    echo $view->render("views/cart.html"); // render method, return text on template
 });
 
-//purchase route
+//checkout form route
 $f3->route('GET /checkout', function() {
     //instantiate a view
     $view = new Template(); // template is a fat free class

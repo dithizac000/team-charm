@@ -2,6 +2,7 @@
 <div class="py-5 text-center card">
     <h2>Checkout Form</h2>
 </div>
+<form> <!-- form head -->
 <div class="card-group">
     <!-- cart listings-->
     <div class="card">
@@ -62,9 +63,15 @@
                 </div>
                 <input type="text" class="form-control" id="username" placeholder="Username">
             </div>
+            <!-- phone number -->
+            <label for="phone">Phone:</label>
+            <input type="text" name="phone" class="form-control" id="phone" placeholder="1234567890" required>
+            <div class="invalid-feedback">
+                Please enter a valid phone number.
+            </div>
             <!-- email input -->
             <label for="email">Email</span></label>
-            <input type="email" class="form-control" id="email" placeholder="you@example.com" value="" required>
+            <input type="email" class="form-control" id="email" placeholder="you@example.com"  required>
             <div class="invalid-feedback">
                 Please enter a valid email address for shipping updates.
             </div>
@@ -117,6 +124,7 @@
     <div class="card">
         <div class="card-body">
             <h5 class="card-title">Payment</h5>
+            <!-- types of card payment -->
             <div class="d-block my-3">
                 <div class="custom-control custom-radio">
                     <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
@@ -132,6 +140,7 @@
                 </div>
             </div>
             <div class="row">
+                <!-- name of card -->
                 <div class="col-md-6 mb-3">
                     <label for="cc-name">Name on card</label>
                     <input type="text" class="form-control" id="cc-name" placeholder="" required>
@@ -140,6 +149,7 @@
                         Name on card is required
                     </div>
                 </div>
+                <!-- credit card number input -->
                 <div class="col-md-6 mb-3">
                     <label for="cc-number">Credit card number</label>
                     <input type="text" class="form-control" id="cc-number" placeholder="" required>
@@ -149,6 +159,7 @@
                 </div>
             </div>
             <div class="row">
+                <!-- CARD expiration -->
                 <div class="col-md-3 mb-3">
                     <label for="cc-expiration">Expiration</label>
                     <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
@@ -156,6 +167,7 @@
                         Expiration date required
                     </div>
                 </div>
+                <!-- CVV security -->
                 <div class="col-md-3 mb-3">
                     <label for="cc-expiration">CVV</label>
                     <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
@@ -168,12 +180,14 @@
     </div>
 </div>
 
-<!-- submit button-->
-<div class="fixed-bottom d-flex flex-row-reverse"> <!-- order now button cotent -->
-    <nav class="navbar">
-        <a role="button" class="btn btn-primary btn-sm m-3 p-2" href="#">Submit</a>
-    </nav>
-</div>
+    <!-- submit button-->
+    <div class="fixed-bottom d-flex flex-row-reverse"> <!-- order now button cotent -->
+        <nav class="navbar">
+            <a role="button" class="btn btn-primary btn-sm m-3 p-2" href="#">Submit</a>
+        </nav>
+    </div>
+</form> <!-- end of form -->
+
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
