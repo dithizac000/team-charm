@@ -24,7 +24,7 @@ nav.navbar.navbar-expand-sm {
     border-radius: 40px;
 }
 /*Font Fmaily - google fonts */
-h1,h2,h5,p,li,.sidenav{
+h1,h2,h5,p,li,.sidenav, h4{
     font-family: 'Quicksand', sans-serif;
     opacity: 80%;
 
@@ -58,12 +58,13 @@ h1:hover,h2:hover,h5, p:hover, li:hover, .sidenav a:hover,.sidenav:hover, nav.na
 /*card class img width and height*/
 .card-img-top  {
     width:100%;
-    max-height: 345px !important;
+    max-height: 340px !important;
 }
     /*button colors and padding*/
 a.btn.btn-primary, h5 {
     background-color: pink;
     border-color: pink;
+    padding: 1rem;
 }
 /*remove under line on a href amd keep color pink*/
 a, nav-link {
@@ -138,7 +139,7 @@ a.btn:hover, .sidenav a:hover,.sidenav:hover, h5:hover {
 
 
 /*Menu hover*/
-.menu-title:hover{
+.menu-title:hover {
     color: pink;
 }
 
