@@ -39,5 +39,19 @@ $f3->route('GET|POST /menu', function ($f3) {
     $view = new Template(); /// template is a fat free class
     echo $view->render("views/menu.html"); // render method, return text on template
 });
+
+//purchase route
+$f3->route('GET /purchase', function() {
+    //instantiate a view
+    $view = new Template(); // template is a fat free class
+    echo $view->render("views/purchase-form.html"); // render method, return text on template
+});
+
+//purchase route
+$f3->route('GET /checkout', function() {
+    //instantiate a view
+    $view = new Template(); // template is a fat free class
+    echo $view->render("views/checkout.html"); // render method, return text on template
+});
 //run fat free
 $f3->run();
