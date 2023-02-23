@@ -5,7 +5,10 @@ const FRUIT_FLAVORS = ["Passion Iced Tea", "Berry Much Iced Tea", "Mango Iced Te
 const SMOOTHIES_BUTTONS = ["avocadoSmoothie", "mangoIcy", "galaxySwirl"];
 const SMOOTHIES = ["Avocado Smoothies", "Mango Icy", "Oreo Swirl"];
 const SMOOTHIES_PRICE = [6.95, 6.95, 7.50];
+
 let smoothiesStrings = "";
+let start = 1;
+let end = 3;
 
 for (let i = 1; i <= 3; i++) {
     smoothiesStrings +=
