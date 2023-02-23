@@ -1,1 +1,12 @@
 this a temp code template
+// do more research on enctype
+<form action="upload.php" method="post" enctype="multipart/form-data">
+<label for="file">Filename:</label>
+<input type="file" name="file" id="file"><br>
+<input type="submit" name="submit" value="Submit">
+</form>
+
+<!-- modal include for all the popups, asscoiated with buttons
+<include href="views/modal-milk-teas.html"></include>
+<include href="views/modal-fruit-teas.html"></include>
+<include href="views/modal-smoothies.html"></include>-->
