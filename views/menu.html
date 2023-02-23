@@ -4,7 +4,7 @@
     <a href="#">Milk Teas</a>
     <a href="#fruit">Fruit Teas</a>
     <a href="#blended">Smoothies</a>
-    <a href="#contact">Toppings</a>
+    <a href="#toppings">Toppings</a>
 </div>
 <!-- boba tea options -->
 <div class="album py-5 light p-2 text-dark">
@@ -151,6 +151,53 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Toppings series -->
+            <div class="col-md-12" id="toppings">
+                <h2 class="menu-title ">Available Toppings</h2>
+                <hr class="featurette-divider ">
+            </div>
+
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" src="menu-images/tapiocaPearl.avif" alt="Tapioca Pearl toppings">
+                    <div class="card-body">
+                        <p class="card-text"><strong class="bold-green">Tapioca Pearl</strong>: made with our fresh tapioca startch and sweet brown sugar</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-warning ">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" src="menu-images/rainbowJelly.webp" alt="Coconut rainbow Jelly">
+                    <div class="card-body">
+                        <p class="card-text"><strong class="bold-green">Coconut Rainbow Jelly</strong>A delicious chewy texture with a coconut primary base and a unique fruit flavoring syrup</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-warning ">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow">
+                    <img class="card-img-top " src="menu-images/puddingTopping.jpg" alt="Egg pudding">
+                    <div class="card-body">
+                        <p class="card-text"><strong class="bold-green">Egg Pudding</strong>: made with whole milk, non-dairy creamer, lactose-free milk, and sugar.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-warning ">Add</button>
+                            </div>
+                            <small class="text-muted">*contains dairy</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div> <!-- end of row -->
     </div>
 
@@ -191,7 +238,25 @@
                     <input type="radio" class="form-check-input" id="radio3" name="sugar-level" value="option3">Half Sweet
                     <label class="form-check-label" for="radio3"></label>
                 </div>
-
+                <br>
+                <!-- Choose toppings -->
+                <label class="form-label">Choose Toppings:</label>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="radio4" name="topping" value="None" checked> None
+                    <label class="form-check-label" for="radio4"></label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="radio5" name="topping" value="Tapioca"> Tapioca
+                    <label class="form-check-label" for="radio5"></label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="radio6" name="topping" value="Rainbow Jelly"> Rainbow Jelly
+                    <label class="form-check-label" for="radio6"></label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="radio7" name="topping" value="Pudding"> Pudding
+                    <label class="form-check-label" for="radio7"></label>
+                </div>
 
             </div>
             <div class="modal-footer">
