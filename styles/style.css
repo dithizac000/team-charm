@@ -35,13 +35,6 @@ h1,h2,h5,p,li,.sidenav, h4{
     padding: 150px 0;
 }
 
-/*Styling the paragraph next to the carousel*/
-p#home-page-content {
-    background-color: white;
-    padding-bottom: 15px;
-    border-radius: 15px;
-}
-
 /*Hover to full opacity for most fonts*/
 h1:hover,h2:hover,h5, p:hover, li:hover, .sidenav a:hover,.sidenav:hover, nav.navbar.navbar-expand-sm:hover  {
     opacity: 100%;
