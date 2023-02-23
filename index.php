@@ -8,6 +8,7 @@ error_reporting(E_ALL);
 //require autoload file
 require_once('vendor/autoload.php');
 require_once('model/functions.php');
+require_once('model/modal-functions.php');
 
 //instantiate F3 base class
 $f3 = Base::instance();
@@ -21,6 +22,7 @@ $f3->route('GET /', function() {
 // menu route
 $f3->route('GET|POST /menu', function ($f3) {
 
+    /*
     // if the form has been posted
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
         var_dump($_POST); // For development process
@@ -35,7 +37,10 @@ $f3->route('GET|POST /menu', function ($f3) {
 
         // redirect to summary page
         $f3->reroute('experience');
-    }
+    }*/
+
+    //add output modal to hive
+     $f3->set('echo["modal"]', getModal());
 
     //instantiate a view
     $view = new Template(); /// template is a fat free class
