@@ -7,6 +7,7 @@ error_reporting(E_ALL);
 
 //require autoload file
 require_once('vendor/autoload.php');
+require_once('model/functions.php');
 
 //instantiate F3 base class
 $f3 = Base::instance();
@@ -35,6 +36,7 @@ $f3->route('GET|POST /menu', function ($f3) {
         // redirect to summary page
         $f3->reroute('experience');
     }
+
     //instantiate a view
     $view = new Template(); /// template is a fat free class
     echo $view->render("views/menu.html"); // render method, return text on template
