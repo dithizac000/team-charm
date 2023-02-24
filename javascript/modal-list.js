@@ -1,13 +1,24 @@
 const MAIN = document.querySelector('main');
 
 const BUTTONS_NAMES = ["milkTea", "greenTea", "thaiTea","passionTea", "berryTea","mangoTea","avocadoSmoothie", "mangoIcy", "galaxySwirl"];
-const BOBA_NAMES = ["Milk Tea", "Green Tea", "Thai Tea", "Passion Iced Tea", "Berry Much Iced Tea",
-    "Mango Iced Tea","Avocado Smoothies", "Mango Icy", "Oreo Swirl"];
+const BOBA_NAMES = ["Milk Tea", "Jasmine Green Tea", "Thai Tea", "Passion Fruit Iced Tea", "Berry Much Iced Tea",
+    "Mango Iced Tea","Avocado Smoothie", "Mango Icy", "Galaxy Swirl"];
 const BOBA_PRICE = [5.45, 5.45,5.95,5.95, 5.95, 5.95,6.95, 6.95, 7.50];
 
 let smoothiesStrings = "";
+let teaSelect = "               <!-- tea choice level -->\n" +
+"                <label class=\"form-label\">Select Tea:</label>\n" +
+"                <div class=\"form-check\">\n" +
+"                    <input type=\"radio\" class=\"form-check-input\" name=\"black-tea\" value=\"Black Tea\" checked>Black Tea\n" +
+"                    <label class=\"form-check-label\" for=\"radio1\"></label>\n" +
+"                </div>\n" +
+"                <div class=\"form-check\">\n" +
+"                    <input type=\"radio\" class=\"form-check-input\" name=\"green-tea\" value=\"Green Tea\">Green Tea\n" +
+"                    <label class=\"form-check-label\" for=\"radio2\"></label>\n" +
+"                <br>\n";
 
 for (let i = 0; i < BOBA_NAMES.length ; i++) {
+
     smoothiesStrings +=
         `<div class=\"modal fade\" id=\"${BUTTONS_NAMES[i]}\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\">\n` +
         "    <div class=\"modal-dialog modal-dialog-centered\" role=\"document\">\n" +
@@ -18,13 +29,18 @@ for (let i = 0; i < BOBA_NAMES.length ; i++) {
         "                    <span aria-hidden=\"true\"></span>\n" +
         "                </button>\n" +
         "            </div>\n" +
-        "            <div class=\"modal-body\">\n" +
+        "            <div class=\"modal-body\">\n";
+
+    if(BOBA_NAMES[i] == "Passion Fruit Iced Tea"|| BOBA_NAMES[i] ==  "Berry Much Iced Tea" || BOBA_NAMES[i] == "Mango Iced Tea") {
+        smoothiesStrings += teaSelect;
+
+    }   smoothiesStrings +=
+
         "                <!-- title and price -->\n" +
         `                <input class=\"form-control bg-white\" type=\"text\" placeholder=\"${BOBA_NAMES[i]}\" value=\"${BOBA_NAMES[i]}\" readonly>\n` +
         "                <br>\n" +
         `                <input class=\"form-control\" type=\"text\" placeholder=\"${BOBA_PRICE[i]}\" value=\"${BOBA_PRICE[i]}\" readonly>\n` +
         "                <br>\n" +
-
         "                <!-- quantity amount label -->\n" +
         `                <label class=\"form-label\" for=\"typeNumber${i}\">Quantity:</label>\n"` +
         `                <input type=\"number\" id=\"typeNumber${i}\" class=\"form-control\"  value=\"1\" min=\"1\" max=\"99\"/>\n` +
@@ -35,15 +51,6 @@ for (let i = 0; i < BOBA_NAMES.length ; i++) {
         "                    <input type=\"radio\" class=\"form-check-input\" name=\"sugar-level\" value=\"Normal\" checked>Normal\n" +
         "                    <label class=\"form-check-label\" for=\"radio1\"></label>\n" +
         "                </div>\n" +
-        "                <div class=\"form-check\">\n" +
-        "                    <input type=\"radio\" class=\"form-check-input\" name=\"sugar-level\" value=\"Extra Sweet\">Extra Sweet\n" +
-        "                    <label class=\"form-check-label\" for=\"radio2\"></label>\n" +
-        "                </div>\n" +
-        "                <div class=\"form-check\">\n" +
-        "                    <input type=\"radio\" class=\"form-check-input\" name=\"sugar-level\" value=\"Half Sweet\">Half Sweet\n" +
-        "                    <label class=\"form-check-label\" for=\"radio3\"></label>\n" +
-        "                </div>\n" +
-        "                <br>\n" +
         "                <!-- Choose toppings -->\n" +
         "                <label class=\"form-label\">Choose Toppings:</label>\n" +
         "                <div class=\"form-check\">\n" +
