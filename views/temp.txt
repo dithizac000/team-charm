@@ -37,3 +37,9 @@ if(BOBA_PRICE[i] == 3 || BOBA_PRICE[i] == 4 || BOBA_PRICE[i] == 5 ) {
                                                         "                    <label class=\"form-check-label\" for=\"radio2\"></label>\n" +
                                                         "                <br>\n";
                                                 } +
+
+// if array name matches these three, output the div input variable for tea selection
+if(BOBA_NAMES[i] == "Passion Fruit Iced Tea"|| BOBA_NAMES[i] ==  "Berry Much Iced Tea" || BOBA_NAMES[i] == "Mango Iced Tea") {
+displayModal += teaSelect;
+
+}   displayModal +=
