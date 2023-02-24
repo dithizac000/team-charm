@@ -1,18 +1,15 @@
 const MAIN = document.querySelector('main');
 
-const MILK_TEAS = ["Milk Tea", "Green Tea", "Thai Tea"];
-const FRUIT_FLAVORS = ["Passion Iced Tea", "Berry Much Iced Tea", "Mango Iced Tea"];
-const SMOOTHIES_BUTTONS = ["avocadoSmoothie", "mangoIcy", "galaxySwirl"];
-const SMOOTHIES = ["Avocado Smoothies", "Mango Icy", "Oreo Swirl"];
-const SMOOTHIES_PRICE = [6.95, 6.95, 7.50];
+const BUTTONS_NAMES = ["milkTea", "greenTea", "thaiTea","passionTea", "berryTea","mangoTea","avocadoSmoothie", "mangoIcy", "galaxySwirl"];
+const BOBA_NAMES = ["Milk Tea", "Green Tea", "Thai Tea", "Passion Iced Tea", "Berry Much Iced Tea",
+    "Mango Iced Tea","Avocado Smoothies", "Mango Icy", "Oreo Swirl"];
+const BOBA_PRICE = [5.45, 5.45,5.95,5.95, 5.95, 5.95,6.95, 6.95, 7.50];
 
 let smoothiesStrings = "";
-let start = 1;
-let end = 3;
 
-for (let i = 1; i <= 3; i++) {
+for (let i = 0; i < BOBA_NAMES.length ; i++) {
     smoothiesStrings +=
-        `<div class=\"modal fade\" id=\"${SMOOTHIES_BUTTONS[i]}+\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\">\n` +
+        `<div class=\"modal fade\" id=\"${BUTTONS_NAMES[i]}\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\">\n` +
         "    <div class=\"modal-dialog modal-dialog-centered\" role=\"document\">\n" +
         "        <div class=\"modal-content\">\n" +
         "            <div class=\"modal-header\">\n" +
@@ -23,10 +20,11 @@ for (let i = 1; i <= 3; i++) {
         "            </div>\n" +
         "            <div class=\"modal-body\">\n" +
         "                <!-- title and price -->\n" +
-        `                <input class=\"form-control bg-white\" type=\"text\" placeholder=\"${SMOOTHIES[i]}\" value=\"${SMOOTHIES[i]}\" readonly>\n` +
+        `                <input class=\"form-control bg-white\" type=\"text\" placeholder=\"${BOBA_NAMES[i]}\" value=\"${BOBA_NAMES[i]}\" readonly>\n` +
         "                <br>\n" +
-        `                <input class=\"form-control\" type=\"text\" placeholder=\"${SMOOTHIES_PRICE[i]}\" value=\"${SMOOTHIES_PRICE[i]}\" readonly>\n` +
+        `                <input class=\"form-control\" type=\"text\" placeholder=\"${BOBA_PRICE[i]}\" value=\"${BOBA_PRICE[i]}\" readonly>\n` +
         "                <br>\n" +
+
         "                <!-- quantity amount label -->\n" +
         `                <label class=\"form-label\" for=\"typeNumber${i}\">Quantity:</label>\n"` +
         `                <input type=\"number\" id=\"typeNumber${i}\" class=\"form-control\"  value=\"1\" min=\"1\" max=\"99\"/>\n` +
