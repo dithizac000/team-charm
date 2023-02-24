@@ -10,3 +10,30 @@ this a temp code template
 <include href="views/modal-milk-teas.html"></include>
 <include href="views/modal-fruit-teas.html"></include>
 <include href="views/modal-smoothies.html"></include>-->
+
+
+if(BOBA_PRICE[i] == 3 || BOBA_PRICE[i] == 4 || BOBA_PRICE[i] == 5 ) {
+                            smoothiesStrings += + "               <!-- tea choice level -->\n" +
+                            "                <label class=\"form-label\">Select Tea:</label>\n" +
+                            "                <div class=\"form-check\">\n" +
+                            "                    <input type=\"radio\" class=\"form-check-input\" name=\"black-tea\" value=\"Black Tea\" checked>Black Tea\n" +
+                            "                    <label class=\"form-check-label\" for=\"radio1\"></label>\n" +
+                            "                </div>\n" +
+                            "                <div class=\"form-check\">\n" +
+                            "                    <input type=\"radio\" class=\"form-check-input\" name=\"green-tea\" value=\"Green Tea\">Green Tea\n" +
+                            "                    <label class=\"form-check-label\" for=\"radio2\"></label>\n" +
+                            "                <br>\n"
+                        } +
+
+                        if(BOBA_NAMES[i] == "Passion Fruit Iced Tea"|| BOBA_NAMES[i] ==  "Berry Much Iced Tea" || BOBA_NAMES[i] == "Mango Iced Tea") {
+                                                       +"               <!-- tea choice level -->\n" +
+                                                        "                <label class=\"form-label\">Select Tea:</label>\n" +
+                                                        "                <div class=\"form-check\">\n" +
+                                                        "                    <input type=\"radio\" class=\"form-check-input\" name=\"black-tea\" value=\"Black Tea\" checked>Black Tea\n" +
+                                                        "                    <label class=\"form-check-label\" for=\"radio1\"></label>\n" +
+                                                        "                </div>\n" +
+                                                        "                <div class=\"form-check\">\n" +
+                                                        "                    <input type=\"radio\" class=\"form-check-input\" name=\"green-tea\" value=\"Green Tea\">Green Tea\n" +
+                                                        "                    <label class=\"form-check-label\" for=\"radio2\"></label>\n" +
+                                                        "                <br>\n";
+                                                } +
