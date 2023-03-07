@@ -53,51 +53,52 @@ $f3->route('GET|POST /menu', function ($f3) {
         switch ($boba) {
             // 1-3: Milk, 4-6: Fruit, 7-9: Smoothies
             case 'Milk Tea':
-                $milkOrder->setMilkType("Black Milk");
                 $setMilk;
+                $milkOrder->setMilkType("Black Milk");
                 $_SESSION['milkOrder'] = $milkOrder;
                 break;
             case 'Jasmine Green Tea':
-                $milkOrder->setMilkType("Green Milk");
                 $setMilk;
+                $milkOrder->setMilkType("Green Milk");
                 $_SESSION['milkOrder'] = $milkOrder;
                 break;
             case 'Thai Tea':
-                $milkOrder->setMilkType("Thai Milk");
                 $setMilk;
+                $milkOrder->setMilkType("Thai Milk");
                 $_SESSION['milkOrder'] = $milkOrder;
                 break;
             case 'Passion Fruit Iced Tea':
+                $setFruit;
+
                 $fruitOrder->setTeaType($teaType);
                 $fruitOrder->setFlavor('Passion Fruit');
-                $setFruit;
                 $_SESSION['fruitOrder'] = $fruitOrder;
                 break;
             case 'Berry Much Iced Tea':
+                $setFruit;
                 $fruitOrder->setTeaType($teaType);
                 $fruitOrder->setFlavor('Mix Berries');
-                $setFruit;
                 $_SESSION['fruitOrder'] = $fruitOrder;
                 break;
             case 'Mango Iced Tea':
+                $setFruit;
                 $fruitOrder->setTeaType($teaType);
                 $fruitOrder->setFlavor('Mango Syrup');
-                $setFruit;
                 $_SESSION['fruitOrder'] = $fruitOrder;
                 break;
             case 'Avocado Smoothie':
-                $smoothieOrder->setBase('Avocado');
                 $setSmoothies;
+                $smoothieOrder->setBase('Avocado');
                 $_SESSION['smoothieOrder'] = $smoothieOrder;
                 break;
             case 'Mango Icy':
-                $smoothieOrder->setBase('Champagne Mango');
                 $setSmoothies;
+                $smoothieOrder->setBase('Champagne Mango');
                 $_SESSION['smoothieOrder'] = $smoothieOrder;
                 break;
             case 'Galaxy Swirl':
-                $smoothieOrder->setBase('Oreo & Taro');
                 $setSmoothies;
+                $smoothieOrder->setBase('Oreo & Taro');
                 $_SESSION['smoothieOrder'] = $smoothieOrder;
                 break;
 
