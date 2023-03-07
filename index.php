@@ -32,9 +32,7 @@ $f3->route('GET|POST /menu', function ($f3) {
 
         // instantiate a new input order
         //$newOrder = new InputModal();
-        $milkOrder = new InputModal();
-        $fruitOrder = new FruitTea();
-        $smoothieOrder = new Smoothies();
+        $orders = new ParentTea();
 
         // move data from POST array to SESSION array
         $boba = $_POST['boba-name'];
@@ -44,55 +42,12 @@ $f3->route('GET|POST /menu', function ($f3) {
         $topping = $_POST['topping'];
         $teaType = $_POST['tea-selection'];
 
-        // set loop
-        $setMilk = $milkOrder->setBobaName($boba) . $milkOrder->setPrice($price) . $milkOrder->setQuantity($quantity). $milkOrder->setSweetness($sweetness) . $milkOrder->setTopping($topping);
+        // if state
+        if($boba == )
+        $setOrder = $basicOrder->setBobaName($boba) . $basicOrder->setPrice($price) . $basicOrder->setQuantity($quantity). $basicOrder->setSweetness($sweetness) . $basicOrder->setTopping($topping);
         $setFruit = $fruitOrder->setBobaName($boba) . $fruitOrder->setPrice($price) . $fruitOrder->setQuantity($quantity). $fruitOrder->setSweetness($sweetness) . $fruitOrder->setTopping($topping);
-        $setSmoothies = $smoothieOrder->setBobaName($boba) . $smoothieOrder->setPrice($price) . $smoothieOrder->setQuantity($quantity). $smoothieOrder->setSweetness($sweetness) . $smoothieOrder->setTopping($topping);
 
-        // switch statement for determining which order
-        switch ($boba) {
-            // 1-3: Milk, 4-6: Fruit, 7-9: Smoothies
-            case 'Thai Tea':
-            case 'Jasmine Green Tea':
-            case 'Milk Tea':
-                $setMilk;
-                $_SESSION['milkOrder'] = $milkOrder;
-                break;
-            case 'Passion Fruit Iced Tea':
-                $setFruit;
-                $fruitOrder->setTeaType($teaType);
-                $fruitOrder->setFlavor('Passion Syrup');
-                $_SESSION['fruitOrder'] = $fruitOrder;
-                break;
-            case 'Berry Much Iced Tea':
-                $setFruit;
-                $fruitOrder->setTeaType($teaType);
-                $fruitOrder->setFlavor('Berries Syrup');
-                $_SESSION['fruitOrder'] = $fruitOrder;
-                break;
-            case 'Mango Iced Tea':
-                $setFruit;
-                $fruitOrder->setTeaType($teaType);
-                $fruitOrder->setFlavor('Mango Syrup');
-                $_SESSION['fruitOrder'] = $fruitOrder;
-                break;
-            case 'Avocado Smoothie':
-                $setSmoothies;
-                $smoothieOrder->setBase('Avocado');
-                $_SESSION['smoothieOrder'] = $smoothieOrder;
-                break;
-            case 'Mango Icy':
-                $setSmoothies;
-                $smoothieOrder->setBase('Champagne Mango');
-                $_SESSION['smoothieOrder'] = $smoothieOrder;
-                break;
-            case 'Galaxy Swirl':
-                $setSmoothies;
-                $smoothieOrder->setBase('Oreo & Taro');
-                $_SESSION['smoothieOrder'] = $smoothieOrder;
-                break;
 
-        } // end of switch
  /*
   * $_SESSION['orders[]'] = $obj1;
     $_SESSION['orders[]'] = $obj2;

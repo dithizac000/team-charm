@@ -1,6 +1,6 @@
 <?php
 
-class InputModal
+class ParentTea
 {
     private $_bobaName;
     private $_price;
