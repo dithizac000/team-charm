@@ -22,25 +22,23 @@ $f3->route('GET /', function() {
 // menu route
 $f3->route('GET|POST /menu', function ($f3) {
 
-    /*
     // if the form has been posted
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
         var_dump($_POST); // For development process
 
         // move data from POST array to SESSION array
-        $_SESSION['fname'] = $_POST['fname'];
-        $_SESSION['lname'] = $_POST['lname'];
-        $_SESSION['email'] = $_POST['email'];
-        $_SESSION['phone'] = $_POST['phone'];
-        $_SESSION['state'] = $_POST['state'];
-
+        $_SESSION['boba-name'] = $_POST['boba-name'];
+        $_SESSION['price'] = $_POST['price'];
+        $_SESSION['quantity'] = $_POST['quantity'];
+        $_SESSION['sugar-level'] = $_POST['sugar-level'];
+        $_SESSION['topping'] = $_POST['topping'];
+        $_SESSION['tea-selection'] = $_POST['tea-selection'];
 
         // redirect to summary page
-        $f3->reroute('experience');
-    }*/
+    }
 
     //add output modal to hive
-     $f3->set('echo["modal"]', getModal());
+     //$f3->set('echo["modal"]', getModal());
 
     //instantiate a view
     $view = new Template(); /// template is a fat free class
@@ -49,6 +47,7 @@ $f3->route('GET|POST /menu', function ($f3) {
 
 //cart route
 $f3->route('GET /cart', function() {
+    var_dump($_POST);
     //instantiate a view
     $view = new Template(); // template is a fat free class
     echo $view->render("views/cart.html"); // render method, return text on template

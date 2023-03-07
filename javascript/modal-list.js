@@ -17,8 +17,7 @@ let teaSelect = "<!-- tea choice level -->\n" +
 "                <div class=\"form-check\">\n" +
 "                    <input type=\"radio\" class=\"form-check-input\" name=\"tea-selection\" value=\"Green Tea\">Green Tea\n" +
 "                    <label class=\"form-check-label\" for=\"radio2\"></label>" +
-                 "</div>" +
-    "<br>";
+                 "</div>" + "<br>";
 
 // empty string variable
 let displayModal = "";
@@ -54,13 +53,13 @@ function header(currentButton,bobaName,price,i) {
         "            </div>\n" +
         "        <div class=\"modal-body\">\n" +
         "                <!-- title and price -->\n" +
-        `                <input class=\"form-control bg-white\" type=\"text\" placeholder=\"${bobaName}\" value=\"${bobaName}\" readonly>\n` +
+        `                <input class=\"form-control bg-white\" type=\"text\" name=\"boba-name\" placeholder=\"${bobaName}\" value=\"${bobaName}\" readonly>\n` +
         "                <br>\n" +
-        `                <input class=\"form-control\" type=\"text\" placeholder=\"${price}\" value=\"${price}\" readonly>\n` +
+        `                <input class=\"form-control\" type=\"text\" name=\"price\" placeholder=\"${price}\" value=\"${price}\" readonly>\n` +
         "                <br>\n" +
         "                <!-- quantity amount label -->\n" +
-        `                <label class=\"form-label\" for=\"typeNumber${i}\">Quantity:</label>\n"` +
-        `                <input type=\"number\" id=\"typeNumber${i}\" class=\"form-control\"  value=\"1\" min=\"1\" max=\"99\"/>\n` +
+        `                <label class=\"form-label\" for=\"typeNumber${i}\">Quantity:</label>\n` +
+        `                <input type=\"number\" name=\"quantity\" id=\"typeNumber${i}\" class=\"form-control\"  value=\"1\" min=\"1\" max=\"99\"/>\n` +
         "                <br>\n";
 }
 
@@ -102,8 +101,8 @@ function footer() {
         "\n" +
         "            </div>\n" +
         "            <div class=\"modal-footer\">\n" +
-        "                <button type=\"button\" class=\"btn btn-m btn-outline-warning \" data-dismiss=\"modal\">Cancel</button>\n" +
-        "                <button type=\"button\" class=\"btn btn-m btn-outline-warning \">Save</button>\n" +
+        "                <button type=\"button\" class=\"btn btn-m btn-outline-warning\" data-dismiss=\"modal\">Cancel</button>\n" +
+        "                <button class=\"btn btn-m btn-outline-warning\" type=\"submit\" >Save</button>\n" +
         "            </div>\n" +
         "        </div>\n" +
         "    </div>\n" +
