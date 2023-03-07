@@ -8,9 +8,16 @@
     {
       "name": "Jazmin Gonzalez",
       "email": "gonzalez.jazmin@student.greenriver.edu"
+    },
+    {
+      "name": "Dale",
+      "email": "dale@student.greenriver.edu"
     }
   ],
   "require": {
     "bcosca/fatfree-core": "dev-master"
+  },
+  "autoload": {
+    "classmap": ["classes/", "model/"]
   }
 }

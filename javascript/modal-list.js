@@ -42,7 +42,8 @@ for (let i = 0; i < BOBA_NAMES.length; i++) {
 
 // return the top div as header function to above for i loop
 function header(currentButton,bobaName,price,i) {
-    return `<div class=\"modal fade\" id=\"${currentButton}\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\">\n` +
+    return ` <form action="#" method="post">  
+        <div class=\"modal fade\" id=\"${currentButton}\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\">\n` +
         "    <div class=\"modal-dialog modal-dialog-centered\" role=\"document\">\n" +
         "        <div class=\"modal-content\">\n" +
         "            <div class=\"modal-header\">\n" +
@@ -106,7 +107,8 @@ function footer() {
         "            </div>\n" +
         "        </div>\n" +
         "    </div>\n" +
-        "</div>";
+        "</div> " +
+        "</form>";
 }
 //carry the displayModal string into the MAIN selection(main) via inner HTML
 MAIN.innerHTML = displayModal;
