@@ -32,7 +32,7 @@ $f3->route('GET|POST /menu', function ($f3) {
 
         // instantiate a new input order
         //$newOrder = new InputModal();
-        $milkOrder = new MilkTea();
+        $milkOrder = new InputModal();
         $fruitOrder = new FruitTea();
         $smoothieOrder = new Smoothies();
 
@@ -52,32 +52,22 @@ $f3->route('GET|POST /menu', function ($f3) {
         // switch statement for determining which order
         switch ($boba) {
             // 1-3: Milk, 4-6: Fruit, 7-9: Smoothies
+            case 'Thai Tea':
+            case 'Jasmine Green Tea':
             case 'Milk Tea':
                 $setMilk;
-                $milkOrder->setMilkType("Black Milk");
-                $_SESSION['milkOrder'] = $milkOrder;
-                break;
-            case 'Jasmine Green Tea':
-                $setMilk;
-                $milkOrder->setMilkType("Green Milk");
-                $_SESSION['milkOrder'] = $milkOrder;
-                break;
-            case 'Thai Tea':
-                $setMilk;
-                $milkOrder->setMilkType("Thai Milk");
                 $_SESSION['milkOrder'] = $milkOrder;
                 break;
             case 'Passion Fruit Iced Tea':
                 $setFruit;
-
                 $fruitOrder->setTeaType($teaType);
-                $fruitOrder->setFlavor('Passion Fruit');
+                $fruitOrder->setFlavor('Passion Syrup');
                 $_SESSION['fruitOrder'] = $fruitOrder;
                 break;
             case 'Berry Much Iced Tea':
                 $setFruit;
                 $fruitOrder->setTeaType($teaType);
-                $fruitOrder->setFlavor('Mix Berries');
+                $fruitOrder->setFlavor('Berries Syrup');
                 $_SESSION['fruitOrder'] = $fruitOrder;
                 break;
             case 'Mango Iced Tea':
@@ -103,7 +93,11 @@ $f3->route('GET|POST /menu', function ($f3) {
                 break;
 
         } // end of switch
-
+ /*
+  * $_SESSION['orders[]'] = $obj1;
+    $_SESSION['orders[]'] = $obj2;
+ echo "<img src=menu-images/$imgName>";
+  */
     } // end of post if
 
 
@@ -112,6 +106,7 @@ $f3->route('GET|POST /menu', function ($f3) {
 
     //instantiate a view
     $view = new Template(); /// template is a fat free class
+   // $f3->set("imgName", "thai-milk-tea.jpg");
     echo $view->render("views/menu.html"); // render method, return text on template
 });
 
