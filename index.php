@@ -19,13 +19,16 @@ $f3->route('GET /', function() {
     $view = new Template(); // template is a fat free class
     echo $view->render("views/home.html"); // render method, return text on template
 });
+
 // menu route
 $f3->route('GET|POST /menu', function ($f3) {
+    var_dump($_POST);
     // if the form has been posted
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
        // var_dump($_POST); // For development process
+
         // instantiate a new input order
-        $newOrder = new InputModal();
+        //$newOrder = new InputModal();
         $milkOrder = new MilkTea();
         $fruitOrder = new FruitTea();
         $smoothieOrder = new Smoothies();
@@ -38,48 +41,62 @@ $f3->route('GET|POST /menu', function ($f3) {
         $topping = $_POST['topping'];
         $teaType = $_POST['tea-selection'];
 
-        $newOrder->setBobaName($boba);
-        $newOrder->setPrice($price);
-        $newOrder->setQuantity($quantity);
-        $newOrder->setSweetness($sweetness);
-        $newOrder->setTopping($topping);
+        // set loop
+        $setMilk = $milkOrder->setBobaName($boba) . $milkOrder->setPrice($price) . $milkOrder->setQuantity($quantity). $milkOrder->setSweetness($sweetness) . $milkOrder->setTopping($topping);
+        $setFruit = $fruitOrder->setBobaName($boba) . $fruitOrder->setPrice($price) . $fruitOrder->setQuantity($quantity). $fruitOrder->setSweetness($sweetness) . $fruitOrder->setTopping($topping);
+        $setSmoothies = $smoothieOrder->setBobaName($boba) . $smoothieOrder->setPrice($price) . $smoothieOrder->setQuantity($quantity). $smoothieOrder->setSweetness($sweetness) . $smoothieOrder->setTopping($topping);
 
         // switch statement for determining which order
         switch ($boba) {
             // 1-3: Milk, 4-6: Fruit, 7-9: Smoothies
             case 'Milk Tea':
                 $milkOrder->setMilkType("Classic Milk");
+                $setMilk;
                 break;
             case 'Jasmine Green Tea':
                 $milkOrder->setMilkType("Green Milk");
+                $setMilk;
                 break;
             case 'Thai Tea':
                 $milkOrder->setMilkType("Thai Milk");
+                $setMilk;
                 break;
             case 'Passion Fruit Iced Tea':
                 $fruitOrder->setTeaType($teaType);
                 $fruitOrder->setFlavor('Passion Fruit');
+                $setFruit;
                 break;
             case 'Berry Much Iced Tea':
                 $fruitOrder->setTeaType($teaType);
                 $fruitOrder->setFlavor('Mix Berries');
+                $setFruit;
                 break;
             case 'Mango Iced Tea':
                 $fruitOrder->setTeaType($teaType);
                 $fruitOrder->setFlavor('Mango Syrup');
+                $setFruit;
                 break;
             case 'Avocado Smoothie':
                 $smoothieOrder->setBase('Avocado');
+                $setSmoothies;
                 break;
             case 'Mango Icy':
                 $smoothieOrder->setBase('Champagne Mango');
+                $setSmoothies;
                 break;
             case 'Galaxy Swirl':
                 $smoothieOrder->setBase('Oreo & Taro');
+                $setSmoothies;
                 break;
-        }
 
-    }
+        } // end of switch
+        // storing sessions
+        $_SESSION['milkOrder'] = $milkOrder;
+        $_SESSION['fruitOrder'] = $fruitOrder;
+        $_SESSION['smoothieOrder'] = $smoothieOrder;
+
+    } // end of post if
+
 
     //add output modal to hive
      //$f3->set('echo["modal"]', getModal());
@@ -91,7 +108,8 @@ $f3->route('GET|POST /menu', function ($f3) {
 
 //cart route
 $f3->route('GET /cart', function() {
-    var_dump($_POST);
+    Print_r ($_SESSION);
+
     //instantiate a view
     $view = new Template(); // template is a fat free class
     echo $view->render("views/cart.html"); // render method, return text on template

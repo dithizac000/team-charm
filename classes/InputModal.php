@@ -33,9 +33,9 @@ class InputModal
     }
 
     /**
-     * @return mixed|string
+     * @return string
      */
-    public function getPrice(): mixed
+    public function getPrice()
     {
         return $this->_price;
     }
@@ -43,7 +43,7 @@ class InputModal
     /**
      * @param string $price
      */
-    public function setPrice(mixed $price): void
+    public function setPrice($price)
     {
         $this->_price = $price;
     }
