@@ -52,14 +52,17 @@ $f3->route('GET|POST /menu', function ($f3) {
             case 'Milk Tea':
                 $milkOrder->setMilkType("Classic Milk");
                 $setMilk;
+                $_SESSION['milkOrder'] = $milkOrder;
                 break;
             case 'Jasmine Green Tea':
                 $milkOrder->setMilkType("Green Milk");
                 $setMilk;
+                $_SESSION['milkOrder'] = $milkOrder;
                 break;
             case 'Thai Tea':
                 $milkOrder->setMilkType("Thai Milk");
                 $setMilk;
+                $_SESSION['milkOrder'] = $milkOrder;
                 break;
             case 'Passion Fruit Iced Tea':
                 $fruitOrder->setTeaType($teaType);
@@ -70,30 +73,31 @@ $f3->route('GET|POST /menu', function ($f3) {
                 $fruitOrder->setTeaType($teaType);
                 $fruitOrder->setFlavor('Mix Berries');
                 $setFruit;
+                $_SESSION['fruitOrder'] = $fruitOrder;
                 break;
             case 'Mango Iced Tea':
                 $fruitOrder->setTeaType($teaType);
                 $fruitOrder->setFlavor('Mango Syrup');
                 $setFruit;
+                $_SESSION['fruitOrder'] = $fruitOrder;
                 break;
             case 'Avocado Smoothie':
                 $smoothieOrder->setBase('Avocado');
                 $setSmoothies;
+                $_SESSION['smoothieOrder'] = $smoothieOrder;
                 break;
             case 'Mango Icy':
                 $smoothieOrder->setBase('Champagne Mango');
                 $setSmoothies;
+                $_SESSION['smoothieOrder'] = $smoothieOrder;
                 break;
             case 'Galaxy Swirl':
                 $smoothieOrder->setBase('Oreo & Taro');
                 $setSmoothies;
+                $_SESSION['smoothieOrder'] = $smoothieOrder;
                 break;
 
         } // end of switch
-        // storing sessions
-        $_SESSION['milkOrder'] = $milkOrder;
-        $_SESSION['fruitOrder'] = $fruitOrder;
-        $_SESSION['smoothieOrder'] = $smoothieOrder;
 
     } // end of post if
 
