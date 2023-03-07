@@ -22,7 +22,10 @@ $f3->route('GET /', function() {
 
 // menu route
 $f3->route('GET|POST /menu', function ($f3) {
+    echo '<pre>';
     var_dump($_POST);
+    echo '</pre>';
+
     // if the form has been posted
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
        // var_dump($_POST); // For development process
@@ -50,7 +53,7 @@ $f3->route('GET|POST /menu', function ($f3) {
         switch ($boba) {
             // 1-3: Milk, 4-6: Fruit, 7-9: Smoothies
             case 'Milk Tea':
-                $milkOrder->setMilkType("Classic Milk");
+                $milkOrder->setMilkType("Black Milk");
                 $setMilk;
                 $_SESSION['milkOrder'] = $milkOrder;
                 break;
@@ -68,6 +71,7 @@ $f3->route('GET|POST /menu', function ($f3) {
                 $fruitOrder->setTeaType($teaType);
                 $fruitOrder->setFlavor('Passion Fruit');
                 $setFruit;
+                $_SESSION['fruitOrder'] = $fruitOrder;
                 break;
             case 'Berry Much Iced Tea':
                 $fruitOrder->setTeaType($teaType);
@@ -111,12 +115,15 @@ $f3->route('GET|POST /menu', function ($f3) {
 });
 
 //cart route
-$f3->route('GET /cart', function() {
+$f3->route('GET /cart', function($d3) {
+    echo '<pre>';
     Print_r ($_SESSION);
+    echo '</pre>';
 
     //instantiate a view
     $view = new Template(); // template is a fat free class
     echo $view->render("views/cart.html"); // render method, return text on template
+
 });
 
 //checkout form route
