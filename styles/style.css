@@ -18,11 +18,7 @@ nav.navbar.navbar-expand-sm {
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
     color:salmon;
 }
-.col-md-12.text-center.uk-panel-box {
-    padding: 40px;
-    background-color: white;
-    border-radius: 40px;
-}
+
 /*Font Fmaily - google fonts */
 h1,h2,h5,p,li,.sidenav, h4{
     font-family: 'Quicksand', sans-serif;
