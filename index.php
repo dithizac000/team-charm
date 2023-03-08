@@ -40,13 +40,12 @@ $f3->route('GET|POST /menu', function ($f3) {
         $img = $_POST['teaImg'];
         $teaType = $_POST['tea-selection'];
 
-        // instantiate a new input order
+            // instantiate a new input order
         if ($teaType) {
             $order = new FruitTea();
         } else {
             $order = new ParentTea();
         }
-
 
         // assign to variable
         $order->setBobaName($boba);
@@ -64,23 +63,29 @@ $f3->route('GET|POST /menu', function ($f3) {
 //        $_SESSION['orders'] = array();
 //        echo $arr;
         // if orders[] does not exist
-        if (!$_SESSION['orders']) {
+        if (!$_SESSION['orders'] ) {
             echo "in the if";
             // create orders[]
             // use for var. cart icon security
             $arr = [$order];
             $_SESSION['orders'] = $arr;
-        // else
+            // else
         } else {
             echo "in the else";
-            $content = 'cart'; //href header from menu to cart if click cart icon
             $_SESSION['orders'][] = $order;
         }
 
         // size of the orders array, use for cart size
         $arraySize = count($_SESSION['orders']);
+        //$arraySize = (int)$_SESSION['orders'];
+
+        echo $arraySize;
         // set cart size for menu page only
         $f3->set('cartSize', "$arraySize"); // use for cart size increment for menu page
+
+        // prevent refresh of duplicated data from submit
+        header("location: menu");
+        exit;
  /*
   * $_SESSION['orders[]'] = $obj1;
     $_SESSION['orders[]'] = $obj2;
