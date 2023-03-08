@@ -107,10 +107,26 @@ $f3->route('GET /cart', function($f3) {
 });
 
 //checkout form route
-$f3->route('GET /checkout', function() {
+$f3->route('GET|POST /checkout', function($f3) {
+    echo '<pre>';
+    Print_r ($_SESSION);
+    echo '</pre>';
+
+    if($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $f3->reroute('summary');
+    }
     //instantiate a view
     $view = new Template(); // template is a fat free class
     echo $view->render("views/checkout.html"); // render method, return text on template
+});
+
+//summary page
+$f3->route('GET /summary', function () {
+    //instantiate a view
+    $view = new Template(); // template is a fat free class
+    echo $view->render("views/summary.html"); // render method, return text on template
+    //destroy session array
+    session_destroy();
 });
 //run fat free
 $f3->run();
