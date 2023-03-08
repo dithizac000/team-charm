@@ -74,6 +74,10 @@ $f3->route('GET|POST /menu', function ($f3) {
             echo "in the else";
             $_SESSION['orders'][] = $order;
         }
+        // size of the orders array, use for cart size
+        $arraySize = count($_SESSION['orders']);
+        // set cart size for menu page only
+        $f3->set('cartSize', "$arraySize"); // use for cart size increment for menu page
 
 
  /*

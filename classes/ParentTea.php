@@ -8,6 +8,7 @@ class ParentTea
     private $_sweetness;
     private $_topping;
     private $_img;
+
     function __construct($bobaName="",$price="",$quantity="",$sweetness="",$topping="",$img="")
     {
         $this->_bobaName = $bobaName;

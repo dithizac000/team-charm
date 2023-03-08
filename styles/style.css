@@ -8,12 +8,22 @@ body {
     background-size: 50%;
 
 }
-
 /*nav-bar styling bg color*/
 nav.navbar.navbar-expand-sm {
     background-color: pink;
     opacity: 90%;
 }
+
+/*nav bar for cart content, centering the text content within cart img*/
+div.shopping {
+    position: relative;
+    text-align: left;
+}
+/*opacity for cart font in cart number*/
+.cart-center {
+    opacity: 100%;
+}
+
 /*drop down hover color*/
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
     color:salmon;
@@ -58,7 +68,7 @@ a.btn.btn-primary, h5 {
 /*remove under line on a href amd keep color pink*/
 a, nav-link {
     color: pink;
-    text-decoration: none; /* no underline */
+    text-decoration: none !important; /* no underline */
 }
 /*green font color when a href is hover*/
 a:hover,.bold-green:hover, nav.navbar.navbar-expand-sm:hover {
@@ -98,7 +108,6 @@ a.btn:hover, .sidenav a:hover,.sidenav:hover, h5:hover {
     100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
-
 /*side bar code */
 .sidenav {
     width: 100px;
@@ -119,7 +128,6 @@ a.btn:hover, .sidenav a:hover,.sidenav:hover, h5:hover {
     display: block;
 }
 
-
 /*hover border pink on menu album and opacity on selection*/
 .card:hover {
     border-color: deeppink;
@@ -132,6 +140,7 @@ a.btn:hover, .sidenav a:hover,.sidenav:hover, h5:hover {
     color: pink;
 }
 
+
 /*Styling for the footer*/
 .col-md-12.uk-panel-box.bg-light {
     border-radius: 20px;
@@ -141,4 +150,6 @@ a.btn:hover, .sidenav a:hover,.sidenav:hover, h5:hover {
 .modal-backdrop {
     background: linear-gradient(45deg, pink, #8ae78a);
 }
+
+
 
