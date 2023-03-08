@@ -31,8 +31,7 @@ $f3->route('GET|POST /menu', function ($f3) {
        // var_dump($_POST); // For development process
 
         // instantiate a new input order
-        //$newOrder = new InputModal();
-        $orders = new ParentTea();
+        $order = new ParentTea();
 
         // move data from POST array to SESSION array
         $boba = $_POST['boba-name'];
@@ -42,12 +41,19 @@ $f3->route('GET|POST /menu', function ($f3) {
         $topping = $_POST['topping'];
         $teaType = $_POST['tea-selection'];
 
-        // if state
-        if($boba == )
-        $setOrder = $basicOrder->setBobaName($boba) . $basicOrder->setPrice($price) . $basicOrder->setQuantity($quantity). $basicOrder->setSweetness($sweetness) . $basicOrder->setTopping($topping);
-        $setFruit = $fruitOrder->setBobaName($boba) . $fruitOrder->setPrice($price) . $fruitOrder->setQuantity($quantity). $fruitOrder->setSweetness($sweetness) . $fruitOrder->setTopping($topping);
+        // assign to variable
+        $order->setBobaName($boba);
+        $order->setPrice($price);
+        $order->setQuantity($quantity);
+        $order->setSweetness($sweetness);
+        $order->setTopping($topping);
+        if ($boba == 'Passion Fruit Iced Tea' || $boba == 'Berry Much Iced Tea' || $boba ==
+            'Mango Iced Tea') {
+            $order->setTeaType($teaType);
+        }
 
 
+        $_SESSION['orders[]'] = $order;
  /*
   * $_SESSION['orders[]'] = $obj1;
     $_SESSION['orders[]'] = $obj2;

@@ -1,6 +1,6 @@
 <?php
 
-class FruitTea extends InputModal
+class FruitTea extends ParentTea
 {
     private $_teaType;
 
