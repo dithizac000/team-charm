@@ -9,6 +9,7 @@ error_reporting(E_ALL);
 require_once('vendor/autoload.php');
 //Start a session AFTER requiring autoload.php
 session_start();
+//session_destroy();
 
 //instantiate F3 base class
 $f3 = Base::instance();
@@ -23,15 +24,12 @@ $f3->route('GET /', function() {
 // menu route
 $f3->route('GET|POST /menu', function ($f3) {
     echo '<pre>';
-    var_dump($_POST);
+    Print_r ($_SESSION);
     echo '</pre>';
 
     // if the form has been posted
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
-       // var_dump($_POST); // For development process
-
-        // instantiate a new input order
-        $order = new ParentTea();
+        // var_dump($_POST); // For development process
 
         // move data from POST array to SESSION array
         $boba = $_POST['boba-name'];
@@ -40,6 +38,14 @@ $f3->route('GET|POST /menu', function ($f3) {
         $sweetness = $_POST['sugar-level'];
         $topping = $_POST['topping'];
         $teaType = $_POST['tea-selection'];
+
+        // instantiate a new input order
+        if ($teaType) {
+            $order = new FruitTea();
+        } else {
+            $order = new ParentTea();
+        }
+
 
         // assign to variable
         $order->setBobaName($boba);
@@ -52,8 +58,22 @@ $f3->route('GET|POST /menu', function ($f3) {
             $order->setTeaType($teaType);
         }
 
+//        if ($_SESSION['orders'])
+//        $_SESSION['orders'] = array();
+//        echo $arr;
+        // if orders[] does not exist
+        if (!$_SESSION['orders']) {
+            echo "in the if";
+            // create orders[]
+            $arr = [$order];
+            $_SESSION['orders'] = $arr;
+        // else
+        } else {
+            echo "in the else";
+            $_SESSION['orders'][] = $order;
+        }
 
-        $_SESSION['orders[]'] = $order;
+
  /*
   * $_SESSION['orders[]'] = $obj1;
     $_SESSION['orders[]'] = $obj2;
@@ -72,7 +92,7 @@ $f3->route('GET|POST /menu', function ($f3) {
 });
 
 //cart route
-$f3->route('GET /cart', function($d3) {
+$f3->route('GET /cart', function($f3) {
     echo '<pre>';
     Print_r ($_SESSION);
     echo '</pre>';
