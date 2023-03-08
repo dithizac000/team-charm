@@ -67,19 +67,20 @@ $f3->route('GET|POST /menu', function ($f3) {
         if (!$_SESSION['orders']) {
             echo "in the if";
             // create orders[]
+            // use for var. cart icon security
             $arr = [$order];
             $_SESSION['orders'] = $arr;
         // else
         } else {
             echo "in the else";
+            $content = 'cart'; //href header from menu to cart if click cart icon
             $_SESSION['orders'][] = $order;
         }
+
         // size of the orders array, use for cart size
         $arraySize = count($_SESSION['orders']);
         // set cart size for menu page only
         $f3->set('cartSize', "$arraySize"); // use for cart size increment for menu page
-
-
  /*
   * $_SESSION['orders[]'] = $obj1;
     $_SESSION['orders[]'] = $obj2;
