@@ -7,13 +7,15 @@ class ParentTea
     private $_quantity;
     private $_sweetness;
     private $_topping;
-    function __construct($bobaName="",$price="",$quantity="",$sweetness="",$topping="")
+    private $_img;
+    function __construct($bobaName="",$price="",$quantity="",$sweetness="",$topping="",$img="")
     {
         $this->_bobaName = $bobaName;
         $this->_price = $price;
         $this->_quantity = $quantity;
         $this->_sweetness = $sweetness;
         $this->_topping = $topping;
+        $this->_img = $img;
     }
 
     /**
@@ -51,7 +53,7 @@ class ParentTea
     /**
      * @return string
      */
-    public function getQuantity(): mixed
+    public function getQuantity()
     {
         return $this->_quantity;
     }
@@ -96,6 +98,18 @@ class ParentTea
         $this->_topping = $topping;
     }
 
+    public function getImg()
+    {
+        return $this->_img;
+    }
+
+    /**
+     * @param string img
+     */
+    public function setImg($img)
+    {
+        $this->_img = $img;
+    }
 
 
 }

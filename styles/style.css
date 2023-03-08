@@ -53,7 +53,7 @@ h1:hover,h2:hover,h5, p:hover, li:hover, .sidenav a:hover,.sidenav:hover, nav.na
     width:100%;
     max-height: 340px !important;
 }
-    /*button colors and padding*/
+/*button colors and padding*/
 a.btn.btn-primary, h5 {
     background-color: pink;
     border-color: pink;
@@ -145,5 +145,4 @@ a.btn:hover, .sidenav a:hover,.sidenav:hover, h5:hover {
 .modal-backdrop {
     background: linear-gradient(45deg, pink, #8ae78a);
 }
-
 

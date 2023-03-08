@@ -6,6 +6,8 @@ const BUTTONS_NAMES = ["milkTea", "greenTea", "thaiTea","passionTea", "berryTea"
 const BOBA_NAMES = ["Milk Tea", "Jasmine Green Tea", "Thai Tea", "Passion Fruit Iced Tea", "Berry Much Iced Tea",
     "Mango Iced Tea","Avocado Smoothie", "Mango Icy", "Galaxy Swirl"];
 const BOBA_PRICE = [5.45, 5.45,5.95,5.95, 5.95, 5.95,6.95, 6.95, 7.50];
+const BOBA_IMG = ["classic-milk-tea.jpg","green-milk-tea.jpg","thai-milk-tea.jpg","passion-fruit-tea.jpg","berries-tea.jpg","mango-tea.jpg",
+"avocado-smoothies.jfif","mango-slush.jpg","taro-oreo-smoothies.jpg"];
 
 // div input for tea selection of black or green tea. Associated with fruit tea category
 let teaSelect = "<!-- tea choice level -->\n" +
@@ -28,8 +30,9 @@ for (let i = 0; i < BOBA_NAMES.length; i++) {
     let currentButton = BUTTONS_NAMES[i];
     let bobaName = BOBA_NAMES[i];
     let price = BOBA_PRICE[i];
+    let bobaImg = BOBA_IMG[i];
 
-    displayModal += header(currentButton,bobaName,price,i);
+    displayModal += header(currentButton,bobaName,price,bobaImg,i);
 
     // if array name matches these three, output the div input variable for tea selection
     if(bobaName == "Passion Fruit Iced Tea"|| bobaName ==  "Berry Much Iced Tea" || bobaName == "Mango Iced Tea") {
@@ -41,7 +44,7 @@ for (let i = 0; i < BOBA_NAMES.length; i++) {
 }
 
 // return the top div as header function to above for i loop
-function header(currentButton,bobaName,price,i) {
+function header(currentButton,bobaName,price,bobaImg,i) {
     return ` <form action="#" method="post">  
         <div class=\"modal fade\" id=\"${currentButton}\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\">\n` +
         "    <div class=\"modal-dialog modal-dialog-centered\" role=\"document\">\n" +
@@ -53,7 +56,11 @@ function header(currentButton,bobaName,price,i) {
         "                </button>\n" +
         "            </div>\n" +
         "        <div class=\"modal-body\">\n" +
-        "                <!-- title and price -->\n" +
+        "                <!--hidden img value -->\n" +
+        `                <div>
+                            <input type=\"hidden\" name=\"teaImg\" placeholder=\"${bobaImg}\" value=\"${bobaImg}\">\n
+                         </div>`+
+        "                <!--title and price -->\n" +
         `                <input class=\"form-control bg-white\" type=\"text\" name=\"boba-name\" placeholder=\"${bobaName}\" value=\"${bobaName}\" readonly>\n` +
         "                <br>\n" +
         `                <input class=\"form-control\" type=\"text\" name=\"price\" placeholder=\"${price}\" value=\"${price}\" readonly>\n` +

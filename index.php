@@ -29,7 +29,7 @@ $f3->route('GET|POST /menu', function ($f3) {
 
     // if the form has been posted
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
-        // var_dump($_POST); // For development process
+        //var_dump($_POST); // For development process
 
         // move data from POST array to SESSION array
         $boba = $_POST['boba-name'];
@@ -37,6 +37,7 @@ $f3->route('GET|POST /menu', function ($f3) {
         $quantity = $_POST['quantity'];
         $sweetness = $_POST['sugar-level'];
         $topping = $_POST['topping'];
+        $img = $_POST['teaImg'];
         $teaType = $_POST['tea-selection'];
 
         // instantiate a new input order
@@ -53,6 +54,7 @@ $f3->route('GET|POST /menu', function ($f3) {
         $order->setQuantity($quantity);
         $order->setSweetness($sweetness);
         $order->setTopping($topping);
+        $order->setImg($img);
         if ($boba == 'Passion Fruit Iced Tea' || $boba == 'Berry Much Iced Tea' || $boba ==
             'Mango Iced Tea') {
             $order->setTeaType($teaType);
@@ -80,10 +82,6 @@ $f3->route('GET|POST /menu', function ($f3) {
  echo "<img src=menu-images/$imgName>";
   */
     } // end of post if
-
-
-    //add output modal to hive
-     //$f3->set('echo["modal"]', getModal());
 
     //instantiate a view
     $view = new Template(); /// template is a fat free class
