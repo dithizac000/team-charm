@@ -1,3 +1,4 @@
+
 <section class="h-100" >
     <div class="container h-100 py-5">
         <div class="row d-flex justify-content-center align-items-center h-100">
@@ -43,11 +44,11 @@
                             </div>
 
                             <!--Possibly trash button for dropping------>
-<!--
-                            <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                                <a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
-                            </div>
--->
+                            <!--
+                                                        <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                                                            <a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
+                                                        </div>
+                            -->
                         </div>
                     </div>
                 </div>
@@ -140,7 +141,7 @@
                 </div>
 
 
-            <!--Applying a discount code---------->
+                <!--Applying a discount code---------->
                 <div class="card mb-4">
                     <div class="card-body p-4 d-flex flex-row">
                         <div class="form-outline flex-fill">
@@ -152,7 +153,17 @@
                 </div>
 
 
+
+
             </div>
         </div>
     </div>
 </section>
+
+<div class="fixed-bottom d-flex flex-row-reverse"> <!-- order now button content -->
+    <nav class="navbar">
+        <a role="button" class="btn btn-primary btn-sm m-3 p-2" href="checkout">Continue to Checkout</a>
+    </nav>
+</div>
+
+

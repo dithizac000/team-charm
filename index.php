@@ -43,6 +43,8 @@ $f3->route('GET|POST /menu', function ($f3) {
             // instantiate a new input order
         if ($teaType) {
             $order = new FruitTea();
+            $order->setTeaType($teaType);
+
         } else {
             $order = new ParentTea();
         }
@@ -54,10 +56,6 @@ $f3->route('GET|POST /menu', function ($f3) {
         $order->setSweetness($sweetness);
         $order->setTopping($topping);
         $order->setImg($img);
-        if ($boba == 'Passion Fruit Iced Tea' || $boba == 'Berry Much Iced Tea' || $boba ==
-            'Mango Iced Tea') {
-            $order->setTeaType($teaType);
-        }
 
 //        if ($_SESSION['orders'])
 //        $_SESSION['orders'] = array();
@@ -76,12 +74,13 @@ $f3->route('GET|POST /menu', function ($f3) {
         }
 
         // size of the orders array, use for cart size
+
         $arraySize = count($_SESSION['orders']);
         //$arraySize = (int)$_SESSION['orders'];
 
         echo $arraySize;
         // set cart size for menu page only
-        $f3->set('cartSize', "$arraySize"); // use for cart size increment for menu page
+        $f3->set('cartSize',$arraySize); // use for cart size increment for menu page
 
         // prevent refresh of duplicated data from submit
         header("location: menu");
@@ -104,6 +103,28 @@ $f3->route('GET /cart', function($f3) {
     echo '<pre>';
     Print_r ($_SESSION);
     echo '</pre>';
+
+    foreach ($_SESSION['orders'] as $order) {
+        $bobaName = $order->getBobaName();
+        $price = $order->getPrice();
+        $quantity = $order->getQuantity();
+        $sweetness = $order->getSweetness();
+        $topping = $order->getTopping();
+        $img = $order->getImg();
+        /*
+        if(str_contains($order->getTeaType())) {
+            $teaType = $order->getTeaType();
+            $f3->set("teaType", $teaType);
+        }*/
+        echo $bobaName . "---------";
+
+    }
+
+    $arraySize = count($_SESSION['orders']);
+
+    //echo $arraySize; worked
+    // set cart size for cart page
+    $f3->set('cartSize',$arraySize ); // use for cart size increment for menu page
 
     //instantiate a view
     $view = new Template(); // template is a fat free class
@@ -168,6 +189,15 @@ $f3->route('GET /summary', function () {
     echo $view->render("views/summary.html"); // render method, return text on template
     //destroy session array
     session_destroy();
+});
+
+/**
+ * Admin page get route for owner to access data via jQuery
+ */
+$f3->route('GET /admin', function () {
+    //instantiate a view
+    $view = new Template(); // template is a fat free class
+    echo $view->render("views/admin.html"); // render method, return text on template
 });
 //run fat free
 $f3->run();
