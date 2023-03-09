@@ -79,11 +79,11 @@
                     Please enter a valid phone number.
                 </div>
                 <!-- email input -->
-                <label for="email"><span>Email</span></label>
+                <label for="email" class="form-label"><span>Email</span></label>
                 <input type="text" class="form-control" id="email" placeholder="you@example.com"   >
                 <!--Error message for Invalid email-->
                 <check if="{{ isset(@errors['email'])}}">
-                    <br><span class="text-danger">{{ @errors['email']}}</span>
+                    <br><span class="text-danger">{{ @errors['email'] }}</span>
                 </check>
                 <div class="invalid-feedback">
                     Please enter a valid email address for shipping updates.

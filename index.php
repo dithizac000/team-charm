@@ -139,7 +139,7 @@ $f3->route('GET|POST /checkout', function($f3) {
             $_SESSION['email'] = $email;
         } else {
             $f3->set('errors["email"]',
-                    'Email is invalid');
+                    'Enter a valid email');
         }
 
         //validation for phone number
