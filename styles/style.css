@@ -24,10 +24,6 @@ div.shopping {
     opacity: 100%;
 }
 
-/*drop down hover color*/
-.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
-    color:salmon;
-}
 
 /*Font Fmaily - google fonts */
 h1,h2,h5,p,li,.sidenav, h4{
@@ -71,12 +67,12 @@ a, nav-link {
     text-decoration: none !important; /* no underline */
 }
 /*green font color when a href is hover*/
-a:hover,.bold-green:hover, nav.navbar.navbar-expand-sm:hover {
+bold-green:hover, nav.navbar.navbar-expand-sm:hover {
     color: #8ae78a;
     text-decoration-style: solid;
 }
 /*button hover pink border and brown font*/
-a.btn:hover, .sidenav a:hover,.sidenav:hover, h5:hover {
+ .sidenav a:hover,.sidenav:hover, h5:hover {
     background-color: #8ae78a;
     color: #806464;
 }
@@ -151,5 +147,9 @@ a.btn:hover, .sidenav a:hover,.sidenav:hover, h5:hover {
     background: linear-gradient(45deg, pink, #8ae78a);
 }
 
+.navbar-brand {
+    bottom: 0;
+
+}
 
 
