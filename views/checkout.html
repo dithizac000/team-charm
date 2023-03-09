@@ -45,10 +45,10 @@
                 <h5 class="card-title">Contact</h5>
                 <!-- first name value -->
                 <label for="firstName">First name</label>
-                <input type="text" class="form-control" id="firstName" placeholder="" value=" "  >
-                <div class="invalid-feedback">
+                <input name="firstName" type="text" class="form-control" id="firstName" placeholder="" value=" "  >
+                <!--<div class="invalid-feedback">
                     Valid first name is required.
-                </div>
+                </div>-->
                 <!--Error message for name validation-->
                 <check if="{{ isset(@errors['name'])}}">
                     <br><span class="text-danger">{{ @errors['name'] }}</span></br>
@@ -56,10 +56,10 @@
 
                 <!-- last name value -->
                 <label for="lastName">Last name</label>
-                <input type="text" class="form-control" id="lastName" placeholder="" value=""  >
-                <div class="invalid-feedback">
+                <input name="lastName" type="text" class="form-control" id="lastName" placeholder="" value=""  >
+                <!--<div class="invalid-feedback">
                     Valid last name is required.
-                </div>
+                </div>-->
                 <!-- username -->
                 <label for="username">Username <span class="text-muted">(Optional)</span></label>
                 <div class="input-group">
@@ -71,23 +71,25 @@
                 <!-- phone number -->
                 <label for="phone">Phone:</label>
                 <input type="text" name="phone" class="form-control" id="phone" placeholder="1234567890"  >
+                <!--Error message for invalid phone number-->
                 <check if="{{ isset(@errors['phone'])}}">
                     <br><span class="text-danger">{{ $errors['phone'] }}</span></br>
                 </check>
 
-                <div class="invalid-feedback">
+                <!--<div class="invalid-feedback">
                     Please enter a valid phone number.
-                </div>
+                </div>-->
+
                 <!-- email input -->
                 <label for="email" class="form-label"><span>Email</span></label>
-                <input type="text" class="form-control" id="email" placeholder="you@example.com"   >
+                <input type="text" class="form-control" id="email" name="email" placeholder="you@example.com"   >
                 <!--Error message for Invalid email-->
                 <check if="{{ isset(@errors['email'])}}">
-                    <br><span class="text-danger">{{ @errors['email'] }}</span>
+                    <br><span class="text-danger">{{ @errors['email'] }}</span></br>
                 </check>
-                <div class="invalid-feedback">
+                <!--<div class="invalid-feedback">
                     Please enter a valid email address for shipping updates.
-                </div>
+                </div>-->
             </div>
         </div>
 
