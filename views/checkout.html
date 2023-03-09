@@ -45,10 +45,15 @@
                 <h5 class="card-title">Contact</h5>
                 <!-- first name value -->
                 <label for="firstName">First name</label>
-                <input type="text" class="form-control" id="firstName" placeholder="" value=""  >
+                <input type="text" class="form-control" id="firstName" placeholder="" value=" "  >
                 <div class="invalid-feedback">
                     Valid first name is required.
                 </div>
+                <!--Error message for name validation-->
+                <check if="{{ isset(@errors['name'])}}">
+                    <br><span class="text-danger">{{ @errors['name'] }}</span></br>
+                </check>
+
                 <!-- last name value -->
                 <label for="lastName">Last name</label>
                 <input type="text" class="form-control" id="lastName" placeholder="" value=""  >
@@ -71,7 +76,11 @@
                 </div>
                 <!-- email input -->
                 <label for="email"><span>Email</span></label>
-                <input type="email" class="form-control" id="email" placeholder="you@example.com"   >
+                <input type="text" class="form-control" id="email" placeholder="you@example.com"   >
+                <!--Error message for Invalid email-->
+                <check if="{{ isset(@errors['email'])}}">
+                    <br><span class="text-danger">{{ @errors['email']}}</span>
+                </check>
                 <div class="invalid-feedback">
                     Please enter a valid email address for shipping updates.
                 </div>

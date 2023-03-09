@@ -118,7 +118,34 @@ $f3->route('GET|POST /checkout', function($f3) {
     echo '</pre>';
 
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $f3->reroute('summary');
+        $_SESSION['firstName'] = $_POST['firstName'];
+        $_SESSION['lastName'] = $_POST['lastName'];
+        $_SESSION['email'] = $_POST['email'];
+
+        //validation for name
+        $fname = trim($_POST['firstName']);
+        $lname = trim($_POST['lastName']);
+        if(Validation::validName($fname) && Validation::validName($lname)) {
+            $_SESSION['firstName'] = $fname;
+            $_SESSION['lastName'] = $lname;
+        } else {
+            $f3->set('errors["firstName"])',
+                    'Please enter a valid name');
+        }
+
+        //validation for email
+        $email = trim($_POST['email']);
+        if(Validation::validEmail($email)){
+            $_SESSION['email'] = $email;
+        } else {
+            $f3->set('errors["email"]',
+                    'Email is invalid');
+        }
+
+        //if there are no errors go to the next page
+        if(empty($f3->get('errors'))){
+            $f3->reroute('summary');
+        }
     }
     //instantiate a view
     $view = new Template(); // template is a fat free class
