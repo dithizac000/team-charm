@@ -26,8 +26,8 @@
                             </div>
                             <!--Order details------->
                             <div class="col-md-3 col-lg-3 col-xl-3">
-                                <p class="lead fw-normal mb-2">Classic Milk Tea</p>
-                                <p><span class="text-muted">Sweetness: </span>Normal <span class="text-muted">Toppings: </span>Tapioca Pearl</p>
+                                <p class="lead fw-normal mb-2">{{ @SESSION.order->getBobaName() }}</p>
+                                <p><span class="text-muted">Sweetness: </span>{{ @SESSION.order->getSweetness() }} <span class="text-muted">Toppings: </span>{{ @SESSION.order->getTopping() }}</p>
                             </div>
                             <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
                                 <button class="btn btn-link px-2"
