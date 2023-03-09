@@ -118,9 +118,9 @@ $f3->route('GET|POST /checkout', function($f3) {
     echo '</pre>';
 
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $_SESSION['firstName'] = $_POST['firstName'];
+       /* $_SESSION['firstName'] = $_POST['firstName'];
         $_SESSION['lastName'] = $_POST['lastName'];
-        $_SESSION['email'] = $_POST['email'];
+        $_SESSION['email'] = $_POST['email'];*/
 
         //validation for name
         $fname = trim($_POST['firstName']);
@@ -129,17 +129,26 @@ $f3->route('GET|POST /checkout', function($f3) {
             $_SESSION['firstName'] = $fname;
             $_SESSION['lastName'] = $lname;
         } else {
-            $f3->set('errors["firstName"])',
+            $f3->set('errors["name"])',
                     'Please enter a valid name');
         }
 
         //validation for email
-        $email = trim($_POST['email']);
+        $email = $_POST['email'];
         if(Validation::validEmail($email)){
             $_SESSION['email'] = $email;
         } else {
             $f3->set('errors["email"]',
                     'Email is invalid');
+        }
+
+        //validation for phone number
+        $phone = $_POST['phone'];
+        if(Validation::validPhone($phone)){
+            $_SESSION['phone'] = $phone;
+        } else {
+            $f3->set('errors["phone"]',
+                    'Enter a valid phone number');
         }
 
         //if there are no errors go to the next page

@@ -10,6 +10,11 @@ Class Validation
 
     static function validEmail($email)
     {
-        return (bool)filter_var($email, FILTER_VALIDATE_EMAIL);
+        return filter_var($email, FILTER_VALIDATE_EMAIL);
+    }
+
+    static function validPhone($phone)
+    {
+        return filter_var($phone, FILTER_SANITIZE_NUMBER_INT);
     }
 }

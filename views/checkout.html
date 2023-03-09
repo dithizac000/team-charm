@@ -71,6 +71,10 @@
                 <!-- phone number -->
                 <label for="phone">Phone:</label>
                 <input type="text" name="phone" class="form-control" id="phone" placeholder="1234567890"  >
+                <check if="{{ isset(@errors['phone'])}}">
+                    <br><span class="text-danger">{{ $errors['phone'] }}</span></br>
+                </check>
+
                 <div class="invalid-feedback">
                     Please enter a valid phone number.
                 </div>
