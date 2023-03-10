@@ -1,12 +1,38 @@
-/* pink font trio is : pink, deeppink, and salmon
-green: #8ae78a
-brown: #806464*/
-
+/*--------------------MAIN CSS STYLING ---------------------------*/
 /*having an image background*/
 body {
     background-image: url("http://jgonzalez.greenriverdev.com/328/team-charm/images/bobaBackground.jpg");
     background-size: 50%;
 
+}
+/*Font Fmaily - google fonts */
+h1,h2,h4,h5,li,p,.sidenav {
+    font-family: 'Quicksand', sans-serif;
+    opacity: 80%;
+
+}
+/*--------------------NAV CSS STYLING ---------------------------*/
+
+/*remove under line on a href amd keep color pink*/
+a, nav-link {
+    color: pink;
+    text-decoration: none !important; /* no underline */
+}
+
+/*nav bar for cart content, centering the text content within cart img*/
+/*button colors and padding*/
+a.btn.btn-primary, h5 {
+    background-color: pink;
+    border-color: pink;
+    padding: 1rem;
+}
+/*opacity for cart font in cart number*/
+.cart-center {
+    opacity: 100%;
+}
+div.shopping {
+    position: relative;
+    text-align: left;
 }
 /*nav-bar styling bg color*/
 nav.navbar.navbar-expand-sm {
@@ -14,67 +40,20 @@ nav.navbar.navbar-expand-sm {
     opacity: 90%;
 }
 
-/*nav bar for cart content, centering the text content within cart img*/
-div.shopping {
-    position: relative;
-    text-align: left;
-}
-/*opacity for cart font in cart number*/
-.cart-center {
-    opacity: 100%;
-}
+/*--------------------HOME PAGE CSS STYLING ---------------------------*/
 
-
-/*Font Fmaily - google fonts */
-h1,h2,h5,p,li,.sidenav, h4{
-    font-family: 'Quicksand', sans-serif;
-    opacity: 80%;
-
-}
-
-/*Centering the content to center of the div*/
-.col-md-6.col-sm-12.color_description.text-center {
-    padding: 150px 0;
-}
-
-/*Hover to full opacity for most fonts*/
-h1:hover,h2:hover,h5, p:hover, li:hover, .sidenav a:hover,.sidenav:hover, nav.navbar.navbar-expand-sm:hover  {
-    opacity: 100%;
-}
-/*img slide show height */
-.slides {
-    width: 100%;
-}
-/*max height on witdth on hoem carousel*/
+/*----height on witdth on hoem carousel*/
 .carousel-inner{
     width:100%;
     max-height: 300px !important;
 }
-/*card class img width and height*/
-.card-img-top  {
-    width:100%;
-    max-height: 340px !important;
+/*Hover to full opacity for most fonts*/
+h1:hover,h2:hover,h5, li:hover,p:hover,nav.navbar.navbar-expand-sm:hover, .sidenav a:hover,.sidenav:hover {
+    opacity: 100%;
 }
-/*button colors and padding*/
-a.btn.btn-primary, h5 {
-    background-color: pink;
-    border-color: pink;
-    padding: 1rem;
-}
-/*remove under line on a href amd keep color pink*/
-a, nav-link {
-    color: pink;
-    text-decoration: none !important; /* no underline */
-}
-/*green font color when a href is hover*/
-bold-green:hover, nav.navbar.navbar-expand-sm:hover {
-    color: #8ae78a;
-    text-decoration-style: solid;
-}
-/*button hover pink border and brown font*/
- .sidenav a:hover,.sidenav:hover, h5:hover {
-    background-color: #8ae78a;
-    color: #806464;
+/*Styling for the footer*/
+.col-md-12.uk-panel-box.bg-light {
+    border-radius: 20px;
 }
 /*logo size*/
 .logo {
@@ -104,6 +83,42 @@ bold-green:hover, nav.navbar.navbar-expand-sm:hover {
     100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
+/*img slide show height */
+.slides {
+    width: 100%;
+}
+
+/*--------------------MENU CSS STYLING ---------------------------*/
+/*green font color when a href is hover*/
+bold-green:hover, nav.navbar.navbar-expand-sm:hover {
+    color: #8ae78a;
+    text-decoration-style: solid;
+}
+/*green font color when a href is hover*/
+bold-green:hover, nav.navbar.navbar-expand-sm:hover {
+    color: #8ae78a;
+    text-decoration-style: solid;
+}
+/*card class img width and height*/
+.card-img-top  {
+    width:100%;
+    max-height: 340px !important;
+}
+/*hover border pink on menu album and opacity on selection*/
+.card:hover {
+    border-color: deeppink;
+}
+/*modal backdrop gradient color when pop up*/
+.modal-backdrop {
+    background: linear-gradient(45deg, pink, #8ae78a);
+}
+
+/*button hover pink border and brown font*/
+.sidenav a:hover,.sidenav:hover, h5:hover {
+    background-color: #8ae78a;
+    color: #806464;
+}
+
 /*side bar code */
 .sidenav {
     width: 100px;
@@ -116,6 +131,17 @@ bold-green:hover, nav.navbar.navbar-expand-sm:hover {
     padding: 8px 0;
     opacity: 80%;
 }
+
+
+/*Menu hover*/
+.menu-title:hover {
+    color: pink;
+}
+
+.navbar-brand {
+    bottom: 0;
+
+}
 /*side bar a href code*/
 .sidenav a {
     padding: 5px 5px 5px 12px;
@@ -124,34 +150,10 @@ bold-green:hover, nav.navbar.navbar-expand-sm:hover {
     display: block;
 }
 
-/*hover border pink on menu album and opacity on selection*/
-.card:hover {
-    border-color: deeppink;
-}
 
-
-/*Menu hover*/
-.menu-title:hover {
-    color: pink;
-}
-
-
-/*Styling for the footer*/
-.col-md-12.uk-panel-box.bg-light {
-    border-radius: 20px;
-}
-
-/*modal backdrop gradient color when pop up*/
-.modal-backdrop {
-    background: linear-gradient(45deg, pink, #8ae78a);
-}
-
-.navbar-brand {
-    bottom: 0;
-
-}
-
-/*ADMIN PAGE STYLING*/
+/*--------------------CART CSS STYLING ---------------------------*/
+/*--------------------CHECKOUT CSS STYLING ---------------------------*/
+/*--------------------ADMIN CSS STYLING ---------------------------*/
 body.admin {
     display: -ms-flexbox;
     display: -webkit-box;
