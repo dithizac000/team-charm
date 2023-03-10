@@ -23,13 +23,9 @@ $f3->route('GET /', function() {
 
 // menu route
 $f3->route('GET|POST /menu', function ($f3) {
-    echo '<pre>';
-    Print_r ($_SESSION);
-    echo '</pre>';
 
     // if the form has been posted
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
-        //var_dump($_POST); // For development process
 
         // move data from POST array to SESSION array
         $boba = $_POST['boba-name'];
@@ -57,9 +53,6 @@ $f3->route('GET|POST /menu', function ($f3) {
         $order->setTopping($topping);
         $order->setImg($img);
 
-//        if ($_SESSION['orders'])
-//        $_SESSION['orders'] = array();
-//        echo $arr;
         // if orders[] does not exist
         if (!$_SESSION['orders'] ) {
             echo "in the if";
@@ -73,28 +66,15 @@ $f3->route('GET|POST /menu', function ($f3) {
             $_SESSION['orders'][] = $order;
         }
 
-        // size of the orders array, use for cart size
-
-        $arraySize = count($_SESSION['orders']);
-        //$arraySize = (int)$_SESSION['orders'];
-
-        echo $arraySize;
-        // set cart size for menu page only
-        $f3->set('cartSize',$arraySize); // use for cart size increment for menu page
 
         // prevent refresh of duplicated data from submit
         header("location: menu");
         exit;
- /*
-  * $_SESSION['orders[]'] = $obj1;
-    $_SESSION['orders[]'] = $obj2;
- echo "<img src=menu-images/$imgName>";
-  */
+
     } // end of post if
 
     //instantiate a view
     $view = new Template(); /// template is a fat free class
-   // $f3->set("imgName", "thai-milk-tea.jpg");
     echo $view->render("views/menu.html"); // render method, return text on template
 });
 
@@ -111,18 +91,11 @@ $f3->route('GET /cart', function($f3) {
         $sweetness = $order->getSweetness();
         $topping = $order->getTopping();
         $img = $order->getImg();
-        /*
-        if(str_contains($order->getTeaType())) {
-            $teaType = $order->getTeaType();
-            $f3->set("teaType", $teaType);
-        }*/
-        echo $bobaName . "---------";
-
     }
 
+    //get cart size by counting the session order index
     $arraySize = count($_SESSION['orders']);
 
-    //echo $arraySize; worked
     // set cart size for cart page
     $f3->set('cartSize',$arraySize ); // use for cart size increment for menu page
 
