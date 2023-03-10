@@ -40,6 +40,7 @@ inject data into our database. Besides that we have a log in page for user and f
 
 :heavy_check_mark: 9. All code is clean, clear, and well-commented. DRY (Don't Repeat Yourself) is practiced.
   * 
+
 :heavy_check_mark: 10. Your submission shows adequate effort for a final project in a full-stack web development course.
   * 
 
