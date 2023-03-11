@@ -110,7 +110,7 @@ function footer() {
         "            </div>\n" +
         "            <div class=\"modal-footer\">\n" +
         "                <button type=\"button\" class=\"btn btn-m btn-outline-warning\" data-dismiss=\"modal\">Cancel</button>\n" +
-        "                <button class=\"btn btn-m btn-outline-warning\" type=\"submit\" >Save</button>\n" +
+        "                <button class=\"btn btn-m btn-outline-warning\" type=\"submit\">Save</button>\n" +
         "            </div>\n" +
         "        </div>\n" +
         "    </div>\n" +

@@ -112,20 +112,6 @@ bold-green:hover, nav.navbar.navbar-expand-sm:hover {
 .modal-backdrop {
     background: linear-gradient(45deg, pink, #8ae78a);
 }
-.progress-container {
-    position: fixed;
-    bottom: 0;
-    z-index: 1;
-    width: 100%;
-    height: 20px;
-    background: pink;
-}
-
-.progress-bar {
-    height: 20px;
-    background: #8ae78a;
-    width: 0%;
-}
 
 /*button hover pink border and brown font*/
 .sidenav a:hover,.sidenav:hover, h5:hover {
@@ -217,4 +203,18 @@ body.admin {
     bottom: 0;
     z-index: 1;
     width: 100%;
+}
+
+/* The progress container (grey background) */
+.progress-container {
+    background: pink;
+    height: 1em;
+    width: 100%;
+}
+
+/* The progress bar (scroll indicator) */
+.progress-bar {
+    background:  #8ae78a;
+    height: 1em;
+    width: 0%;
 }
