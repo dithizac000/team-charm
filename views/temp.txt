@@ -1,169 +1,76 @@
-
-<section class="h-100" >
-    <div class="container h-100 py-5">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col-10">
-
-                <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h3 class="fw-normal mb-0 text-black">Shopping Cart</h3>
-                </div>
-
-                <!--First item in shopping cart-->
-                <div class="card rounded-3 mb-4">
-                    <div class="card-body p-4">
-                        <div class="row d-flex justify-content-between align-items-center">
-                            <div class="col-md-2 col-lg-2 col-xl-2">
-                                <img
-                                        src="menu-images/classic-milk-tea.jpg"
-                                        class="img-fluid rounded-3" alt="Classic milk tea">
-                            </div>
-                            <!--Order details------->
-                            <div class="col-md-3 col-lg-3 col-xl-3">
-                                <p class="lead fw-normal mb-2">Classic Milk Tea</p>
-                                <p><span class="text-muted">Sweetness: </span>Normal <span class="text-muted">Toppings: </span>Tapioca Pearl</p>
-                            </div>
-                            <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                                <button class="btn btn-link px-2"
-                                        onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                                    <i class="fas fa-minus"></i>
-                                </button>
-
-                                <!--Setting the quantity--------------------->
-                                <input min="0" name="quantity" value="1" type="number"
-                                       class="form-control form-control-sm" />
-
-                                <!--<button class="btn btn-link px-2"
-                                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                                    <i class="fas fa-plus"></i>
-                                </button>-->
-                            </div>
-
-                            <!--Setting Price--------------------->
-                            <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                                <h5 class="mb-0">$5.45</h5>
-                            </div>
-
-                            <!--Possibly trash button for dropping------>
-                            <!--
-                                                        <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                                                            <a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
-                                                        </div>
-                            -->
-                        </div>
-                    </div>
-                </div>
-
-                <!--Next sample item in shopping cart-->
-                <div class="card rounded-3 mb-4">
-                    <div class="card-body p-4">
-                        <div class="row d-flex justify-content-between align-items-center">
-                            <div class="col-md-2 col-lg-2 col-xl-2">
-                                <img
-                                        src="menu-images/green-milk-tea.jpg"
-                                        class="img-fluid rounded-3" alt="Jasmine Green milk tea">
-                            </div>
-                            <div class="col-md-3 col-lg-3 col-xl-3">
-                                <p class="lead fw-normal mb-2">Green Milk Tea</p>
-                                <p><span class="text-muted">Sweetness: </span>Medium <span class="text-muted">Toppings: </span>Pudding</p>
-                            </div>
-                            <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                                <button class="btn btn-link px-2"
-                                        onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                                    <i class="fas fa-minus"></i>
-                                </button>
-
-                                <!--Setting the quantity--------------------->
-                                <input min="0" name="quantity" value="1" type="number"
-                                       class="form-control form-control-sm" />
-
-                                <!--<button class="btn btn-link px-2"
-                                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                                    <i class="fas fa-plus"></i>
-                                </button>-->
-                            </div>
-
-                            <!--Setting Price--------------------->
-                            <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                                <h5 class="mb-0">$5.45</h5>
-                            </div>
-
-                            <!--Possibly trash button for dropping------>
-                            <!--<div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                                <a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
-                            </div>-->
-                        </div>
-                    </div>
-                </div>
-
-                <!--Next item in shopping cart-->
-                <div class="card rounded-3 mb-4">
-                    <div class="card-body p-4">
-                        <div class="row d-flex justify-content-between align-items-center">
-                            <div class="col-md-2 col-lg-2 col-xl-2">
-                                <img
-                                        src="menu-images/passion-fruit-tea.jpg"
-                                        class="img-fluid rounded-3" alt="Classic milk tea">
-                            </div>
-                            <!--Order details------->
-                            <div class="col-md-3 col-lg-3 col-xl-3">
-                                <p class="lead fw-normal mb-2">Passion Iced Tea</p>
-                                <p><span class="text-muted">Sweetness: </span>Normal <span class="text-muted">Toppings: </span>Rainbow Jelly</p>
-                            </div>
-                            <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                                <button class="btn btn-link px-2"
-                                        onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                                    <i class="fas fa-minus"></i>
-                                </button>
-
-                                <!--Setting the quantity--------------------->
-                                <input min="0" name="quantity" value="1" type="number"
-                                       class="form-control form-control-sm" />
-
-                                <!--<button class="btn btn-link px-2"
-                                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                                    <i class="fas fa-plus"></i>
-                                </button>-->
-                            </div>
-
-                            <!--Setting Price--------------------->
-                            <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                                <h5 class="mb-0">$5.95</h5>
-                            </div>
-
-                            <!--Possibly trash button for dropping------>
-                            <!--
-                                                        <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                                                            <a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
-                                                        </div>
-                            -->
-                        </div>
-                    </div>
-                </div>
-
-
-                <!--Applying a discount code---------->
-                <div class="card mb-4">
-                    <div class="card-body p-4 d-flex flex-row">
-                        <div class="form-outline flex-fill">
-                            <input type="text" id="form1" class="form-control form-control-lg" />
-                            <label class="form-label" for="form1">Discount code</label>
-                        </div>
-                        <button type="button" class="btn btn-outline-warning btn-lg ms-3">Apply</button>
-                    </div>
-                </div>
-
-
-
-
-            </div>
+<!-- CONSTANT NAVIGATION BAR MAIN SITE -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <!-- LOGO AND LINK TO HOME PAGE -->
+  <a class="navbar-brand" href=".">
+   <img class="img-fluid logo opacity-full m-2 me-5" src="images/boba-charm-pink.png" id="logo" alt="Boba Charm Logo"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <!-- SHOW LIST OF NAV CONTENT FROM HOME, ADMIN, AND MENU -->
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link active me-4" href=".">Home <img class="img-thumbnail" src="images/medicham.png" height="40" width="40"/> | </a>
+      </li>
+       <li class="nav-item active">
+          <a class="nav-link active me-4" href="admin">Admin | <img class="img-thumbnail" src="images/lopunny.png" height="40" width="40"/></a>
+       </li>
+       <li class="nav-item active">
+          <a class="nav-link active me-4" href="menu">Menu | <img class="img-thumbnail" src="images/gardevior.png" height="40" width="40"/></a>
+       </li>
+    </ul>
+  </div>
+   <!-- show cart if session has started and contains modal input -->
+    <check if="{{ @SESSION['orders'] != null }}">
+      <true>
+        <div class="shopping">
+          <a role="button" class="btn btn-primary btn-sm me-4 p-2" href="cart">
+            <div class="cart-center"><strong>{{ @cartSize }}</strong></div>
+            <img class="img-thumbnail" src="images/cart-icon.png" width="40" height="40" class="d-inline-block align-top" alt="shopping cart">
+          </a>
         </div>
+      </true>
+      <false>
+      </false>
+    </check>
+</nav> <!-- END OF NAV -->
+
+
+
+
+<nav class="navbar navbar-light navbar-expand-sm sticky-top  rounded">
+  <div class="container-fluid">
+    <a class="navbar-brand" href=".">
+      <img class="img-fluid logo opacity-full m-2 me-5" src="images/boba-charm-pink.png" id="logo" alt="Boba Charm Logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+          <a class="nav-link active me-4" href=".">Home <img class="img-thumbnail" src="images/medicham.png" height="40" width="40"/> | </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active me-4" href="admin">Admin | <img class="img-thumbnail" src="images/lopunny.png" height="40" width="40"/></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active me-4" href="menu">Menu | <img class="img-thumbnail" src="images/gardevior.png" height="40" width="40"/></a>
+        </li>
+      </ul>
     </div>
-</section>
-
-<div class="fixed-bottom d-flex flex-row-reverse"> <!-- order now button content -->
-    <nav class="navbar">
-        <a role="button" class="btn btn-primary btn-sm m-3 p-2" href="checkout">Continue to Checkout</a>
-    </nav>
-</div>
-
-
+    <!-- show cart if session has started and contains modal input -->
+    <check if="{{ @SESSION['orders'] != null }}">
+      <true>
+        <div class="shopping">
+          <a role="button" class="btn btn-primary btn-sm me-4 p-2" href="cart">
+            <div class="cart-center"><strong>{{ @cartSize }}</strong></div>
+            <img class="img-thumbnail" src="images/cart-icon.png" width="40" height="40" class="d-inline-block align-top" alt="shopping cart">
+          </a>
+        </div>
+      </true>
+      <false>
+      </false>
+    </check>
+  </div>
+</nav>

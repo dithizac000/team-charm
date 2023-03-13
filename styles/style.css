@@ -13,11 +13,6 @@ h1,h2,h4,h5,li,p,.sidenav {
 }
 /*--------------------NAV CSS STYLING ---------------------------*/
 
-/*remove under line on a href amd keep color pink*/
-a, nav-link {
-    color: pink;
-    text-decoration: none !important; /* no underline */
-}
 
 /*nav bar for cart content, centering the text content within cart img*/
 /*button colors and padding*/
