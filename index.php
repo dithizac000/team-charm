@@ -118,13 +118,11 @@ $f3->route('GET|POST /checkout', function($f3) {
 
         //validation for name
         $fname = trim($_POST['firstName']);
-        $lname = trim($_POST['lastName']);
-        if(Validation::validName($fname) && Validation::validName($lname)) {
+        if(Validation::validFName($fname)) {
             $_SESSION['firstName'] = $fname;
-            $_SESSION['lastName'] = $lname;
         } else {
-            $f3->set('errors["name"])',
-                    'Please enter a valid name');
+            $f3->set('errors["firstName"]',
+                'First name must be alphabetical characters only');
         }
 
         //validation for email
