@@ -79,6 +79,12 @@ class Controller
         Print_r ($_SESSION);
         echo '</pre>';
 
+        //instantiate a view
+        $view = new Template(); // template is a fat free class
+        if(empty($_SESSION)) {
+            echo $view->render("views/home.html"); // render home when session is empty | destroy
+        }
+
         foreach ($_SESSION['orders'] as $order) {
             $bobaName = $order->getBobaName();
             $price = $order->getPrice();
@@ -94,8 +100,6 @@ class Controller
         // set cart size for cart page
         $this->_f3->set('cartSize',$arraySize ); // use for cart size increment for menu page
 
-        //instantiate a view
-        $view = new Template(); // template is a fat free class
         echo $view->render("views/cart.html"); // render method, return text on template
 
     }
@@ -106,11 +110,16 @@ class Controller
         Print_r ($_SESSION);
         echo '</pre>';
 
+        //instantiate a view
+        $view = new Template(); // template is a fat free class
+        if(empty($_SESSION['orders'])) {
+            echo $view->render("views/home.html"); // render home when session order is empty | destroy
+        }
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             //validation for name
             $fname = trim($_POST['firstName']);
-            if(Validation::validFName($fname)) {
+            if(validation::validFName($fname)) {
                 $_SESSION['firstName'] = $fname;
             } else {
                 $this->_f3->set('errors["firstName"]',
@@ -119,7 +128,7 @@ class Controller
 
             //validation for email
             $email = $_POST['email'];
-            if(Validation::validEmail($email)){
+            if(validation::validEmail($email)){
                 $_SESSION['email'] = $email;
             } else {
                 $this->_f3->set('errors["email"]',
@@ -128,7 +137,7 @@ class Controller
 
             //validation for phone number
             $phone = $_POST['phone'];
-            if(Validation::validPhone($phone)){
+            if(validation::validPhone($phone)){
                 $_SESSION['phone'] = $phone;
             } else {
                 $this->_f3->set('errors["phone"]',
@@ -140,8 +149,7 @@ class Controller
                 $this->_f3->reroute('summary');
             }
         }
-        //instantiate a view
-        $view = new Template(); // template is a fat free class
+
         echo $view->render("views/checkout.html"); // render method, return text on template
     }
 

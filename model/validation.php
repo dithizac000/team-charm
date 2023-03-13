@@ -1,7 +1,7 @@
 <?php
 // use this validation for the checkout
 
-Class Validation
+Class validation
 {
     static function validFName($name)
     {
