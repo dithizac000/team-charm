@@ -90,10 +90,12 @@ bold-green:hover, nav.navbar.navbar-expand-sm:hover {
     text-decoration-style: solid;
 }
 /*green font color when a href is hover*/
-bold-green:hover, nav.navbar.navbar-expand-sm:hover {
-    color: #8ae78a;
-    text-decoration-style: solid;
+/*remove under line on a href amd keep color pink*/
+a, nav-link {
+    color: pink;
+    text-decoration: none !important; /* no underline */
 }
+
 /*card class img width and height*/
 .card-img-top  {
     width:100%;
@@ -107,7 +109,10 @@ bold-green:hover, nav.navbar.navbar-expand-sm:hover {
 .modal-backdrop {
     background: linear-gradient(45deg, pink, #8ae78a);
 }
-
+nav.navbar.navbar-expand-sm:hover {
+    color: #8ae78a;
+    text-decoration-style: solid;
+}
 /*button hover pink border and brown font*/
 .sidenav a:hover,.sidenav:hover, h5:hover {
     background-color: #8ae78a;
