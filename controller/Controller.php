@@ -157,7 +157,10 @@ class Controller
     {
         //instantiate a view
         $view = new Template();
-        echo $view->render("views/summary.html");
+        if(empty($_SESSION)) {
+            echo $view->render("views/home.html"); // render home if session is empty
+        }
+        echo $view->render("views/summary.html"); // render summary page after checkout submit
         //destroy session array
         session_destroy();
     }
