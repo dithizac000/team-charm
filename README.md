@@ -22,10 +22,10 @@ inject data into our database. Besides that we have a log in page for user and f
   * All routes are in the index.php and leverages a templating language using Fat-Free Framework 
 
 :heavy_check_mark: 3. Has a clearly defined database layer using PDO and prepared statements. You should have at least two related tables.
-  * All database layer is under model in data-layer.php. kidUser and creations are the related table (one to many relationship).
+  * All database layer is under model in data-layer.php.
  
 :heavy_check_mark: 4. Data can be viewed and added.
-  * Database layer uses PDO and prepared statements to add, retrieve, and delete from the database. 
+  * 
 
 :heavy_check_mark: 5. Has a history of commits from both team members to a Git repository. Commits are clearly commented. 
 
@@ -33,7 +33,7 @@ inject data into our database. Besides that we have a log in page for user and f
   * 
 
 :heavy_check_mark: 7. Contains full Docblocks for all PHP files and follows PEAR standards. 
-  * All PHP files contains DocBlock and Follows Pear Standards. 
+  *
 
 :heavy_check_mark: 8. Has full validation on the client side through JavaScript and server side through PHP.
   * 
