@@ -84,6 +84,10 @@ h1:hover,h2:hover,h5, li:hover,p:hover,nav.navbar.navbar-expand-sm:hover, .siden
 }
 
 /*--------------------MENU CSS STYLING ---------------------------*/
+/*add to cart, related to pop up via javascript*/
+#add-cart {
+
+}
 /*green font color when a href is hover*/
 bold-green:hover, nav.navbar.navbar-expand-sm:hover {
     color: #8ae78a;

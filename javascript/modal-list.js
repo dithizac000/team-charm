@@ -45,7 +45,7 @@ for (let i = 0; i < BOBA_NAMES.length; i++) {
 
 // return the top div as header function to above for i loop
 function header(currentButton,bobaName,price,bobaImg,i) {
-    return ` <form action="#" method="post">  
+    return ` <form action="#" method="post" id="modal-add">  
         <div class=\"modal fade\" id=\"${currentButton}\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\">\n` +
         "    <div class=\"modal-dialog modal-dialog-centered\" role=\"document\">\n" +
         "        <div class=\"modal-content\">\n" +
