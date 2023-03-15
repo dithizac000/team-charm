@@ -101,7 +101,11 @@ class Controller
             $sweetness = $order->getSweetness();
             $topping = $order->getTopping();
             $img = $order->getImg();
+            // insert into database via boba_orders table
+            $GLOBALS['data']->addOrder($order);
+            echo  "HELLO";
         }
+
 
         echo $view->render("views/cart.html"); // render method, return text on template
 
@@ -109,9 +113,13 @@ class Controller
 
     function checkout()
     {
+        //Get the data from the model
+        $display = $GLOBALS['data']->displayOrder();
+        $this->_f3->set('display', $display);
         echo '<pre>';
         Print_r ($_SESSION);
         echo '</pre>';
+
 
         //instantiate a view
         $view = new Template(); // template is a fat free class

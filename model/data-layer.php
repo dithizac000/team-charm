@@ -37,17 +37,45 @@ class DataLayer
      * @param $orderObject
      * @return void
      */
-    function addOrders($orderObject) {
+    function addOrder($orderObject) {
         // 1. DEFINE SQL Statement
         $sql = "INSERT INTO `boba_orders`
-        (`order_id`, `boba_name`, `sweetness`, `toppings`, 
-        `img`, `order_date`, `points`) 
-        VALUES (:orderID,:bobaName,:sweetness,:toppings,:img,:date,:points)";
+        (`boba_name`, `price`,`quantity`,`sweetness`,`toppings`, 
+        `img`, `order_date`) 
+        VALUES (:bobaName,:price,:quantity,:sweetness,:toppings,:img,:date)";
         // 2. PREPARE STATEMENT
         $statement = $this->_dbh->prepare($sql);
         // 3. BIND PARAMETERS
-        $orderID = $orderObject->getOrderID();
+        $bobaName = $orderObject->getBobaName();
+        $price = $orderObject->getPrice();
+        $quantity = $orderObject->getQuantity();
+        $sweetness = $orderObject->getSweetness();
+        $toppings = $orderObject->getTopping();
+        $img = $orderObject->getImg();
+        $date = date("Y-m-d");
+
+        $statement->bindParam(':bobaName', $bobaName);
+        $statement->bindParam(':price', $price);
+        $statement->bindParam(':quantity', $quantity);
+        $statement->bindParam(':sweetness', $sweetness);
+        $statement->bindParam(':toppings', $toppings);
+        $statement->bindParam(':img', $img);
+        $statement->bindParam(':date', $date);
         // 4. EXECUTE
         $statement->execute();
     }
+
+    /** This functions fetch all the file in the data
+     * @return void
+     */
+    function displayOrder()
+    {
+        $sql = "SELECT * FROM boba_orders ORDER BY order_id"; // multi. rows
+        $statement = $this->_dbh->prepare($sql);
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+
+    }
+
 } // END OF DataLayer

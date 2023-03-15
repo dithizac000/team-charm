@@ -14,8 +14,9 @@ session_start();
 //instantiate F3 base class
 $f3 = Base::instance();
 
-//Instantiate a Controller
+//Instantiate a Controller and DataLayer object
 $con = new Controller($f3);
+$data = new DataLayer();
 
 // define a default route (SDEV328/team-charm)
 $f3->route('GET /', function() {
