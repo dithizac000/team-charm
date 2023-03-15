@@ -3,7 +3,6 @@
 class Controller
 {
     private $_f3; //Fat-Free object
-
     function __construct($f3)
     {
         $this->_f3 = $f3;
@@ -61,12 +60,21 @@ class Controller
                 $_SESSION['orders'][] = $order;
             }
 
+            foreach ($_SESSION['orders'] as $key =>$value) {
+                echo "<h1>$key</h1>";
+
+            }
 
             // prevent refresh of duplicated data from submit
             header("location: menu");
-            exit;
-
         } // end of post if
+
+        if(!empty($_SESSION['orders'])) {
+            //get cart size by counting the session order index
+            $GLOBALS['arraySize'] = count($_SESSION['orders']);
+            // set cart size for menu page, above the cart icon nav bar
+            $this->_f3->set('cartSize', $GLOBALS['arraySize']);
+        }
 
         //instantiate a view
         $view = new Template(); /// template is a fat free class
@@ -85,7 +93,8 @@ class Controller
             echo $view->render("views/home.html"); // render home when session is empty | destroy
         }
 
-        foreach ($_SESSION['orders'] as $order) {
+        foreach ($_SESSION['orders'] as $key => $order) {
+            echo "<h1>$key</h1>";
             $bobaName = $order->getBobaName();
             $price = $order->getPrice();
             $quantity = $order->getQuantity();
@@ -93,12 +102,6 @@ class Controller
             $topping = $order->getTopping();
             $img = $order->getImg();
         }
-
-        //get cart size by counting the session order index
-        $arraySize = count($_SESSION['orders']);
-
-        // set cart size for cart page
-        $this->_f3->set('cartSize',$arraySize ); // use for cart size increment for menu page
 
         echo $view->render("views/cart.html"); // render method, return text on template
 
@@ -157,7 +160,7 @@ class Controller
     {
         //instantiate a view
         $view = new Template();
-        if(empty($_SESSION)) {
+        if(empty($_SESSION) ) {
             echo $view->render("views/home.html"); // render home if session is empty
         }
         echo $view->render("views/summary.html"); // render summary page after checkout submit

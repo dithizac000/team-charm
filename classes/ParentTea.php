@@ -24,8 +24,8 @@ class ParentTea
     function __construct($bobaName="",$price="",$quantity="",$sweetness="",$topping="",$img="")
     {
         $this->_bobaName = $bobaName;
-        $this->_price = $price;
-        $this->_quantity = $quantity;
+        $this->_price = (float) $price;
+        $this->_quantity = (int) $quantity;
         $this->_sweetness = $sweetness;
         $this->_topping = $topping;
         $this->_img = $img;
