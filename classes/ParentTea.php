@@ -6,6 +6,7 @@
  */
 class ParentTea
 {
+    private $_orderID = 1;
     private $_bobaName;
     private $_price;
     private $_quantity;
@@ -29,6 +30,20 @@ class ParentTea
         $this->_sweetness = $sweetness;
         $this->_topping = $topping;
         $this->_img = $img;
+    }
+
+    /** Returns and get the order ID
+     * @return int
+     */
+    public function getOrderID() {
+        return (int) $this->_orderID;
+    }
+
+    /** Sets and change the order ID
+     * @return void
+     */
+    public function incrementOrderID() {
+        $this->_orderID++;
     }
 
     /** Get the boba name from modal form
