@@ -102,8 +102,9 @@ class Controller
                 $topping = $order->getTopping();
                 $img = $order->getImg();
                 // insert into database via boba_orders table
-                $GLOBALS['data']->addOrder($order);
                 echo  "HELLO";
+                $GLOBALS['data']->addOrder($GLOBALS['order']);
+
             }
 
             echo $view->render("views/cart.html"); // render method, return text on template
