@@ -8,7 +8,6 @@ body {
 /*Font Fmaily - google fonts */
 h1,h2,h4,h5,li,p,.sidenav,th,tr{
     font-family: 'Quicksand', sans-serif;
-    opacity: 90%;
 
 }
 /*--------------------NAV CSS STYLING ---------------------------*/
@@ -32,7 +31,6 @@ div.shopping {
 /*nav-bar styling bg color*/
 nav.navbar.navbar-expand-sm {
     background-color: pink;
-    opacity: 90%;
 }
 .navbar .navbar-collapse {
     text-align: center;
@@ -92,7 +90,7 @@ h1:hover,h2:hover,h5, li:hover,p:hover,nav.navbar.navbar-expand-sm:hover, .siden
 
 }
 /*green font color when a href is hover*/
-bold-green:hover, nav.navbar.navbar-expand-sm:hover {
+ nav.navbar.navbar-expand-sm:hover {
     color: #8ae78a;
     text-decoration-style: solid;
 }
@@ -110,7 +108,7 @@ a, nav-link {
 }
 /*hover border pink on menu album and opacity on selection*/
 .card:hover {
-    border-color: deeppink;
+    border-color: #8ae78a;
 }
 /*modal backdrop gradient color when pop up*/
 .modal-backdrop {
