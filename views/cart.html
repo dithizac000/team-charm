@@ -32,7 +32,7 @@
                                             <span class="text-muted">Sweetness: </span>{{ @order->getTopping() }}
 
                                             <!-- print if contains tea-->
-                                            <check if="{{ @order->getTeaType() != null }}">
+                                            <check if="{{ @order->getNameOfClass() == 'FruitTea' }}">
                                                 <true>
                                                     <br>
                                                     <span class="text-muted">Tea : </span>{{ @order->getTeaType() }}

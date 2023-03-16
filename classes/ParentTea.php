@@ -12,7 +12,6 @@ class ParentTea
     private $_sweetness;
     private $_topping;
     private $_img;
-    private $_teaType;
 
 
     /** Constructor for the ParentTea class
@@ -23,7 +22,7 @@ class ParentTea
      * @param $topping
      * @param $img
      */
-    function __construct($bobaName="",$price="",$quantity="",$sweetness="",$topping="",$img="",$tea="")
+    function __construct($bobaName="",$price="",$quantity="",$sweetness="",$topping="",$img="")
     {
         $this->_bobaName = $bobaName;
         $this->_price = (float) $price;
@@ -31,7 +30,6 @@ class ParentTea
         $this->_sweetness = $sweetness;
         $this->_topping = $topping;
         $this->_img = $img;
-        $this->_teaType = $tea;
     }
 
     /** Get the boba name from modal form
@@ -134,5 +132,13 @@ class ParentTea
     public function setImg($img)
     {
         $this->_img = $img;
+    }
+
+    /** get name of class
+     * @return string
+     */
+    public function getNameOfClass()
+    {
+        return static::class;
     }
 }

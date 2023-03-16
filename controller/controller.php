@@ -31,6 +31,10 @@ class Controller
      */
     function menu()
     {
+        echo "<pre>";
+        echo print_r($_SESSION);
+        echo print_r($_POST);
+        echo "</pre>";
         // if the form has been posted
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -42,10 +46,14 @@ class Controller
             $topping = $_POST['topping'];
             $img = $_POST['teaImg'];
             $teaType = $_POST['tea-selection'];
+            echo $teaType;
+            echo var_dump($_POST);
 
             // instantiate a new input order
             if($teaType) {
                 $order = new FruitTea();
+                $order->setTeaType($teaType);
+
             } else {
                 $order = new ParentTea();
 
@@ -58,9 +66,6 @@ class Controller
             $order->setSweetness($sweetness);
             $order->setTopping($topping);
             $order->setImg($img);
-            if($teaType) {
-                $order->setTeaType($teaType);
-            }
 
             // if orders[] does not exist
             if (!$_SESSION['orders']) {
@@ -72,9 +77,13 @@ class Controller
                 // store orders in array object
                 $_SESSION['orders'][] = $order;
             }
+            echo "<pre>";
+            echo print_r($_SESSION);
+            echo print_r($_POST);
 
+            echo "</pre>";
             // prevent refresh of duplicated data from submit
-            header("location: menu");
+           // header("location: menu");
         }
 
         if (!empty($_SESSION['orders'])) {
@@ -95,6 +104,8 @@ class Controller
      */
     function cart()
     {
+        echo var_dump($_POST);
+
         echo "<pre>";
         echo print_r($_SESSION);
         echo print_r($_POST);
@@ -114,6 +125,7 @@ class Controller
                 $sweetness = $order->getSweetness();
                 $topping = $order->getTopping();
                 $img = $order->getImg();
+                $tea = $order->getTeaType();
                 $cost += $price; // sum up the cost
             }
 
