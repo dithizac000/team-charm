@@ -135,22 +135,4 @@ class ParentTea
     {
         $this->_img = $img;
     }
-
-    /**
-     * @return type of tea, which is black or green
-     */
-    public function getTeaType()
-    {
-        return $this->_teaType;
-    }
-
-    /**
-     * @paramstring $teaType
-     */
-    public function setTeaType( $teaType)
-    {
-        $this->_teaType = $teaType;
-    }
-
-
 }
