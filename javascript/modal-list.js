@@ -72,7 +72,7 @@ function header(currentButton,bobaName,price,bobaImg,i) {
         "                <!--title and price -->\n" +
         `                <input class=\"form-control bg-white\" type=\"text\" name=\"boba-name\" placeholder=\"${bobaName}\" value=\"${bobaName}\" readonly>\n` +
         "                <br>\n" +
-        `                <input class=\"form-control\" type=\"text\" name=\"price\" placeholder=\"$${price}\" value=\"$${price}\" readonly>\n` +
+        `                <input class=\"form-control\" type=\"text\" name=\"price\" placeholder=\"$${price}\" value=\"${price}\" readonly>\n` +
         "                <br>\n" +
         "                <!-- quantity amount label -->\n" +
         `                <label class=\"form-label\" for=\"typeNumber${i}\">Quantity:</label>\n` +
