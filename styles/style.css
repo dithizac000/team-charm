@@ -34,6 +34,9 @@ nav.navbar.navbar-expand-sm {
     background-color: pink;
     opacity: 90%;
 }
+.navbar .navbar-collapse {
+    text-align: center;
+}
 
 /*--------------------HOME PAGE CSS STYLING ---------------------------*/
 
