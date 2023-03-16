@@ -120,7 +120,6 @@ class Controller
                 $img = $order->getImg();
                 // insert into database via boba_orders table
                 echo "HELLO";
-                $GLOBALS['data']->addOrder($GLOBALS['order']);
 
             }
 
@@ -184,6 +183,9 @@ class Controller
      */
     function summary()
     {
+        // call data layer and insert orders session into database
+        //$GLOBALS['data']->addOrder($GLOBALS['order']);
+
         //instantiate a view
         $view = new Template();
         if (empty($_SESSION)) {
@@ -203,7 +205,7 @@ class Controller
     {
         //Get the data from the model
         $display = $GLOBALS['data']->displayOrder();
-        $this->_f3-set('displaying', $display);
+        $this->_f3->set('displaying', $display);
         //instantiate a view
         $view = new Template();
         echo $view->render("views/admin.html");
