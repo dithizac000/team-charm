@@ -132,7 +132,9 @@ class Controller
      */
     function checkout()
     {
-
+        echo "<pre>";
+        print_r($_SESSION);
+        echo "</pre>";
         //instantiate a view
         $view = new Template(); // template is a fat free class
         if (empty($_SESSION['orders'])) {
@@ -176,8 +178,12 @@ class Controller
      */
     function summary()
     {
-        // call data layer and insert orders session into database
-        //$GLOBALS['data']->addOrder($GLOBALS['order']);
+        // each loop for @order get method call use in cart.html
+        foreach ($_SESSION['orders'] as $order) {
+            // call data layer and insert orders session into database
+            $GLOBALS['data']->addOrder($order);
+        }
+
 
         //instantiate a view
         $view = new Template();
