@@ -91,23 +91,24 @@ class Controller
         $view = new Template(); // template is a fat free class
         if(empty($_SESSION)) {
             echo $view->render("views/home.html"); // render home when session is empty | destroy
+        } else {
+
+            foreach ($_SESSION['orders'] as $key => $order) {
+                echo "<h1>$key</h1>";
+                $bobaName = $order->getBobaName();
+                $price = $order->getPrice();
+                $quantity = $order->getQuantity();
+                $sweetness = $order->getSweetness();
+                $topping = $order->getTopping();
+                $img = $order->getImg();
+                // insert into database via boba_orders table
+                $GLOBALS['data']->addOrder($order);
+                echo  "HELLO";
+            }
+
+            echo $view->render("views/cart.html"); // render method, return text on template
+
         }
-
-        foreach ($_SESSION['orders'] as $key => $order) {
-            echo "<h1>$key</h1>";
-            $bobaName = $order->getBobaName();
-            $price = $order->getPrice();
-            $quantity = $order->getQuantity();
-            $sweetness = $order->getSweetness();
-            $topping = $order->getTopping();
-            $img = $order->getImg();
-            // insert into database via boba_orders table
-            $GLOBALS['data']->addOrder($order);
-            echo  "HELLO";
-        }
-
-
-        echo $view->render("views/cart.html"); // render method, return text on template
 
     }
 
@@ -125,43 +126,45 @@ class Controller
         $view = new Template(); // template is a fat free class
         if(empty($_SESSION['orders'])) {
             echo $view->render("views/home.html"); // render home when session order is empty | destroy
+        } else {
+            if($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+                //validation for name
+                $fname = trim($_POST['firstName']);
+                if(Valid::validFName($fname)) {
+                    $_SESSION['firstName'] = $fname;
+                } else {
+                    $this->_f3->set('errors["firstName"]',
+                        'First name must be alphabetical characters only');
+                }
+
+                //validation for email
+                $email = $_POST['email'];
+                if(Valid::validEmail($email)){
+                    $_SESSION['email'] = $email;
+                } else {
+                    $this->_f3->set('errors["email"]',
+                        'Enter a valid email');
+                }
+
+                //validation for phone number
+                $phone = $_POST['phone'];
+                if(Valid::validPhone($phone)){
+                    $_SESSION['phone'] = $phone;
+                } else {
+                    $this->_f3->set('errors["phone"]',
+                        'Enter a valid phone number');
+                }
+
+                //if there are no errors go to the next page
+                if(empty($this->_f3->get('errors'))){
+                    $this->_f3->reroute('summary');
+                }
+            }
+
+            echo $view->render("views/checkout.html"); // render method, return text on template
         }
-        if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-            //validation for name
-            $fname = trim($_POST['firstName']);
-            if(Valid::validFName($fname)) {
-                $_SESSION['firstName'] = $fname;
-            } else {
-                $this->_f3->set('errors["firstName"]',
-                    'First name must be alphabetical characters only');
-            }
-
-            //validation for email
-            $email = $_POST['email'];
-            if(Valid::validEmail($email)){
-                $_SESSION['email'] = $email;
-            } else {
-                $this->_f3->set('errors["email"]',
-                    'Enter a valid email');
-            }
-
-            //validation for phone number
-            $phone = $_POST['phone'];
-            if(Valid::validPhone($phone)){
-                $_SESSION['phone'] = $phone;
-            } else {
-                $this->_f3->set('errors["phone"]',
-                    'Enter a valid phone number');
-            }
-
-            //if there are no errors go to the next page
-            if(empty($this->_f3->get('errors'))){
-                $this->_f3->reroute('summary');
-            }
-        }
-
-        echo $view->render("views/checkout.html"); // render method, return text on template
     }
 
     function summary()
@@ -170,9 +173,11 @@ class Controller
         $view = new Template();
         if(empty($_SESSION) ) {
             echo $view->render("views/home.html"); // render home if session is empty
+        } else {
+            echo $view->render("views/summary.html"); // render summary page after checkout submit
+            //destroy session array
         }
-        echo $view->render("views/summary.html"); // render summary page after checkout submit
-        //destroy session array
+
         session_destroy();
     }
 
