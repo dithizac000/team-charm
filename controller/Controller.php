@@ -44,7 +44,12 @@ class Controller
             $teaType = $_POST['tea-selection'];
 
             // instantiate a new input order
-            $order = new ParentTea();
+            if($teaType) {
+                $order = new FruitTea();
+            } else {
+                $order = new ParentTea();
+
+            }
 
             // assign to variable
             $order->setBobaName($boba);
@@ -108,7 +113,6 @@ class Controller
                 $sweetness = $order->getSweetness();
                 $topping = $order->getTopping();
                 $img = $order->getImg();
-                $tea = $order->getTeaType();
                 $cost += $price; // sum up the cost
             }
 
