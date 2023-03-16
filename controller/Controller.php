@@ -136,11 +136,6 @@ class Controller
     function checkout()
     {
 
-        echo '<pre>';
-        Print_r($_SESSION);
-        echo '</pre>';
-
-
         //instantiate a view
         $view = new Template(); // template is a fat free class
         if (empty($_SESSION['orders'])) {
