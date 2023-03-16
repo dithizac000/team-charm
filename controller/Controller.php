@@ -130,7 +130,7 @@ class Controller
 
             //validation for name
             $fname = trim($_POST['firstName']);
-            if(validation::validFName($fname)) {
+            if(Valid::validFName($fname)) {
                 $_SESSION['firstName'] = $fname;
             } else {
                 $this->_f3->set('errors["firstName"]',
@@ -139,7 +139,7 @@ class Controller
 
             //validation for email
             $email = $_POST['email'];
-            if(validation::validEmail($email)){
+            if(Valid::validEmail($email)){
                 $_SESSION['email'] = $email;
             } else {
                 $this->_f3->set('errors["email"]',
@@ -148,7 +148,7 @@ class Controller
 
             //validation for phone number
             $phone = $_POST['phone'];
-            if(validation::validPhone($phone)){
+            if(Valid::validPhone($phone)){
                 $_SESSION['phone'] = $phone;
             } else {
                 $this->_f3->set('errors["phone"]',
