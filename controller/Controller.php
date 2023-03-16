@@ -58,7 +58,7 @@ class Controller
             $order->setSweetness($sweetness);
             $order->setTopping($topping);
             $order->setImg($img);
-            $order->setTeaType($teaType);
+           // $order->setTeaType($teaType);
 
 
             // if orders[] does not exist
