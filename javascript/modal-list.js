@@ -1,3 +1,12 @@
+/**
+ * This query selection of MAIN is input in our menu page and called upon
+ * with this innerHTML injection.
+ * Its purpose is to loop and implants these unique array index.
+ * The loop being made is DIV modals that allows each boba content
+ * to be popped up via modal when the button add is selected from the DIV page.
+ * Option of CLOSE modal and SAVE (SUBMIT) will be prompted afterwards.
+ * @type {HTMLElement}
+ */
 // constant for main selection within menu.html
 const MAIN = document.querySelector('main');
 
