@@ -1,35 +1,33 @@
 <include href="views/header.html"></include>
 <body class="admin">
-    <div class="card col-md-3">
-        <form class="admin form-signin">
-            <div class="card-body">
-                <h4 class="card-title">Log In</h4>
-                <div class="card-text">
-                    <label for="inputEmail" class="sr-only">Email address</label>
-                    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                    <label for="inputPassword" class="sr-only">Password</label>
-                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                    <div class="checkbox mb-3">
-                        <label>
-                            <input type="checkbox" value="remember-me"> Remember me
-                        </label>
-                    </div>
-                </div>
-                <button class="btn btn-lg btn-secondary btn-block" type="submit">Sign in</button>
-            </div>
-        </form>
-
-        <form class="user form-signin">
-            <div class="card-body">
-                <h4 class="card-title">Track Order</h4>
-                <div class="card-text">
-                    <label for="phoneNumber" class="sr-only">Phone Number</label>
-                    <input type="password" id="phoneNumber" class="form-control" placeholder="123-456-7890" required>
-                </div>
-                <button class="btn btn-lg btn-secondary btn-block" type="submit">View</button>
-            </div>
-        </form>
-    </div>
-
+    <table class="table">
+        <!-- table head -->
+        <thead>
+            <tr>
+                <th scope="col">BOBA</th>
+                <th scope="col">PHOTO</th>
+                <th scope="col">PRICE</th>
+                <th scope="col">QUANITITY</th>
+                <th scope="col">SWEETNESS</th>
+                <th scope="col">TOPPINGS</th>
+                <th scope="col">DATE</th>
+            </tr>
+        </thead>
+        <!-- table body-->
+        <tbody>
+            <!-- repeat block-->
+            <repeat group="{{ @displaying }}" value="{{ @display }}">
+                <tr>
+                    <th scope="col">{{ @display['boba_name'] }}</th>
+                    <th scope="row">{{ @display['img'] }}</th>
+                    <td>{{ @display['price'] }}</td>
+                    <td>{{ @display['quantity'] }}</td>
+                    <td>{{ @display['sweetness'] }}</td>
+                    <td>{{ @display['toppings'] }} </td>
+                    <td>{{ @display['order_date'] }}</td>
+                </tr>
+            </repeat>
+        </tbody> <!-- end of block -->
+    </table> <!-- end of body-->
 </body>
 </html>

@@ -114,9 +114,7 @@ class Controller
 
     function checkout()
     {
-        //Get the data from the model
-        $display = $GLOBALS['data']->displayOrder();
-        $this->_f3->set('display', $display);
+
         echo '<pre>';
         Print_r ($_SESSION);
         echo '</pre>';
@@ -171,7 +169,7 @@ class Controller
     {
         //instantiate a view
         $view = new Template();
-        if(empty($_SESSION) ) {
+        if(empty($_SESSION ) ) {
             echo $view->render("views/home.html"); // render home if session is empty
         } else {
             echo $view->render("views/summary.html"); // render summary page after checkout submit
@@ -183,6 +181,9 @@ class Controller
 
     function admin()
     {
+        //Get the data from the model
+        $display = $GLOBALS['data']->displayOrder();
+        $this->_f3->set('displaying', $display);
         //instantiate a view
         $view = new Template();
         echo $view->render("views/admin.html");

@@ -39,7 +39,7 @@ $f3->route('GET|POST /checkout', function($f3) {
 });
 
 //summary page
-$f3->route('GET /summary', function () {
+$f3->route('GET|POST /summary', function () {
     $GLOBALS['con']->summary();
 });
 
