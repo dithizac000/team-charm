@@ -1,13 +1,23 @@
 <?php
 
+/**
+ * This controller class implement functions that renders the index.php section
+ */
 class Controller
 {
     private $_f3; //Fat-Free object
+
+    /** default constructor
+     * @param $f3
+     */
     function __construct($f3)
     {
         $this->_f3 = $f3;
     }
 
+    /** first function of the main home page that renders the intro site of our boba shop
+     * @return void
+     */
     function home()
     {
         //instantiate a view
@@ -16,6 +26,9 @@ class Controller
 
     }
 
+    /** renders the menu secion of the nav bar, can be access in most page via nav
+     * @return void
+     */
     function menu()
     {
         // if the form has been posted
@@ -81,6 +94,10 @@ class Controller
         echo $view->render("views/menu.html"); // render method, return text on template
     }
 
+    /** cart page will only render on top of nav when menu is added and statemetn are input if menu
+     * empty it will render the home page instead
+     * @return void
+     */
     function cart()
     {
         echo '<pre>';
@@ -113,6 +130,10 @@ class Controller
 
     }
 
+    /** checkout page renders after the cart has been filled, the user may skip cart review
+     * and just type checkout if wanted due to get method
+     * @return void
+     */
     function checkout()
     {
 
@@ -166,6 +187,11 @@ class Controller
 
     }
 
+    /** summary page gets reroute via checkout due to its method post requirement. This is also the session destroyer
+     * This page currently does not prevent user from jumping if the cart contains content. However, this
+     * will render home if the session is empty.
+     * @return void
+     */
     function summary()
     {
         //instantiate a view
@@ -180,6 +206,9 @@ class Controller
         session_destroy();
     }
 
+    /** The main admin page that allow guest to log to view order status or for user to view history and points
+     * @return void
+     */
     function admin()
     {
         //Get the data from the model
@@ -191,6 +220,9 @@ class Controller
 
     }
 
+    /** allow user to view their account and order history when pass through admin page
+     * @return void
+     */
     function account()
     {
         //instantiate a view
