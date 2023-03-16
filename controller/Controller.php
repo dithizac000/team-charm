@@ -44,13 +44,7 @@ class Controller
             $teaType = $_POST['tea-selection'];
 
             // instantiate a new input order
-            if ($teaType) {
-                $order = new FruitTea();
-                $order->setTeaType($teaType);
-
-            } else {
-                $order = new ParentTea();
-            }
+            $order = new ParentTea();
 
             // assign to variable
             $order->setBobaName($boba);
@@ -59,28 +53,23 @@ class Controller
             $order->setSweetness($sweetness);
             $order->setTopping($topping);
             $order->setImg($img);
+            $order->setTeaType($teaType);
+
 
             // if orders[] does not exist
             if (!$_SESSION['orders']) {
-                echo "in the if";
                 // create orders[]
-                // use for var. cart icon security
                 $arr = [$order];
                 $_SESSION['orders'] = $arr;
                 // else
             } else {
-                echo "in the else";
+                // store orders in array object
                 $_SESSION['orders'][] = $order;
-            }
-
-            foreach ($_SESSION['orders'] as $key => $value) {
-                echo "<h1>$key</h1>";
-
             }
 
             // prevent refresh of duplicated data from submit
             header("location: menu");
-        } // end of post if
+        }
 
         if (!empty($_SESSION['orders'])) {
             //get cart size by counting the session order index
@@ -100,32 +89,40 @@ class Controller
      */
     function cart()
     {
-        echo '<pre>';
-        Print_r($_SESSION);
-        echo '</pre>';
+        echo "<pre>";
+        echo print_r($_SESSION);
+        echo print_r($_POST);
 
+        echo "</pre>";
         //instantiate a view
         $view = new Template(); // template is a fat free class
         if (empty($_SESSION)) {
             echo $view->render("views/home.html"); // render home when session is empty | destroy
         } else {
-
-            foreach ($_SESSION['orders'] as $key => $order) {
-                echo "<h1>$key</h1>";
+            $cost = 0; // use to hold cost of each order tea
+            // each loop for @order get method call use in cart.html
+            foreach ($_SESSION['orders'] as $order) {
                 $bobaName = $order->getBobaName();
                 $price = $order->getPrice();
                 $quantity = $order->getQuantity();
                 $sweetness = $order->getSweetness();
                 $topping = $order->getTopping();
                 $img = $order->getImg();
-                // insert into database via boba_orders table
-                echo "HELLO";
-
+                $tea = $order->getTeaType();
+                $cost += $price; // sum up the cost
             }
+
+
+            $afterTax = round($cost*1.1, 2); // format as dollars and after tax calculations
+            $this->_f3->set('total', $afterTax);
 
             echo $view->render("views/cart.html"); // render method, return text on template
 
+            if($_SERVER['REQUEST_METHOD'] == 'POST') {
+                echo $view->reroute("views/checkout.html");
+            }
         }
+
 
     }
 
@@ -152,7 +149,8 @@ class Controller
                 $country = $_POST['country'];
                 $state = $_POST['state'];
                 $zip = $_POST['zip'];
-                //do this later $cost= $_POST['cost'];
+                $cost = $_POST['total'];
+                $_SESSION['total'] = $cost;
 
                 // call validation and return erorr within class if not true
                 Valid::validName($fname, "firstName", "First name ");

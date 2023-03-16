@@ -19,8 +19,15 @@
                         <li class="list-group-item d-flex justify-content-between lh-condensed">
                             <div>
                                 <h6 class="my-0">{{ @order->getBobaName() }}</h6>
-                                <small class="text-muted">Sweetness: {{ @order->getSweetness() }}</small>
+                                <small class="text-muted">Sweetness: {{ @order->getSweetness() }}</small><br>
                                 <small class="text-muted">Topping: {{ @order->getTopping() }}</small><br>
+                                <!-- print if contains tea-->
+                                <check if="{{ @order->getTeaType() != null }}">
+                                    <true>
+                                        <small class="text-muted">Tea: {{ @order->getTeaType() }}</small><br>
+                                    </true>
+                                </check>
+
                             </div>
                             <span class="text-muted">$ {{ @order->getPrice() }}</span>
                         </li>
@@ -30,7 +37,7 @@
 
                     <li class="list-group-item d-flex justify-content-between">
                         <span>Total (USD)</span>
-                        <strong>$20</strong> <!-- this need to be use for cost var post later -->
+                        <strong>$ {{ @_SESSION['total'] }}</strong> <!-- this need to be use for cost var post later -->
                     </li>
 
             </div>
