@@ -8,29 +8,54 @@
  */
 class Valid
 {
-    /** Prompt user to input alphabetical letters.
+    /** Prompt user to input alphabetical letters for naming convetions
      * @param $name
-     * @return bool
+     * @param $post
+     * @param $placeholder
+     * @return void
      */
-    static function validFName($name)
+    static function validName($name,$post,$placeholder)
     {
-        return ctype_alpha($name);
+        global $f3;
+        if (!ctype_alpha($name) || strlen($name) < 2) {
+            $f3->set("errors[$post]", "$placeholder is invalid");
+        }
+        else {
+            $_SESSION[$post] = $name;
+        }
+    }
+
+    /** Prompt user to input a valid phone number
+     * @param $phone
+     * @param $post
+     * @return void
+     */
+    static function validPhone($phone,$post)
+    {
+        global $f3;
+
+        if(!preg_match('/^[0-9]{10}+$/', $phone)){
+            $f3->set("errors['phone']", "Phone is invalid");
+        } else {
+            $_SESSION[$post] = $phone;
+        }
     }
 
     /** Prompt user to input a validated email via PHP filter validated email
      * @param $email
-     * @return mixed
+     * @param $post
+     * @return void
      */
-    static function validEmail($email)
+    static function validEmail($email,$post)
     {
-        return filter_var($email, FILTER_VALIDATE_EMAIL);
+        global $f3;
+
+        if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $f3->set("errors['email']", "Email is invalid");
+        }
+        else {
+            $_SESSION[$post] = $email;
+        }
     }
 
-    /**
-     * Prompt user to input a valid phone number
-     */
-    static function validPhone($phone)
-    {
-        return filter_var($phone, FILTER_SANITIZE_NUMBER_INT);
-    }
 }

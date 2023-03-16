@@ -32,7 +32,7 @@ class Controller
     function menu()
     {
         // if the form has been posted
-        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             // move data from POST array to SESSION array
             $boba = $_POST['boba-name'];
@@ -61,7 +61,7 @@ class Controller
             $order->setImg($img);
 
             // if orders[] does not exist
-            if (!$_SESSION['orders'] ) {
+            if (!$_SESSION['orders']) {
                 echo "in the if";
                 // create orders[]
                 // use for var. cart icon security
@@ -73,7 +73,7 @@ class Controller
                 $_SESSION['orders'][] = $order;
             }
 
-            foreach ($_SESSION['orders'] as $key =>$value) {
+            foreach ($_SESSION['orders'] as $key => $value) {
                 echo "<h1>$key</h1>";
 
             }
@@ -82,7 +82,7 @@ class Controller
             header("location: menu");
         } // end of post if
 
-        if(!empty($_SESSION['orders'])) {
+        if (!empty($_SESSION['orders'])) {
             //get cart size by counting the session order index
             $GLOBALS['arraySize'] = count($_SESSION['orders']);
             // set cart size for menu page, above the cart icon nav bar
@@ -101,12 +101,12 @@ class Controller
     function cart()
     {
         echo '<pre>';
-        Print_r ($_SESSION);
+        Print_r($_SESSION);
         echo '</pre>';
 
         //instantiate a view
         $view = new Template(); // template is a fat free class
-        if(empty($_SESSION)) {
+        if (empty($_SESSION)) {
             echo $view->render("views/home.html"); // render home when session is empty | destroy
         } else {
 
@@ -119,7 +119,7 @@ class Controller
                 $topping = $order->getTopping();
                 $img = $order->getImg();
                 // insert into database via boba_orders table
-                echo  "HELLO";
+                echo "HELLO";
                 $GLOBALS['data']->addOrder($GLOBALS['order']);
 
             }
@@ -138,55 +138,45 @@ class Controller
     {
 
         echo '<pre>';
-        Print_r ($_SESSION);
+        Print_r($_SESSION);
         echo '</pre>';
 
 
         //instantiate a view
         $view = new Template(); // template is a fat free class
-        if(empty($_SESSION['orders'])) {
+        if (empty($_SESSION['orders'])) {
             echo $view->render("views/home.html"); // render home when session order is empty | destroy
         } else {
-            if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-                //validation for name
+                // post variables
                 $fname = trim($_POST['firstName']);
-                if(Valid::validFName($fname)) {
-                    $_SESSION['firstName'] = $fname;
-                } else {
-                    $this->_f3->set('errors["firstName"]',
-                        'First name must be alphabetical characters only');
-                }
-
-                //validation for email
-                $email = $_POST['email'];
-                if(Valid::validEmail($email)){
-                    $_SESSION['email'] = $email;
-                } else {
-                    $this->_f3->set('errors["email"]',
-                        'Enter a valid email');
-                }
-
-                //validation for phone number
+                $lname = trim($_POST['lastName']);
                 $phone = $_POST['phone'];
-                if(Valid::validPhone($phone)){
-                    $_SESSION['phone'] = $phone;
-                } else {
-                    $this->_f3->set('errors["phone"]',
-                        'Enter a valid phone number');
-                }
+                $email = $_POST['email'];
+                $address = $_POST['address'];
+                $country = $_POST['country'];
+                $state = $_POST['state'];
+                $zip = $_POST['zip'];
+                //do this later $cost= $_POST['cost'];
+
+                // call validation and return erorr within class if not true
+                Valid::validName($fname, "firstName", "First name ");
+                Valid::validName($lname, "lastName", "Last name " );
+                Valid::validPhone($phone,"phone");
+                Valid::validEmail($email,"email");
+                // other post field does not require validation and is optional for user
 
                 //if there are no errors go to the next page
-                if(empty($this->_f3->get('errors'))){
+                if (empty($this->_f3->get('errors'))) {
                     $this->_f3->reroute('summary');
                 }
             }
-
             echo $view->render("views/checkout.html"); // render method, return text on template
+
+
         }
-
-    }
-
+    } // end of cart
     /** summary page gets reroute via checkout due to its method post requirement. This is also the session destroyer
      * This page currently does not prevent user from jumping if the cart contains content. However, this
      * will render home if the session is empty.
@@ -196,7 +186,7 @@ class Controller
     {
         //instantiate a view
         $view = new Template();
-        if(empty($_SESSION ) ) {
+        if (empty($_SESSION)) {
             echo $view->render("views/home.html"); // render home if session is empty
         } else {
             echo $view->render("views/summary.html"); // render summary page after checkout submit
@@ -213,7 +203,7 @@ class Controller
     {
         //Get the data from the model
         $display = $GLOBALS['data']->displayOrder();
-        $this->_f3->set('displaying', $display);
+        $this->_f3-set('displaying', $display);
         //instantiate a view
         $view = new Template();
         echo $view->render("views/admin.html");
@@ -229,4 +219,5 @@ class Controller
         $view = new Template();
         echo $view->render("views/account.html");
     }
+
 }
