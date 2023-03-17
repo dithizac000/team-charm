@@ -22,12 +22,12 @@ const BOBA_IMG = ["classic-milk-tea.jpg","green-milk-tea.jpg","thai-milk-tea.jpg
 let teaSelect = "<!-- tea choice level -->\n" +
     "                <label class=\"form-label\">Select Tea:</label>\n" +
     "                <div class=\"form-check\">\n" +
-    "                    <input type=\"radio\" class=\"form-check-input\" name=\"tea-selection\" value=\"Black Tea\" checked>Black Tea\n" +
-    "                    <label class=\"form-check-label\" for=\"radio1\"></label>\n" +
+    "                    <input type=\"radio\" class=\"form-check-input\" name=\"tea-selection\" value=\"Black Tea\" id=\"radio8\" checked>Black Tea\n" +
+    "                    <label class=\"form-check-label\" for=\"radio8\"></label>\n" +
     "                </div>\n" +
     "                <div class=\"form-check\">\n" +
-    "                    <input type=\"radio\" class=\"form-check-input\" name=\"tea-selection\" value=\"Green Tea\">Green Tea\n" +
-    "                    <label class=\"form-check-label\" for=\"radio2\"></label>" +
+    "                    <input type=\"radio\" class=\"form-check-input\" name=\"tea-selection\" value=\"Green Tea\" id=\"radio9\">Green Tea\n" +
+    "                    <label class=\"form-check-label\" for=\"radio9\"></label>" +
     "</div>" + "<br>";
 
 // empty string variable
@@ -85,34 +85,34 @@ function footer() {
     return "                <!-- sweetness level -->\n" +
         "                <label class=\"form-label\">Sweetness Level:</label>\n" +
         "                <div class=\"form-check\">\n" +
-        "                    <input type=\"radio\" class=\"form-check-input\" name=\"sugar-level\" value=\"Normal\" checked>Normal\n" +
+        "                    <input type=\"radio\" class=\"form-check-input\" name=\"sugar-level\" value=\"Normal\" checked  id=\"radio1\">Normal\n" +
         "                    <label class=\"form-check-label\" for=\"radio1\"></label>\n" +
         "                </div>\n" +
         "                <div class=\"form-check\">\n" +
-        "                    <input type=\"radio\" class=\"form-check-input\" name=\"sugar-level\" value=\"Extra Sweet\">Extra Sweet\n" +
+        "                    <input type=\"radio\" class=\"form-check-input\" name=\"sugar-level\" value=\"Extra Sweet\" id=\"radio2\">Extra Sweet\n" +
         "                    <label class=\"form-check-label\" for=\"radio2\"></label>\n" +
         "                </div>\n" +
         "                <div class=\"form-check\">\n" +
-        "                    <input type=\"radio\" class=\"form-check-input\" name=\"sugar-level\" value=\"Half Sweet\">Half Sweet\n" +
+        "                    <input type=\"radio\" class=\"form-check-input\" name=\"sugar-level\" value=\"Half Sweet\" id=\"radio3\">Half Sweet\n" +
         "                    <label class=\"form-check-label\" for=\"radio3\"></label>\n" +
         "                </div>\n" +
         "                <br>\n" +
         "                <!-- Choose toppings -->\n" +
         "                <label class=\"form-label\">Choose Toppings:</label>\n" +
         "                <div class=\"form-check\">\n" +
-        "                    <input type=\"radio\" class=\"form-check-input\" name=\"topping\" value=\"None\" checked> None\n" +
+        "                    <input type=\"radio\" class=\"form-check-input\" name=\"topping\" value=\"None\" id=\"radio4\" checked> None\n" +
         "                    <label class=\"form-check-label\" for=\"radio4\"></label>\n" +
         "                </div>\n" +
         "                <div class=\"form-check\">\n" +
-        "                    <input type=\"radio\" class=\"form-check-input\" name=\"topping\" value=\"Tapioca\"> Tapioca\n" +
+        "                    <input type=\"radio\" class=\"form-check-input\" name=\"topping\" value=\"Tapioca\" id=\"radio5\" > Tapioca\n" +
         "                    <label class=\"form-check-label\" for=\"radio5\"></label>\n" +
         "                </div>\n" +
         "                <div class=\"form-check\">\n" +
-        "                    <input type=\"radio\" class=\"form-check-input\" name=\"topping\" value=\"Rainbow Jelly\"> Rainbow Jelly\n" +
+        "                    <input type=\"radio\" class=\"form-check-input\" name=\"topping\" value=\"Rainbow Jelly\" id=\"radio6\"> Rainbow Jelly\n" +
         "                    <label class=\"form-check-label\" for=\"radio6\"></label>\n" +
         "                </div>\n" +
         "                <div class=\"form-check\">\n" +
-        "                    <input type=\"radio\" class=\"form-check-input\" name=\"topping\" value=\"Pudding\"> Pudding\n" +
+        "                    <input type=\"radio\" class=\"form-check-input\" name=\"topping\" value=\"Pudding\" id=\"radio7\"> Pudding\n" +
         "                    <label class=\"form-check-label\" for=\"radio7\"></label>\n" +
         "                </div>\n" +
         "\n" +
