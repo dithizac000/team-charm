@@ -11,7 +11,7 @@
         <!-- cart listings-->
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Cart</h5>
+                <h5 class="card-title">Cart </h5>
                 <!-- list of cart items -->
                 <repeat group="{{ @SESSION.orders }}" value="{{ @order }}">
                     <ul class="list-group mb-3">
@@ -44,7 +44,7 @@
         <!-- user contact input -->
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Contact</h5>
+                <h5 class="card-title">Contact (require)</h5>
                 <!-- first name value -->
                 <label for="firstName">First name</label>
                 <input name="firstName" type="text" class="form-control" id="firstName" placeholder="" value=" "  >
@@ -173,4 +173,6 @@
         </div>
     </div>
 </form> <!-- end of form -->
-<include href="views/footer.html"></include>
+
+</body>
+</html>
