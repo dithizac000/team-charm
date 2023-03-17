@@ -93,6 +93,9 @@ class Controller
      */
     function cart()
     {
+        echo "<pre>";
+        print_r($_POST);
+        print_r($_SESSION);
         echo "</pre>";
         //instantiate a view
         $view = new Template(); // template is a fat free class
@@ -103,6 +106,8 @@ class Controller
             // each loop for @order get method call use in cart.html
             foreach ($_SESSION['orders'] as $order) {
                 $price = $order->getPrice();
+                $quantity = $order->getQuantity();
+                $price = ($price * $quantity);
                 $cost += $price; // sum up the cost
             }
 

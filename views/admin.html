@@ -1,11 +1,12 @@
 <include href="views/header.html"></include>
-<body class="admin">
+<include href="views/navigation.html"></include><!-- START OF TOP home page -->
+<div class="position-relative overflow-hidden text-center bg-light"></div>
     <table class="table">
         <!-- table head -->
         <thead>
             <tr>
                 <th scope="col">BOBA</th>
-                <th scope="col">PHOTO</th>
+                <th scope="col">ORDER ID</th>
                 <th scope="col">PRICE</th>
                 <th scope="col">QUANITITY</th>
                 <th scope="col">SWEETNESS</th>
@@ -19,7 +20,7 @@
             <repeat group="{{ @displaying }}" value="{{ @display }}">
                 <tr>
                     <th scope="col">{{ @display['boba_name'] }}</th>
-                    <th scope="row">{{ @display['img'] }}</th>
+                    <th scope="row">{{ @display['order_idf'] }}</th>
                     <td>{{ @display['price'] }}</td>
                     <td>{{ @display['quantity'] }}</td>
                     <td>{{ @display['sweetness'] }}</td>
@@ -29,5 +30,6 @@
             </repeat>
         </tbody> <!-- end of block -->
     </table> <!-- end of body-->
+</div>
 </body>
 </html>
