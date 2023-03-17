@@ -1,15 +1,12 @@
 /*--------------------MAIN CSS STYLING ---------------------------*/
 /*having an image background*/
 body {
+    font-family: 'Quicksand', sans-serif;
     background-image: url("http://jgonzalez.greenriverdev.com/328/team-charm/images/bobaBackground.jpg");
     background-size: 50%;
 
 }
-/*Font Fmaily - google fonts */
-h1,h2,h4,h5,li,p,.sidenav,th,tr{
-    font-family: 'Quicksand', sans-serif;
 
-}
 /*--------------------NAV CSS STYLING ---------------------------*/
 
 
@@ -37,16 +34,8 @@ nav.navbar.navbar-expand-sm {
 }
 
 /*--------------------HOME PAGE CSS STYLING ---------------------------*/
-/*CENTER TEXT ON IMG*/
 
-/*Hover to full opacity for most fonts*/
-h1:hover,h2:hover,h5, li:hover,p:hover,nav.navbar.navbar-expand-sm:hover, .sidenav a:hover,.sidenav:hover {
-    opacity: 100%;
-}
-/*Styling for the footer*/
-.col-md-12.uk-panel-box.bg-light {
-    border-radius: 20px;
-}
+
 /*logo size*/
 .logo {
     height: 50px;
@@ -80,11 +69,23 @@ h1:hover,h2:hover,h5, li:hover,p:hover,nav.navbar.navbar-expand-sm:hover, .siden
     width: 100%;
 }
 
-/*--------------------MENU CSS STYLING ---------------------------*/
-/*add to cart, related to pop up via javascript*/
-#add-cart {
 
+/* The progress container (grey background) */
+.progress-container {
+    background: pink;
+    height: 1em;
+    width: 100%;
 }
+
+/* The progress bar (scroll indicator) */
+.progress-bar {
+    background:  #8ae78a;
+    height: 1em;
+    width: 0%;
+}
+
+/*--------------------MENU CSS STYLING ---------------------------*/
+
 /*green font color when a href is hover*/
  nav.navbar.navbar-expand-sm:hover {
     color: #8ae78a;
@@ -118,6 +119,7 @@ nav.navbar.navbar-expand-sm:hover {
 .sidenav a:hover,.sidenav:hover, h5:hover {
     background-color: #8ae78a;
     color: #806464;
+    opacity: 100%;
 }
 
 /*side bar code */
@@ -134,15 +136,6 @@ nav.navbar.navbar-expand-sm:hover {
 }
 
 
-/*Menu hover*/
-.menu-title:hover {
-    color: pink;
-}
-
-.navbar-brand {
-    bottom: 0;
-
-}
 /*side bar a href code*/
 .sidenav a {
     padding: 5px 5px 5px 12px;
@@ -198,24 +191,4 @@ body.admin {
     border-top-right-radius: 0;
 }
 
-/* Style the header: fixed position (always stay at the top) */
-.header {
-    position: fixed;
-    bottom: 0;
-    z-index: 1;
-    width: 100%;
-}
 
-/* The progress container (grey background) */
-.progress-container {
-    background: pink;
-    height: 1em;
-    width: 100%;
-}
-
-/* The progress bar (scroll indicator) */
-.progress-bar {
-    background:  #8ae78a;
-    height: 1em;
-    width: 0%;
-}
