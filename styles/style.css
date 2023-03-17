@@ -37,12 +37,8 @@ nav.navbar.navbar-expand-sm {
 }
 
 /*--------------------HOME PAGE CSS STYLING ---------------------------*/
+/*CENTER TEXT ON IMG*/
 
-/*----height on witdth on hoem carousel*/
-.carousel-inner{
-    width:100%;
-    max-height: 300px !important;
-}
 /*Hover to full opacity for most fonts*/
 h1:hover,h2:hover,h5, li:hover,p:hover,nav.navbar.navbar-expand-sm:hover, .sidenav a:hover,.sidenav:hover {
     opacity: 100%;
@@ -131,7 +127,7 @@ nav.navbar.navbar-expand-sm:hover {
     z-index: 1;
     top: 150px;
     left: 10px;
-    background: pink;
+    background-color: #8ae78a;
     overflow-x: hidden;
     padding: 8px 0;
     opacity: 80%;

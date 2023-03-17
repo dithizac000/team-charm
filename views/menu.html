@@ -1,5 +1,4 @@
 <include href="views/header.html"></include>
-<body>
 <include href="views/navigation.html"></include>
 
 <div class="sidenav">
@@ -15,14 +14,16 @@
             <!-- add to cart content -->
             <span id="add-cart">
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <strong>{{ @addToCart}}BOBA NAME, needs ajax</strong> was last added!
+                    <strong>
+                        {{ @displayBoba }}
+                    </strong> was last added!
                     <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
                     </button>
                 </div>
             </span>
             <!-- milk tea series -->
             <div class="col-md-12 ">
-                <h2 class="menu-title ">Milk Tea Series</h2>
+                <h2>Milk Tea Series</h2>
                 <hr class="featurette-divider ">
             </div>
             <!-- black tea-->
@@ -70,7 +71,7 @@
             </div>
             <!-- fruit tea series -->
             <div class="col-md-12" id="fruit">
-                <h2 class="menu-title ">Fruit Tea Series</h2>
+                <h2>Fruit Tea Series</h2>
                 <hr class="featurette-divider">
             </div>
             <!-- passion tea-->
@@ -119,7 +120,7 @@
 
             <!-- smoothies series -->
             <div class="col-md-12" id="blended">
-                <h2 class="menu-title ">Blended Flavors Series</h2>
+                <h2>Blended Flavors Series</h2>
                 <hr class="featurette-divider ">
 
             </div>
@@ -171,7 +172,7 @@
 
             <!-- Toppings series -->
             <div class="col-md-12" id="toppings">
-                <h2 class="menu-title ">Available Toppings</h2>
+                <h2>Available Toppings</h2>
                 <hr class="featurette-divider">
             </div>
             <!-- boba pearls -->
@@ -216,10 +217,7 @@
 <div class="progress-container fixed-bottom rounded">
     <div class="progress-bar fixed-bottom rounded" id="myBar"></div>
 </div>
-<script>
 
-
-</script>
 <!-- progress bar javascript -->
 <script src="javascript/scroll-bar.js"></script>
 <!-- use this script to loop our modal divs and associated with <main></main> -->

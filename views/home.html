@@ -1,82 +1,90 @@
 <include href="views/header.html"></include>
-<body>
 <include href="views/navigation.html"></include>
-<div class="container-fluid px-0 col-10 mx-auto">
-    <div class="container-fluid text-center my-5">
-        <div class="row">
-            <!-- box content about -->
-            <div class="col-md-12 m-auto p-2">
-                <div class="card mb-12 box-shadow">
-                    <h2>Welcome to Boba Charm</h2>
-                    <div class="card-body">
-                        <p class="card-text">Team Charm (Japanese: チャームズ Charms) is an exploration team in Pokémon
-                            Mystery Dungeon: Explorers of Time and Explorers of Darkness and Pokémon Mystery Dungeon:
-                            Explorers of Sky. It consists of Lopunny, Medicham and Gardevoir. For our love for this game
-                            and these Pokemon, we (Dale, Jasmine, and Zack) decided to create a boba shop
-                            website with team's Charm inspirations.  ---"bulbapedia.net"</p>
-                        <div class="d-flex justify-content-between flex-row-reverse logo">
-                            <img class="img-fluid logo opacity-full" src="images/boba-charm-pink.png" alt="Boba Charm Logo">
-                        </div> <!-- end of logo -->
-                    </div> <!-- end of car body-->
-                </div> <!--end of box content  -->
-            </div> <!-- end of col-md-12 -->
 
-
-            <!-- box content message -->
-            <div class="col-md-6 m-auto p-2">
-                <div class="card mb-12 box-shadow">
-                    <h2>Finest Ingredients</h2>
-                    <div class="card-body">
-                        <p class="card-text">Our drinks are made from the finest ingredients and use only high-quality
-                            tea leaves instead of artificial flavors to produce the best tasting tea.
-                            We test the tea leaves and ingredients to ensure our drinks’ consistency.
-
-                        </p>
-                        <img class="img-fluid img-thumbnail opacity-75" src="images/team-charm.png"  alt=" Team Charm Adventure">
-                    </div> <!-- end of car body-->
-                </div> <!--end of box content  -->
-            </div> <!-- end of col-md-6 -->
-
-            <!-- box content for carousel -->
-            <div class="col-md-6  m-auto p-2 ">
-                <div class="card mb-12 box-shadow">
-                    <h2>The Boba Gallery</h2>
-                    <div class="card-body">
-                        <!-- start of carousel-->
-                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <h5>Milk Tea Boba</h5>
-                                    <img src="menu-images/classic-milk-tea.jpg" class="d-block w-100 slides" alt="Milk Tea Boba">
-                                </div>
-                                <div class="carousel-item">
-                                    <h5>Green Milk Tea Boba</h5>
-                                    <img src="menu-images/green-milk-tea.jpg" class="d-block w-100 slides" alt="Green Milk Tea Boba">
-                                </div>
-                                <div class="carousel-item">
-                                    <h5>Passion Fruit Tea</h5>
-                                    <img src="menu-images/passion-fruit-tea.jpg" class="d-block w-100 slides" alt="Passion Fruit Tea">
-                                </div>
-                            </div>
-                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                             </a>
-                            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            </a>
-                        </div><!-- end of carousel inner -->
-=                    </div> <!-- end of car body-->
-                </div> <!--end of box content  -->
-            </div> <!-- end of col-md-6 -->
-
-        </div> <!-- end of row -->
-    </div> <!-- end of  2nd main div -->
-</div> <!-- End of our main div -->
-
-
-<div class="fixed-bottom d-flex flex-row-reverse"> <!-- order now button cotent -->
-    <nav class="navbar">
-        <a role="button" class="btn btn-primary btn-sm m-3 p-2" href="menu">Order Your Drink Now!</a>
-    </nav>
+<!-- STICKY NAV -->
+<div class="sidenav">
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
 </div>
-<include href="views/footer.html"></include>
+
+<!-- START OF TOP home page -->
+<div class="position-relative overflow-hidden text-center bg-light">
+    <!-- PROMPT ORDER NOW AND SLOGAN -->
+    <div class="col-md-5 p-lg-5 mx-auto my-5">
+        <h1 class="display-4 font-weight-normal">TEAM CHARM</h1><br>
+        <h1 class="display-4 font-weight-normal">TEA SHOP</h1><br>
+        <p class="lead font-weight-normal">Begin your boba journey and charm your taste buds...</p>
+        <a class="btn btn-outline-warning" href="menu">ORDER NOW!</a><br>
+
+        <img class="img-fluid img-thumbnail opacity-75 my-2" src="menu-images/classic-milk-tea.jpg"  alt="Classic Milk Tea">
+
+    </div>
+
+
+    <!-- HISTORY -->
+    <div class="col-md-5 p-lg-5 mx-auto my-5" >
+        <h1 class="display-4 font-weight-normal">WHAT IS BOBA?</h1><br>
+        <p class="lead font-weight-normal">
+            Bubble tea is a tea-based drink that originated in Taiwan in the early 1980s. Taiwanese immigrants brought
+            it to the United States in the 1990s, initially in California through regions like Los Angeles County, but
+            the drink has also spread to other countries where there is a large East Asian diaspora population.
+        </p>
+        <!-- LOGO -->
+        <div class="d-flex justify-content-between flex-row-reverse logo">
+            <img class="img-fluid logo opacity-full" src="images/boba-charm-pink.png" alt="Boba Charm Logo">
+        </div>
+    </div>
+
+
+    <!-- ABOUT US -->
+    <div class="col-md-5 p-lg-5 mx-auto my-5" id="about">
+        <h1 class="display-4 font-weight-normal">ABOUT US</h1><br>
+        <p class="lead font-weight-normal">
+            Team Charm (Japanese: チャームズ Charms) is an exploration team in Pokémon
+            Mystery Dungeon: Explorers of Time and Explorers of Darkness and Pokémon Mystery Dungeon:
+            Explorers of Sky. It consists of Lopunny, Medicham and Gardevoir. For our love for this game
+            and these Pokemon, we (Dale, Jasmine, and Zack) decided to create a boba shop
+            website with team's Charm inspirations.  ---"bulbapedia.net"</p>
+        </p>
+        <img class="img-fluid img-thumbnail opacity-75" src="images/team-charm.png"  alt=" Team Charm Adventure">
+    </div>
+
+
+    <!-- BOBA PROMISE -->
+    <div class="col-md-5 p-lg-5 mx-auto my-5"  >
+        <h1 class="display-4 font-weight-normal">Finest Ingredients</h1><br>
+        <p class="lead font-weight-normal">
+            Our drinks are made from the finest ingredients and use only high-quality
+            tea leaves. We guarantee that you'll get a HI-JUMP-KICK boost from the Medicham
+            spirit, or be PSYCH through the whole day with Gardevior's fairy energy. Perhaps,
+            even get some radiant energy from our drinks due to Lopunny's charm!
+        </p>
+        <img class="img-fluid img-thumbnail opacity-75 my-2" src="images/tea-leaf.jpg"  alt="Tea Leaf">
+    </div>
+
+    <!-- BOBA PROMISE -->
+    <div class="col-md-5 p-lg-5 mx-auto my-5" id="contact">
+        <h1 class="display-4 font-weight-normal">Contact US</h1><br>
+        <div class="card-body">
+            <p>1221 D St NE, Auburn, WA 98002</p>
+            <p>(253) 911-8333</p>
+            <hr class="featurette-divider">
+            <h2>Open Hours</h2>
+            <p>teamcharm@email.com</p>
+            <p>Mon - Sun</p>
+            <p>9:00 am - 10:00 pm</p>
+        </div>
+    </div>
+</div> <!-- end of TOP DIV -->
+
+<!-- progress bar at bottom of page -->
+<div class="progress-container fixed-bottom rounded">
+    <div class="progress-bar fixed-bottom rounded" id="myBar"></div>
+</div>
+
+<!-- progress bar javascript -->
+<script src="javascript/scroll-bar.js"></script>
+
+</body>
+</html>

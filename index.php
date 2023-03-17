@@ -29,7 +29,7 @@ $f3->route('GET|POST /menu', function ($f3) {
 });
 
 //cart route
-$f3->route('GET /cart', function($f3) {
+$f3->route('GET|POST /cart', function($f3) {
     $GLOBALS['con']->cart();
 });
 

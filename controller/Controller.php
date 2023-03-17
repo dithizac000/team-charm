@@ -31,10 +31,6 @@ class Controller
      */
     function menu()
     {
-        echo "<pre>";
-        echo print_r($_SESSION);
-        echo print_r($_POST);
-        echo "</pre>";
         // if the form has been posted
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -46,8 +42,6 @@ class Controller
             $topping = $_POST['topping'];
             $img = $_POST['teaImg'];
             $teaType = $_POST['tea-selection'];
-            echo $teaType;
-            echo var_dump($_POST);
 
             // instantiate a new input order
             if($teaType) {
@@ -77,13 +71,8 @@ class Controller
                 // store orders in array object
                 $_SESSION['orders'][] = $order;
             }
-            echo "<pre>";
-            echo print_r($_SESSION);
-            echo print_r($_POST);
-
-            echo "</pre>";
             // prevent refresh of duplicated data from submit
-           // header("location: menu");
+           header("location: menu");
         }
 
         if (!empty($_SESSION['orders'])) {
@@ -104,12 +93,6 @@ class Controller
      */
     function cart()
     {
-        echo var_dump($_POST);
-
-        echo "<pre>";
-        echo print_r($_SESSION);
-        echo print_r($_POST);
-
         echo "</pre>";
         //instantiate a view
         $view = new Template(); // template is a fat free class
@@ -178,7 +161,6 @@ class Controller
                 }
             }
             echo $view->render("views/checkout.html"); // render method, return text on template
-
 
         }
     } // end of cart
