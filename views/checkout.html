@@ -22,7 +22,7 @@
                                 <small class="text-muted">Sweetness: {{ @order->getSweetness() }}</small><br>
                                 <small class="text-muted">Topping: {{ @order->getTopping() }}</small><br>
                                 <!-- print if contains tea-->
-                                <check if="{{ @order->getTeaType() != null }}">
+                                <check if="{{ @order->getNameOfClass() == 'FruitTea' }}">
                                     <true>
                                         <small class="text-muted">Tea: {{ @order->getTeaType() }}</small><br>
                                     </true>
@@ -35,10 +35,10 @@
                 </repeat>
 
 
-                    <li class="list-group-item d-flex justify-content-between">
-                        <span>Total (USD)</span>
-                        <strong>$ {{ @_SESSION['total'] }}</strong> <!-- this need to be use for cost var post later -->
-                    </li>
+                <li class="list-group-item d-flex justify-content-between">
+                    <span>Total (USD)</span>
+                    <strong>$ {{ @_SESSION['total'] }}</strong> <!-- this need to be use for cost var post later -->
+                </li>
 
             </div>
         </div>
@@ -174,4 +174,4 @@
         </div>
     </div>
 </form> <!-- end of form -->
-]<include href="views/footer.html"></include>
+<include href="views/footer.html"></include>

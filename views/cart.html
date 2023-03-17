@@ -76,11 +76,11 @@
                     <!-- Hold value of hidden total cost of all boba orders + tax-->
                     <input type="hidden" for="total" class="form-control form-control-lg" value="{{ @total }}"/>
 
-                    <!--Applying a discount code---------->
+                    <!--Display Total Text and request post for next page---------->
                     <div class="card mb-4">
                         <div class="card-body p-4 d-flex flex-row">
                             <div class="form-outline flex-fill">
-                                <p class="text-center"><span class="text-muted">Total: </span>$ {{ @total }}</p>
+                                <p class="text-center"><span class="text-muted">Total w/ Tax: </span>$ {{ @total }}</p>
                             </div>
                             <button type="button" type="submit" class="btn btn-outline-warning btn-lg ms-3">Next</button>
                         </div>
