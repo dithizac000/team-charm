@@ -86,7 +86,7 @@ nav.navbar.navbar-expand-sm {
 
 /*--------------------MENU CSS STYLING ---------------------------*/
 
-/*green font color when a href is hover*/
+    /*green font color when a href is hover*/
  nav.navbar.navbar-expand-sm:hover {
     color: #8ae78a;
     text-decoration-style: solid;

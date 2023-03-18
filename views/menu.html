@@ -8,13 +8,20 @@
     <a href="#toppings">Toppings</a>
 </div>
 <!-- boba tea options -->
-<div class="album py-5 light p-2 text-dark">
+<div class="album py-5 m-3 position-relative overflow-hidden text-center ">
     <div class="container">
-        <div class="row">
+
+
+
+        <!-- start of row for milk tea -->
+
+        <div class="row overflow-hidden bg-light rounded my-2">
             <!-- milk tea series -->
-            <div class="col-md-12 ">
-                <h2>Milk Tea Series</h2>
-                <hr class="featurette-divider ">
+            <div class="col-md-12">
+                <h1 class="display-4 font-weight-normal">Milk Tea Series</h1><br>
+                <p class="lead font-weight-normal">Combination of smoothness and sweetness pairing nicely with our freshly brewed tea
+                </p>
+                <hr class="featurette-divider">
             </div>
             <!-- black tea-->
             <div class="col-md-4">
@@ -59,9 +66,20 @@
                     </div>
                 </div>
             </div>
-            <!-- fruit tea series -->
+        </div> <!-- end of row for milk tea  -->
+
+
+        <br>
+
+
+        <!-- start of row for fruit tea -->
+        <div class="row overflow-hidden bg-light my-2">
+        <!-- fruit tea series -->
             <div class="col-md-12" id="fruit">
-                <h2>Fruit Tea Series</h2>
+                <h1 class="display-4 font-weight-normal">Fruit Tea Series</h1><br>
+                <p class="lead font-weight-normal">
+                    A wide selection of fresh fruit jam paired with our freshly brewed tea for a refreshing choice
+                </p>
                 <hr class="featurette-divider">
             </div>
             <!-- passion tea-->
@@ -93,7 +111,7 @@
                     </div>
                 </div>
             </div>
-            <!-- manog ice tea-->
+            <!-- mango ice tea-->
             <div class="col-md-4">
                 <div class="card mb-4 box-shadow">
                     <img class="img-fluid" src="menu-images/mango-tea.jpg" data-toggle="modal" data-target="#mangoTea" alt="Mango Iced Tea">
@@ -108,11 +126,21 @@
                 </div>
             </div>
 
-            <!-- smoothies series -->
-            <div class="col-md-12" id="blended">
-                <h2>Blended Flavors Series</h2>
-                <hr class="featurette-divider ">
+        </div> <!-- end of fruit tea row -->
 
+
+        <br>
+
+
+        <!-- start of smoothie row -->
+        <div class="row overflow-hidden bg-light rounded my-2">
+            <!-- smoothie series -->
+            <div class="col-md-12" id="blended">
+                <h1 class="display-4 font-weight-normal">Smoothie Series</h1><br>
+                <p class="lead font-weight-normal">
+                    Ice cold drinks made with different flavors with the addition of topping available
+                </p>
+                <hr class="featurette-divider">
             </div>
             <!-- avocado smoothies-->
             <div class="col-md-4">
@@ -159,12 +187,19 @@
                     </div>
                 </div>
             </div>
+        </div> <!-- end of smoothie row -->
 
-            <!-- Toppings series -->
+        <br>
+
+
+        <!-- start of topping row -->
+        <div class="row overflow-hidden bg-light rounded my-2">
             <div class="col-md-12" id="toppings">
-                <h2>Available Toppings</h2>
+                <h1 class="display-4 font-weight-normal">Available Toppings</h1><br>
+                <p class="lead font-weight-normal">Selection of toppings of your choice...</p>
                 <hr class="featurette-divider">
             </div>
+
             <!-- boba pearls -->
             <div class="col-md-4">
                 <div class="card mb-4 box-shadow">
@@ -195,13 +230,38 @@
                     </div>
                 </div>
             </div>
-        </div> <!-- end of row -->
-    </div>
+        </div> <!-- end of row for topping  -->
+
+        <br>
+
+        <!-- start row for contact us -->
+        <div class="row overflow-hidden bg-light rounded my-2">
+            <div class="container-fluid text-center my-5">
+                <!-- box content footer -->
+                <div class="col-md-12 m-2 p-2">
+                    <h2>Contact Us</h2>
+                    <p>1221 D St NE, Auburn, WA 98002</p>
+                    <p>(253) 911-8333</p>
+                    <hr>
+                    <h2>Open Hours</h2>
+                    <p>teamcharm@email.com</p>
+                    <p>Mon - Sun</p>
+                    <p>9:00 am - 10:00 pm</p>
+                </div>
+                <img class="img-fluid img-thumbnail opacity-75 my-2" src="images/badge.png"  alt="Pokemon Badge">
+            </div>
+        </div><!-- end row for contact us -->
+
+    </div> <!-- end of container -->
 </div> <!-- end of boba div -->
 
-<!-- use as js insert for modal -->
-<main>
-</main>
+
+
+    <!-- use as js insert for modal -->
+    <main>
+    </main>
+
+
 
 <!-- progress bar at bottom of page -->
 <div class="progress-container fixed-bottom rounded">
@@ -213,7 +273,6 @@
 <!-- use this script to loop our modal divs and associated with <main></main> -->
 <script src="javascript/modal-list.js"></script>
 
-<include href="views/footer.html"></include>
-
-
+</body>
+</html>
 
