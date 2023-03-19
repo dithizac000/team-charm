@@ -2,7 +2,7 @@
 /*having an image background*/
 body {
     font-family: 'Quicksand', sans-serif;
-    background-image: url("http://jgonzalez.greenriverdev.com/328/team-charm/images/bobaBackground.jpg");
+    background-image: url("https://jgonzalez.greenriverdev.com/328/team-charm/images/bobaBackground.jpg");
     background-size: 50%;
 
 }
@@ -79,7 +79,7 @@ nav.navbar.navbar-expand-sm {
 
 /* The progress bar (scroll indicator) */
 .progress-bar {
-    background:  #8ae78a;
+    background:  #9cf4a7;
     height: 1em;
     width: 0%;
 }
@@ -88,7 +88,7 @@ nav.navbar.navbar-expand-sm {
 
     /*green font color when a href is hover*/
  nav.navbar.navbar-expand-sm:hover {
-    color: #8ae78a;
+    color: #9cf4a7;
     text-decoration-style: solid;
 }
 /*green font color when a href is hover*/
@@ -105,19 +105,19 @@ a, nav-link {
 }
 /*hover border pink on menu album and opacity on selection*/
 .card:hover {
-    border-color: #8ae78a;
+    border-color: #9cf4a7;
 }
 /*modal backdrop gradient color when pop up*/
 .modal-backdrop {
-    background: linear-gradient(45deg, pink, #8ae78a);
+    background: linear-gradient(45deg, pink, #9cf4a7);
 }
 nav.navbar.navbar-expand-sm:hover {
-    color: #8ae78a;
+    color: #9cf4a7;
     text-decoration-style: solid;
 }
 /*button hover pink border and brown font*/
 .sidenav a:hover,.sidenav:hover, h5:hover {
-    background-color: #8ae78a;
+    background-color: #9cf4a7;
     color: #806464;
     opacity: 100%;
 }
@@ -129,7 +129,7 @@ nav.navbar.navbar-expand-sm:hover {
     z-index: 1;
     top: 150px;
     left: 10px;
-    background-color: #8ae78a;
+    background-color: #9cf4a7;
     overflow-x: hidden;
     padding: 8px 0;
     opacity: 80%;
