@@ -93,10 +93,6 @@ class Controller
      */
     function cart()
     {
-        echo "<pre>";
-        print_r($_POST);
-        print_r($_SESSION);
-        echo "</pre>";
         //instantiate a view
         $view = new Template(); // template is a fat free class
         if (empty($_SESSION)) {
@@ -131,9 +127,6 @@ class Controller
      */
     function checkout()
     {
-        echo "<pre>";
-        print_r($_SESSION);
-        echo "</pre>";
         //instantiate a view
         $view = new Template(); // template is a fat free class
         if (empty($_SESSION['orders'])) {
