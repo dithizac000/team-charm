@@ -107,7 +107,7 @@ class Controller
 
 
             $afterTax = round($cost*1.1, 2); // format as dollars and after tax calculations
-            $this->_f3->set('total', $afterTax);
+            $this->_f3->set('afterTaxTotal', $afterTax);
 
             if($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $_SESSION['total'] = $_POST['total'];
@@ -169,6 +169,11 @@ class Controller
     {
         // each loop for @order get method call use in cart.html
         foreach ($_SESSION['orders'] as $order) {
+            // if fruit tea child
+            if($order->getNameOfClass() == 'FruitTea' ) {
+                // call data layer and insert orders session into database
+                $GLOBALS['data']->addTeaOrder($order);
+            }
             // call data layer and insert orders session into database
             $GLOBALS['data']->addOrder($order);
         }

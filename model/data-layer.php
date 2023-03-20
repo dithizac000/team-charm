@@ -40,6 +40,38 @@ class DataLayer
     function addOrder($orderObject) {
         // 1. DEFINE SQL Statement
         $sql = "INSERT INTO `boba_orders`
+        (`boba_name`, `price`,`quantity`,`sweetness`,`toppings`, 
+        `img`, `order_date`) 
+        VALUES (:bobaName,:price,:quantity,:sweetness,:toppings,:img,:date)";
+        // 2. PREPARE STATEMENT
+        $statement = $this->_dbh->prepare($sql);
+        // 3. BIND PARAMETERS
+        $bobaName = $orderObject->getBobaName();
+        $price = $orderObject->getPrice();
+        $quantity = $orderObject->getQuantity();
+        $sweetness = $orderObject->getSweetness();
+        $toppings = $orderObject->getTopping();
+        $img = $orderObject->getImg();
+        $date = date("Y-m-d");
+
+        $statement->bindParam(':bobaName', $bobaName);
+        $statement->bindParam(':price', $price);
+        $statement->bindParam(':quantity', $quantity);
+        $statement->bindParam(':sweetness', $sweetness);
+        $statement->bindParam(':toppings', $toppings);
+        $statement->bindParam(':img', $img);
+        $statement->bindParam(':date', $date);
+        // 4. EXECUTE
+        $statement->execute();
+    }
+
+    /** This function INSERTS into the boba_order database
+     * @param $orderObject
+     * @return void
+     */
+    function addTeaOrder($orderObject) {
+        // 1. DEFINE SQL Statement
+        $sql = "INSERT INTO `boba_orders`
         (`boba_name`, `price`,`quantity`,`tea_type`,`sweetness`,`toppings`, 
         `img`, `order_date`) 
         VALUES (:bobaName,:price,:quantity,:tea,:sweetness,:toppings,:img,:date)";
