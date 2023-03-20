@@ -2,11 +2,6 @@
 <title>Team Charm | Tea Shop | Check Out!</title> <!-- tab title -->
 <include href="views/navigation.html"></include>
 
-<div class="py-5 text-center card">
-    <h1>{{@display}}</h1>
-    <h2>Checkout Form</h2>
-</div>
-
 <form action="#" method="POST"> <!-- form head -->
     <div class="card-group">
         <!-- cart listings-->
@@ -37,7 +32,7 @@
 
                 <li class="list-group-item d-flex justify-content-between">
                     <span>Total (USD)</span>
-                    <strong>$ {{ @_SESSION['total'] }}</strong> <!-- this need to be use for cost var post later -->
+                    <strong>$ {{ @SESSION['total'] }}</strong> <!-- this need to be use for cost var post later -->
                 </li>
 
             </div>

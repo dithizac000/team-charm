@@ -102,8 +102,6 @@ class Controller
             // each loop for @order get method call use in cart.html
             foreach ($_SESSION['orders'] as $order) {
                 $price = $order->getPrice();
-                $quantity = $order->getQuantity();
-                $price = ($price * $quantity);
                 $cost += $price; // sum up the cost
             }
 
@@ -111,11 +109,14 @@ class Controller
             $afterTax = round($cost*1.1, 2); // format as dollars and after tax calculations
             $this->_f3->set('total', $afterTax);
 
+            if($_SERVER['REQUEST_METHOD'] == 'POST') {
+                $_SESSION['total'] = $_POST['total'];
+                $this->_f3->reroute('checkout');
+
+            }
+
             echo $view->render("views/cart.html"); // render method, return text on template
 
-            if($_SERVER['REQUEST_METHOD'] == 'POST') {
-                echo $view->reroute("views/checkout.html");
-            }
         }
 
 
@@ -139,10 +140,6 @@ class Controller
                 $lname = trim($_POST['lastName']);
                 $phone = $_POST['phone'];
                 $email = $_POST['email'];
-                $address = $_POST['address'];
-                $country = $_POST['country'];
-                $state = $_POST['state'];
-                $zip = $_POST['zip'];
                 $cost = $_POST['total'];
                 $_SESSION['total'] = $cost;
 
@@ -159,6 +156,7 @@ class Controller
                 }
             }
             echo $view->render("views/checkout.html"); // render method, return text on template
+
 
         }
     } // end of cart
