@@ -141,7 +141,6 @@ class Controller
                 $lname = trim($_POST['lastName']);
                 $phone = $_POST['phone'];
                 $email = $_POST['email'];
-
                 // call validation and return erorr within class if not true
                 Valid::validName($fname, "firstName", "First name ");
                 Valid::validName($lname, "lastName", "Last name " );
@@ -151,6 +150,8 @@ class Controller
 
                 //if there are no errors go to the next page
                 if (empty($this->_f3->get('errors'))) {
+                    $email = strtolower($email);  // lower case email
+                    // store post into session
                     $_SESSION['firstName'] = $fname;
                     $_SESSION['lastName'] = $lname;
                     $_SESSION['phone'] = $phone;
@@ -206,12 +207,18 @@ class Controller
      */
     function admin()
     {
+        print_r($_SESSION);
+        print_r($_POST);
+
         //instantiate a view
         $view = new Template();
         echo $view->render("views/admin.html");
 
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $_SESSION['sqlEmail'] = $_POST['inputEmail'];
+            $sqlEmail = $_POST['inputEmail'];
+            $sqlEmail = strtolower($sqlEmail); // lower case email
+            $_SESSION['sqlEmail'] = $sqlEmail;
+
             $this->_f3->reroute('account');
 
         }
@@ -223,8 +230,11 @@ class Controller
      */
     function account()
     {
+        print_r($_SESSION);
+        print_r($_POST);
+
         //Get the data from the database
-        $display = $GLOBALS['data']->displayOrder();
+        $display = $GLOBALS['data']->displayOrder($_SESSION['sqlEmail']);
         $info = $GLOBALS['data']->displayCustomer($_SESSION['sqlEmail']);
         $this->_f3->set('displaying', $display);
         $this->_f3->set('info', $info);

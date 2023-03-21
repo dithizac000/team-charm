@@ -102,9 +102,9 @@ class DataLayer
     /** This functions fetch all the file in the data
      * @return void
      */
-    function displayOrder()
+    function displayOrder($post)
     {
-        $sql = "SELECT * FROM boba_orders ORDER BY order_id"; // multi. rows
+        $sql = "SELECT * FROM boba_orders  WHERE email = '$post' ORDER BY order_id"; // multi. rows
         $statement = $this->_dbh->prepare($sql);
         $statement->execute();
 
@@ -151,8 +151,13 @@ VALUES (:fname, :lname, :phone, :email, :date, :total)";
         $sql = "SELECT * FROM customer WHERE email = '$post'"; // multi. rows
         $statement = $this->_dbh->prepare($sql);
         $statement->execute();
+        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-        return $statement->fetchAll(PDO::FETCH_ASSOC);
+        global $f3; // reroute if the sql clause email is not matched in the database
+        if(!$result) {
+            $f3->reroute('admin');
+        }
+        return $result;
 
     }
 
