@@ -150,6 +150,9 @@ class Controller
 
                 //if there are no errors go to the next page
                 if (empty($this->_f3->get('errors'))) {
+                    // convert names to upper
+                    $fname = strtoupper($fname);
+                    $lname = strtoupper($lname);
                     $email = strtolower($email);  // lower case email
                     // store post into session
                     $_SESSION['firstName'] = $fname;
@@ -210,11 +213,9 @@ class Controller
         print_r($_SESSION);
         print_r($_POST);
 
-        //instantiate a view
-        $view = new Template();
-        echo $view->render("views/admin.html");
 
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
+
             $sqlEmail = $_POST['inputEmail'];
             $sqlEmail = strtolower($sqlEmail); // lower case email
             $_SESSION['sqlEmail'] = $sqlEmail;
@@ -222,6 +223,10 @@ class Controller
             $this->_f3->reroute('account');
 
         }
+
+        //instantiate a view
+        $view = new Template();
+        echo $view->render("views/admin.html");
 
     }
 

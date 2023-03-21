@@ -172,9 +172,8 @@ nav.navbar.navbar-expand-sm:hover {
     border-bottom-left-radius: 0;
 }
 
-#form-messages {
+.form-message {
     color: red;
-    display: none;
 }
 
 

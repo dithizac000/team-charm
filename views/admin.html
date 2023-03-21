@@ -12,8 +12,7 @@
                 <div class="card-text">
                     <label for="inputEmail">Email address</label>
                     <input name="inputEmail" type="email" id="inputEmail" class="form-control" placeholder="Email address"  > <br>
-                    <label for="inputPassword" class="sr-only">Password</label>
-                    <input name="inputPassword" type="password" id="inputPassword" class="form-control" placeholder="Password" > <br>
+                    <p class="form-message">{{ @error }}</p>
                 </div>
                 <button class="btn btn-lg btn-secondary btn-block" id="btn-submit" type="submit">Sign in</button>
             </div>
