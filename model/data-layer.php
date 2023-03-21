@@ -25,24 +25,17 @@ class DataLayer
         }
     }
 
-    /** This function INSERTS into the customer table database
-     * @param $customerObject
-     * @return void
-     */
-    function addCustomer($customerObject) {
-
-    }
 
     /** This function INSERTS into the boba_order database
      * @param $orderObject
      * @return void
      */
-    function addOrder($orderObject) {
+    function addOrder($orderObject,$post) {
         // 1. DEFINE SQL Statement
         $sql = "INSERT INTO `boba_orders`
         (`boba_name`, `price`,`quantity`,`sweetness`,`toppings`, 
-        `img`, `order_date`) 
-        VALUES (:bobaName,:price,:quantity,:sweetness,:toppings,:img,:date)";
+        `img`, `order_date`, `email`) 
+        VALUES (:bobaName,:price,:quantity,:sweetness,:toppings,:img,:date,:email)";
         // 2. PREPARE STATEMENT
         $statement = $this->_dbh->prepare($sql);
         // 3. BIND PARAMETERS
@@ -53,6 +46,7 @@ class DataLayer
         $toppings = $orderObject->getTopping();
         $img = $orderObject->getImg();
         $date = date("Y-m-d");
+        $email = $post;
 
         $statement->bindParam(':bobaName', $bobaName);
         $statement->bindParam(':price', $price);
@@ -61,6 +55,8 @@ class DataLayer
         $statement->bindParam(':toppings', $toppings);
         $statement->bindParam(':img', $img);
         $statement->bindParam(':date', $date);
+        $statement->bindParam(':email', $email);
+
         // 4. EXECUTE
         $statement->execute();
     }
@@ -69,12 +65,12 @@ class DataLayer
      * @param $orderObject
      * @return void
      */
-    function addTeaOrder($orderObject) {
+    function addTeaOrder($orderObject,$post) {
         // 1. DEFINE SQL Statement
         $sql = "INSERT INTO `boba_orders`
         (`boba_name`, `price`,`quantity`,`tea_type`,`sweetness`,`toppings`, 
-        `img`, `order_date`) 
-        VALUES (:bobaName,:price,:quantity,:tea,:sweetness,:toppings,:img,:date)";
+        `img`, `order_date`, `email`) 
+        VALUES (:bobaName,:price,:quantity,:tea,:sweetness,:toppings,:img,:date,:email)";
         // 2. PREPARE STATEMENT
         $statement = $this->_dbh->prepare($sql);
         // 3. BIND PARAMETERS
@@ -86,6 +82,8 @@ class DataLayer
         $toppings = $orderObject->getTopping();
         $img = $orderObject->getImg();
         $date = date("Y-m-d");
+        $email = $post;
+
 
         $statement->bindParam(':bobaName', $bobaName);
         $statement->bindParam(':price', $price);
@@ -95,6 +93,8 @@ class DataLayer
         $statement->bindParam(':toppings', $toppings);
         $statement->bindParam(':img', $img);
         $statement->bindParam(':date', $date);
+        $statement->bindParam(':email', $email);
+
         // 4. EXECUTE
         $statement->execute();
     }
@@ -111,5 +111,50 @@ class DataLayer
         return $statement->fetchAll(PDO::FETCH_ASSOC);
 
     }
+
+
+    /** This function INSERTS into the customer table database
+     * @param $customerObject
+     * @return void
+     */
+    function addCustomer($first,$last,$number,$mail,$total) {
+        // 1. DEFINE SQL Statement
+        $sql = "INSERT INTO `customer`(`first_name`, `last_name`, `phone`, `email`,`register_date`, `cost`) 
+VALUES (:fname, :lname, :phone, :email, :date, :total)";
+        // 2. PREPARE STATEMENT
+        $statement = $this->_dbh->prepare($sql);
+        // 3. BIND PARAMETERS
+        $fname = $first;
+        $lname = $last;
+        $phone = $number;
+        $email = $mail;
+        $date = date("Y-m-d");
+        $totalCost = $total;
+
+        $statement->bindParam(':fname', $fname);
+        $statement->bindParam(':lname', $lname);
+        $statement->bindParam(':phone', $phone);
+        $statement->bindParam(':email', $email);
+        $statement->bindParam(':date', $date);
+        $statement->bindParam(':total', $totalCost);
+
+
+        // 4. EXECUTE
+        $statement->execute();
+    }
+
+    /** This functions fetch all the file in the data
+     * @return void
+     */
+    function displayCustomer()
+    {
+        $sql = "SELECT * FROM customer "; // multi. rows
+        $statement = $this->_dbh->prepare($sql);
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+
+    }
+
 
 } // END OF DataLayer

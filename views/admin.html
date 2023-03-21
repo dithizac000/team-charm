@@ -1,38 +1,76 @@
 <include href="views/header.html"></include>
 <title>Team Charm | Tea Shop | Admin</title> <!-- tab title -->
 <include href="views/navigation.html"></include><!-- START OF TOP home page -->
-<div class="position-relative overflow-hidden text-center bg-light">
-    <table class="table">
-        <!-- table head -->
-        <thead>
-            <tr>
-                <th scope="col">BOBA</th>
-                <th scope="col">ORDER ID</th>
-                <th scope="col">PRICE</th>
-                <th scope="col">QUANITITY</th>
-                <th scope="col">TEA</th>
-                <th scope="col">SWEETNESS</th>
-                <th scope="col">TOPPINGS</th>
-                <th scope="col">DATE</th>
-            </tr>
-        </thead>
-        <!-- table body-->
-        <tbody>
-            <!-- repeat block-->
-            <repeat group="{{ @displaying }}" value="{{ @display }}">
-                <tr>
-                    <th scope="col">{{ @display['boba_name'] }}</th>
-                    <th scope="row">{{ @display['order_id'] }}</th>
-                    <td>{{ @display['price'] }}</td>
-                    <td>{{ @display['quantity'] }}</td>
-                    <td>{{ @display['tea_type'] }}</td>
-                    <td>{{ @display['sweetness'] }}</td>
-                    <td>{{ @display['toppings'] }} </td>
-                    <td>{{ @display['order_date'] }}</td>
-                </tr>
-            </repeat>
-        </tbody> <!-- end of block -->
-    </table> <!-- end of body-->
-</div>
+<br>
+
+    <!-- sign in section -->
+    <form class="admin form-signin my-5 py-5">
+        <div class="card">
+            <div class="card-body">
+                <ul id="form-messages"></ul> <br>
+                <h4 class="card-title">Log In</h4> <br>
+                <div class="card-text">
+                    <label for="inputEmail" class="sr-only">Email address</label>
+                    <input type="email" id="inputEmail" class="form-control" placeholder="Email address"  > <br>
+                    <label for="inputPassword" class="sr-only">Password</label>
+                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" > <br>
+                </div>
+                <button class="btn btn-lg btn-secondary btn-block" id="btn-submit" type="submit">Sign in</button>
+            </div>
+        </div>
+    </form>
+
+
+
+<script>
+    const form = {
+        inputEmail: document.getElementById('inputEmail'),
+        inputPassword: document.getElementById('inputPassword'),
+        submit: document.getElementById('btn-submit'),
+        messages: document.getElementById('form-messages')
+    };
+
+    form.submit.addEventListener('click', () => {
+        const request = new XMLHttpRequest();
+
+        request.onload = () => {
+            let responseObject = null;
+
+            try {
+                responseObject = JSON.parse(request.responseText);
+            } catch (e) {
+                console.error('Could not parse JSON!');
+            }
+
+            if (responseObject) {
+                handleResponse(responseObject);
+            }
+        };
+
+        const requestData = `inputEmail=${form.inputEmail.value}&inputPassword=${form.inputPassword.value}`;
+
+        request.open('post', 'check-login.php');
+        request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        request.send(requestData);
+    });
+
+    function handleResponse (responseObject) {
+        if (responseObject.ok) {
+            location.href = 'views/account.html';
+        } else {
+            while (form.messages.firstChild) {
+                form.messages.removeChild(form.messages.firstChild);
+            }
+
+            responseObject.messages.forEach((message) => {
+                const li = document.createElement('li');
+                li.textContent = message;
+                form.messages.appendChild(li);
+            });
+
+            form.messages.style.display = "block";
+        }
+    }
+</script>
 </body>
 </html>

@@ -151,6 +151,11 @@ class Controller
 
                 //if there are no errors go to the next page
                 if (empty($this->_f3->get('errors'))) {
+                    $_SESSION['firstName'] = $fname;
+                    $_SESSION['lastName'] = $lname;
+                    $_SESSION['phone'] = $phone;
+                    $_SESSION['email'] = $email;
+
                     $this->_f3->reroute('summary');
                 }
             }
@@ -166,23 +171,29 @@ class Controller
      */
     function summary()
     {
-        // each loop for @order get method call use in cart.html
-        foreach ($_SESSION['orders'] as $order) {
-            // if fruit tea child
-            if($order->getNameOfClass() == 'FruitTea' ) {
-                // call data layer and insert orders session into database
-                $GLOBALS['data']->addTeaOrder($order);
-            }
-            // call data layer and insert orders session into database
-            $GLOBALS['data']->addOrder($order);
-        }
-
 
         //instantiate a view
         $view = new Template();
         if (empty($_SESSION)) {
             echo $view->render("views/home.html"); // render home if session is empty
         } else {
+            // each loop for @order get method call use in cart.html
+            foreach ($_SESSION['orders'] as $order) {
+                // add customer session into data base
+                $GLOBALS['data']->addCustomer
+                ($_SESSION['firstName'],$_SESSION['lastName'],$_SESSION['phone'],
+                    $_SESSION['email'],$_SESSION['total']);
+                // if fruit tea child
+                if($order->getNameOfClass() == 'FruitTea' ) {
+                    // call data layer and insert orders session into database
+                    $GLOBALS['data']->addTeaOrder($order, $_SESSION['email']);
+                } else {
+                    // call data layer and insert orders session into database
+                    $GLOBALS['data']->addOrder($order,  $_SESSION['email']);
+                }
+
+            }
+
             echo $view->render("views/summary.html"); // render summary page after checkout submit
             //destroy session array
         }
@@ -195,9 +206,6 @@ class Controller
      */
     function admin()
     {
-        //Get the data from the model
-        $display = $GLOBALS['data']->displayOrder();
-        $this->_f3->set('displaying', $display);
         //instantiate a view
         $view = new Template();
         echo $view->render("views/admin.html");
@@ -209,6 +217,11 @@ class Controller
      */
     function account()
     {
+        //Get the data from the database
+        $display = $GLOBALS['data']->displayOrder();
+        $info = $GLOBALS['data']->displayCustomer();
+        $this->_f3->set('displaying', $display);
+        $this->_f3->set('info', $info);
         //instantiate a view
         $view = new Template();
         echo $view->render("views/account.html");
