@@ -210,9 +210,6 @@ class Controller
      */
     function admin()
     {
-        print_r($_SESSION);
-        print_r($_POST);
-
 
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -235,9 +232,6 @@ class Controller
      */
     function account()
     {
-        print_r($_SESSION);
-        print_r($_POST);
-
         //Get the data from the database
         $display = $GLOBALS['data']->displayOrder($_SESSION['sqlEmail']);
         $info = $GLOBALS['data']->displayCustomer($_SESSION['sqlEmail']);

@@ -2,10 +2,10 @@
 <title>Team Charm | Tea Shop | Account</title> <!-- tab title -->
 <include href="views/navigation.html"></include>
 
-<main class="container">
+<main class="row d-flex justify-content-center align-items-center h-100">
 
     <!-- user info -->
-    <div class="my-3 p-3 bg-white rounded box-shadow">
+    <div class="col-10 my-3 p-3 bg-white rounded box-shadow">
         <repeat group="{{ @info }}" value="{{ @info }}"> <!-- start of customer repeat -->
         <h6 class="border-bottom border-gray pb-2 mb-0">Welcome {{ @info['first_name'] }}</h6>
         <div class="media text-muted pt-3">
@@ -45,12 +45,13 @@
 
 
     <!-- order history -->
-    <div class="my-3 p-3 bg-white rounded box-shadow">
+    <div class="col-10 my-3 p-3 bg-white rounded box-shadow">
         <h6 class="border-bottom border-gray pb-2 mb-0"> Order History</h6>
         <table class="table">
             <!-- table head -->
             <thead>
             <tr>
+                <th scope="col"></th>
                 <th scope="col">BOBA</th>
                 <th scope="col">PRICE</th>
                 <th scope="col">QUANITITY</th>
@@ -58,6 +59,7 @@
                 <th scope="col">SWEETNESS</th>
                 <th scope="col">TOPPINGS</th>
                 <th scope="col">DATE</th>
+
             </tr>
             </thead>
             <!-- table body-->
@@ -65,6 +67,11 @@
             <!-- repeat block for orders -->
             <repeat group="{{ @displaying }}" value="{{ @display }}">
                 <tr>
+                    <td>
+                        <img
+                                src="menu-images/{{ @display['img'] }}" class="img-fluid rounded-3"
+                                height="150" width="150" alt="boba image">
+                    </td>
                     <th scope="col">{{ @display['boba_name'] }}</th>
                     <td>{{ @display['price'] }}</td>
                     <td>{{ @display['quantity'] }}</td>
@@ -72,6 +79,7 @@
                     <td>{{ @display['sweetness'] }}</td>
                     <td>{{ @display['toppings'] }} </td>
                     <td>{{ @display['order_date'] }}</td>
+
                 </tr>
             </repeat>
             </tbody> <!-- end of repeat block  for orders-->
