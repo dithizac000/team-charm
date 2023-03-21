@@ -146,9 +146,9 @@ VALUES (:fname, :lname, :phone, :email, :date, :total)";
     /** This functions fetch all the file in the data
      * @return void
      */
-    function displayCustomer()
+    function displayCustomer($post)
     {
-        $sql = "SELECT * FROM customer "; // multi. rows
+        $sql = "SELECT * FROM customer WHERE email = '$post'"; // multi. rows
         $statement = $this->_dbh->prepare($sql);
         $statement->execute();
 

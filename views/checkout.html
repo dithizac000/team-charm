@@ -18,9 +18,7 @@
                                 <small class="text-muted">Topping: {{ @order->getTopping() }}</small><br>
                                 <!-- print if contains tea-->
                                 <check if="{{ @order->getNameOfClass() == 'FruitTea' }}">
-                                    <true>
                                         <small class="text-muted">Tea: {{ @order->getTeaType() }}</small><br>
-                                    </true>
                                 </check>
 
                             </div>

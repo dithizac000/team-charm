@@ -4,7 +4,7 @@
 <br>
 
     <!-- sign in section -->
-    <form class="admin form-signin my-5 py-5">
+    <form action="" method="POST" class="admin form-signin my-5 py-5">
         <div class="card">
             <div class="card-body">
                 <ul id="form-messages"></ul> <br>
@@ -21,56 +21,5 @@
     </form>
 
 
-
-<script>
-    const form = {
-        inputEmail: document.getElementById('inputEmail'),
-        inputPassword: document.getElementById('inputPassword'),
-        submit: document.getElementById('btn-submit'),
-        messages: document.getElementById('form-messages')
-    };
-
-    form.submit.addEventListener('click', () => {
-        const request = new XMLHttpRequest();
-
-        request.onload = () => {
-            let responseObject = null;
-
-            try {
-                responseObject = JSON.parse(request.responseText);
-            } catch (e) {
-                console.error('Could not parse JSON!');
-            }
-
-            if (responseObject) {
-                handleResponse(responseObject);
-            }
-        };
-
-        const requestData = `inputEmail=${form.inputEmail.value}&inputPassword=${form.inputPassword.value}`;
-
-        request.open('post', 'check-login.php');
-        request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-        request.send(requestData);
-    });
-
-    function handleResponse (responseObject) {
-        if (responseObject.ok) {
-            location.href = 'views/account.html';
-        } else {
-            while (form.messages.firstChild) {
-                form.messages.removeChild(form.messages.firstChild);
-            }
-
-            responseObject.messages.forEach((message) => {
-                const li = document.createElement('li');
-                li.textContent = message;
-                form.messages.appendChild(li);
-            });
-
-            form.messages.style.display = "block";
-        }
-    }
-</script>
 </body>
 </html>

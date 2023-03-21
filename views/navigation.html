@@ -1,39 +1,35 @@
 </head>
 <body>
-<!-- Navigation Bar --><!-- CONSTANT NAVIGATION BAR MAIN SITE -->
-<nav class="navbar navbar-light navbar-expand-sm sticky-top rounded ">
-  <!-- LOGO AND LINK TO HOME PAGE -->
-  <a class="navbar-brand" href=".">
-    <img class="img-fluid logo opacity-full m-2 me-5" src="images/boba-charm-pink.png" id="logo" alt="Boba Charm Logo">
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <!-- SHOW LIST OF NAV CONTENT FROM HOME, ADMIN, AND MENU -->
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav nav-inline w-100 navbar-brand">
-      <li class="nav-item active">
-        <a class="nav-link active me-4" href=".">Home | <img class="img-thumbnail" src="images/medicham.png" height="40" width="40" alt="medicham pokemom"/></a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link active me-4" href="admin">Admin | <img class="img-thumbnail" src="images/lopunny.png" height="40" width="40" alt="lopunny pokemon"/></a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link active me-4" href="menu">Menu | <img class="img-thumbnail" src="images/gardevior.png" height="40" width="40" alt="gardevior pokemon"/></a>
-      </li>
-    </ul>
-  </div>
-  <!-- show cart if session has started and contains modal input -->
-  <check if="{{ @SESSION['orders'] != null }}">
-    <true>
-      <div class="shopping">
-        <a role="button" class="btn btn-primary btn-sm me-4 p-2" href="cart">
-          <div class="cart-center"><strong>{{ @cartSize }}</strong></div>
-          <img class="img-thumbnail" src="images/cart-icon.png" width="40" height="40" class="d-inline-block align-top" alt="shopping cart">
-        </a>
-      </div>
-    </true>
-    <false>
-    </false>
-  </check>
-</nav> <!-- END OF NAV -->
+  <!-- Navigation Bar --><!-- CONSTANT NAVIGATION BAR MAIN SITE -->
+  <nav class="navbar navbar-light navbar-expand-sm sticky-top rounded ">
+    <!-- LOGO AND LINK TO HOME PAGE -->
+    <a class="navbar-brand" href=".">
+      <img class="img-fluid logo opacity-full m-2 me-5" src="images/boba-charm-pink.png" id="logo" alt="Boba Charm Logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- SHOW LIST OF NAV CONTENT FROM HOME, ADMIN, AND MENU -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav nav-inline w-100 navbar-brand">
+        <li class="nav-item active">
+          <a class="nav-link active me-4" href=".">Home | <img class="img-thumbnail" src="images/medicham.png" height="40" width="40" alt="medicham pokemom"/></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link active me-4" href="admin">Admin | <img class="img-thumbnail" src="images/lopunny.png" height="40" width="40" alt="lopunny pokemon"/></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link active me-4" href="menu">Menu | <img class="img-thumbnail" src="images/gardevior.png" height="40" width="40" alt="gardevior pokemon"/></a>
+        </li>
+      </ul>
+    </div>
+    <!-- show cart if session has started and contains modal input -->
+    <check if="{{ @SESSION['orders'] != null }}">
+        <div class="shopping">
+          <a role="button" class="btn btn-primary btn-sm me-4 p-2" href="cart">
+            <div class="cart-center"><strong>{{ @cartSize }}</strong></div>
+            <img class="img-thumbnail" src="images/cart-icon.png" width="40" height="40" class="d-inline-block align-top" alt="shopping cart">
+          </a>
+        </div>
+    </check>
+  </nav> <!-- END OF NAV -->

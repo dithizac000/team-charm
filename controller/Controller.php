@@ -210,6 +210,12 @@ class Controller
         $view = new Template();
         echo $view->render("views/admin.html");
 
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $_SESSION['sqlEmail'] = $_POST['inputEmail'];
+            $this->_f3->reroute('account');
+
+        }
+
     }
 
     /** allow user to view their account and order history when pass through admin page
@@ -219,7 +225,7 @@ class Controller
     {
         //Get the data from the database
         $display = $GLOBALS['data']->displayOrder();
-        $info = $GLOBALS['data']->displayCustomer();
+        $info = $GLOBALS['data']->displayCustomer($_SESSION['sqlEmail']);
         $this->_f3->set('displaying', $display);
         $this->_f3->set('info', $info);
         //instantiate a view

@@ -46,14 +46,14 @@ $f3->route('GET|POST /summary', function () {
 /**
  * Admin page get route for owner to access data via jQuery
  */
-$f3->route('GET /admin', function () {
+$f3->route('GET|POST /admin', function () {
     $GLOBALS['con']->admin();
 });
 
 /**
  * Account page when admin has been validated
  */
-$f3->route('GET /account', function () {
+$f3->route('GET|POST /account', function () {
     $GLOBALS['con']->account();
 });
 //run fat free

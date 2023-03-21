@@ -1,4 +1,3 @@
-
 <include href="views/header.html"></include>
 <title>Team Charm | Tea Shop | Cart</title> <!-- tab title -->
 <include href="views/navigation.html"></include>
@@ -30,10 +29,8 @@
 
                                     <!-- print if contains tea-->
                                     <check if="{{ @order->getNameOfClass() == 'FruitTea' }}">
-                                        <true>
                                             <br>
                                             <span class="text-muted">Tea : </span>{{ @order->getTeaType() }}
-                                        </true>
                                     </check>
 
 
@@ -71,7 +68,7 @@
 
 
             <!-- Hold value of hidden total cost of all boba orders + tax-->
-            <input type="hidden" name="total" for="total" class="form-control form-control-lg" value="{{ @afterTaxTotal }}"/>
+            <input type="hidden" name="total" for="total" value="{{ @afterTaxTotal }}"/>
 
             <!--Display Total Text and request post for next page---------->
             <div class="card my-3">
