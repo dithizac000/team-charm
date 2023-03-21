@@ -238,4 +238,19 @@ class Controller
         echo $view->render("views/account.html");
     }
 
+}   /**
+    * @return void
+     */
+    function account()
+    {
+        //Get the data from the database
+        $display = $GLOBALS['data']->displayOrder($_SESSION['sqlEmail']);
+        $info = $GLOBALS['data']->displayCustomer($_SESSION['sqlEmail']);
+        $this->_f3->set('displaying', $display);
+        $this->_f3->set('info', $info);
+        //instantiate a view
+        $view = new Template();
+        echo $view->render("views/account.html");
+    }
+
 }
