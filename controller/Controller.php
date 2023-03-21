@@ -128,6 +128,7 @@ class Controller
      */
     function checkout()
     {
+
         //instantiate a view
         $view = new Template(); // template is a fat free class
         if (empty($_SESSION['orders'])) {
@@ -140,8 +141,6 @@ class Controller
                 $lname = trim($_POST['lastName']);
                 $phone = $_POST['phone'];
                 $email = $_POST['email'];
-                $cost = $_POST['total'];
-                $_SESSION['total'] = $cost;
 
                 // call validation and return erorr within class if not true
                 Valid::validName($fname, "firstName", "First name ");
