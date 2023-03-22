@@ -26,7 +26,7 @@ class Controller
 
     }
 
-    /** renders the menu section of the nav bar, can be access in most page via nav
+    /** renders the menu secion of the nav bar, can be access in most page via nav
      * @return void
      */
     function menu()
@@ -71,8 +71,8 @@ class Controller
                 // store orders in array object
                 $_SESSION['orders'][] = $order;
             }
-
-           header("location: menu");
+            // prevent refresh of duplicated data from submit
+            header("location: menu");
         }
 
         if (!empty($_SESSION['orders'])) {
@@ -107,13 +107,16 @@ class Controller
 
 
             $afterTax = round($cost*1.1, 2); // format as dollars and after tax calculations
-            $this->_f3->set('total', $afterTax);
+            $this->_f3->set('afterTaxTotal', $afterTax);
+
+            if($_SERVER['REQUEST_METHOD'] == 'POST') {
+                $_SESSION['total'] = $_POST['total'];
+                $this->_f3->reroute('checkout');
+
+            }
 
             echo $view->render("views/cart.html"); // render method, return text on template
 
-            if($_SERVER['REQUEST_METHOD'] == 'POST') {
-                echo $view->reroute("views/checkout.html");
-            }
         }
 
 
@@ -125,6 +128,7 @@ class Controller
      */
     function checkout()
     {
+
         //instantiate a view
         $view = new Template(); // template is a fat free class
         if (empty($_SESSION['orders'])) {
@@ -137,9 +141,6 @@ class Controller
                 $lname = trim($_POST['lastName']);
                 $phone = $_POST['phone'];
                 $email = $_POST['email'];
-                $cost = $_POST['total']; // save total cost post from hidden value
-                $_SESSION['total'] = $cost;
-
                 // call validation and return erorr within class if not true
                 Valid::validName($fname, "firstName", "First name ");
                 Valid::validName($lname, "lastName", "Last name " );
@@ -149,6 +150,16 @@ class Controller
 
                 //if there are no errors go to the next page
                 if (empty($this->_f3->get('errors'))) {
+                    // convert names to upper
+                    $fname = strtoupper($fname);
+                    $lname = strtoupper($lname);
+                    $email = strtolower($email);  // lower case email
+                    // store post into session
+                    $_SESSION['firstName'] = $fname;
+                    $_SESSION['lastName'] = $lname;
+                    $_SESSION['phone'] = $phone;
+                    $_SESSION['email'] = $email;
+
                     $this->_f3->reroute('summary');
                 }
             }
@@ -164,6 +175,7 @@ class Controller
      */
     function summary()
     {
+
         //instantiate a view
         $view = new Template();
         if (empty($_SESSION)) {
@@ -171,13 +183,23 @@ class Controller
         } else {
             // each loop for @order get method call use in cart.html
             foreach ($_SESSION['orders'] as $order) {
-                // call data layer and insert orders session into database
-                $GLOBALS['data']->addOrder($order);
+                // add customer session into data base
+                $GLOBALS['data']->addCustomer
+                ($_SESSION['firstName'],$_SESSION['lastName'],$_SESSION['phone'],
+                    $_SESSION['email'],$_SESSION['total']);
+                // if fruit tea child
+                if($order->getNameOfClass() == 'FruitTea' ) {
+                    // call data layer and insert orders session into database
+                    $GLOBALS['data']->addTeaOrder($order, $_SESSION['email']);
+                } else {
+                    // call data layer and insert orders session into database
+                    $GLOBALS['data']->addOrder($order,  $_SESSION['email']);
+                }
+
             }
 
-
             echo $view->render("views/summary.html"); // render summary page after checkout submit
-
+            //destroy session array
         }
 
         session_destroy();
@@ -188,9 +210,17 @@ class Controller
      */
     function admin()
     {
-        //Get the data from the model
-        $display = $GLOBALS['data']->displayOrder();
-        $this->_f3->set('displaying', $display);
+
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            $sqlEmail = $_POST['inputEmail'];
+            $sqlEmail = strtolower($sqlEmail); // lower case email
+            $_SESSION['sqlEmail'] = $sqlEmail;
+
+            $this->_f3->reroute('account');
+
+        }
+
         //instantiate a view
         $view = new Template();
         echo $view->render("views/admin.html");
@@ -211,6 +241,5 @@ class Controller
         $view = new Template();
         echo $view->render("views/account.html");
     }
-
 
 }
