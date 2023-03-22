@@ -11,12 +11,13 @@ inject data into our database. Besides that we have a log in page for user and f
 
 ## Project Requirements
 :heavy_check_mark: 1. Separates all database/business logic using the MVC pattern.
-  * Business logic and database under model folder
+  * Database and validation under model folder
   * All HTML files under views folder
   * Routes to all the html files under the index.php
   * index.php calls function in Controller to get data from model and return views.
   * Classes under classes folder
-  * JSON and JavaScripts under scripts
+  * JSON in its own file
+  * JavaScripts under javascript folder
 
 :heavy_check_mark: 2. Routes all URLs and leverages a templating language using Fat-Free framework
   * All routes are in the index.php and leverages a templating language using Fat-Free Framework 
@@ -25,21 +26,22 @@ inject data into our database. Besides that we have a log in page for user and f
   * All database layer is under model in data-layer.php.
  
 :heavy_check_mark: 4. Data can be viewed and added.
-  * 
+  * Data can view added via checkout and be viewed via input email within the view order page
 
 :heavy_check_mark: 5. Has a history of commits from both team members to a Git repository. Commits are clearly commented. 
+ * Zack | ##, Jazmin | ##, Dale | ##
 
 :heavy_check_mark: 6. Uses OOP, and defines multiple classes, including at least one inheritance relationship.
-  * 
+  * We had three OOP. The customer class store customer's info and the tea has a Parent Tea that has a Child Tea that contains a seperate input. 
 
 :heavy_check_mark: 7. Contains full Docblocks for all PHP files and follows PEAR standards. 
-  *
+  * All PHP and files classs have Docblocks 
 
-:heavy_check_mark: 8. Has full validation on the client side through JavaScript and server side through PHP.
-  * 
+:heavy_check_mark: 8. Has full validation on the client server side through PHP.
+  * Customer input are required and validated through our PHP
 
 :heavy_check_mark: 9. All code is clean, clear, and well-commented. DRY (Don't Repeat Yourself) is practiced.
-  * 
+  * code is cleaned and well commented throughout each filed. DRY was implemeneted. 
 
 :heavy_check_mark: 10. Your submission shows adequate effort for a final project in a full-stack web development course.
   * 
