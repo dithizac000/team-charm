@@ -1,6 +1,11 @@
 # team-charm
-Create a boba shop website that allows user to input order via modal. Then we ask user for validting cart with their personalized infomations. Afterward validation, we 
-inject data into our database. Besides that we have a log in page for user and for admin. 
+Create a boba shop website that allows user to input order via modal in the menu page. The user can proceed to view their order in their cart and proceed to checkout by entering their personal info. Afterwards, the user can check their order history by logging into their account. All of the users order datat will be stored and displayed for the user. 
+
+# Account log in info
+View order history by entering the email associated with your "purchase" when you check out and provide email. 
+example: 
+-after ordering, in the checkout page I provide my email hello@world.com
+-then in the account page I log in using "hello@world.com"
 
 # Authors
 
@@ -47,7 +52,7 @@ inject data into our database. Besides that we have a log in page for user and f
   * code is cleaned and well commented throughout each filed. DRY was implemeneted. 
 
 :heavy_check_mark: 10. Your submission shows adequate effort for a final project in a full-stack web development course.
-  * 
+  * We learned so much this quarter and really got familiar working with the model view controller Fat-Free. We implemented a lot of what we learned in class and in our job app project into this group project. 
 
  BONUS: Incorporates Ajax that access data from a JSON file, PHP script, or API.
   *
