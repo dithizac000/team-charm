@@ -24,21 +24,24 @@ inject data into our database. Besides that we have a log in page for user and f
 
 :heavy_check_mark: 3. Has a clearly defined database layer using PDO and prepared statements. You should have at least two related tables.
   * All database layer is under model in data-layer.php.
+  * Our two tables are boba_orders and customers
  
 :heavy_check_mark: 4. Data can be viewed and added.
-  * Data can view added via checkout and be viewed via input email within the view order page
+  * Data can be added in our checkout.html view page in the views folder. Customer can add info then their data is displayed in the summary.html view page (also in the view folder) after the check out.
 
 :heavy_check_mark: 5. Has a history of commits from both team members to a Git repository. Commits are clearly commented. 
  * Zack | ##, Jazmin | ##, Dale | ##
 
 :heavy_check_mark: 6. Uses OOP, and defines multiple classes, including at least one inheritance relationship.
   * We had three OOP. The customer class store customer's info and the tea has a Parent Tea that has a Child Tea that contains a seperate input. 
+  * These classes are in our classes folder.
 
 :heavy_check_mark: 7. Contains full Docblocks for all PHP files and follows PEAR standards. 
   * All PHP and files classs have Docblocks 
 
 :heavy_check_mark: 8. Has full validation on the client server side through PHP.
-  * Customer input are required and validated through our PHP
+  * Customer input are required in the checkout.html view page. Input is validated through our PHP in the validate.php class
+  * 
 
 :heavy_check_mark: 9. All code is clean, clear, and well-commented. DRY (Don't Repeat Yourself) is practiced.
   * code is cleaned and well commented throughout each filed. DRY was implemeneted. 
