@@ -51,3 +51,6 @@ inject data into our database. Besides that we have a log in page for user and f
 
  BONUS: Incorporates Ajax that access data from a JSON file, PHP script, or API.
   *
+  
+  ![image](https://user-images.githubusercontent.com/115034313/227053504-efef5f8e-83c2-4f52-a7b2-f050af28e1c0.png)
+
