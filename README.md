@@ -35,7 +35,10 @@ example:
   * Data can be added in our checkout.html view page in the views folder. Customer can add info then their data is displayed in the summary.html view page (also in the view folder) after the check out.
 
 :heavy_check_mark: 5. Has a history of commits from both team members to a Git repository. Commits are clearly commented. 
- * Zack | 121, Jazmin | 27, Dale |  15
+ * As of 3.23.23:
+ * Zack | 121 commit
+ *  Jazmin | 27 commit
+ *  Dale |  15 commit
  * All commits have a clear and fully thought out comments and descriptions of actions. 
 
 :heavy_check_mark: 6. Uses OOP, and defines multiple classes, including at least one inheritance relationship.
